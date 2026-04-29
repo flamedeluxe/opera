@@ -1,0 +1,5 @@
+body {
+    --tw-bg-opacity: 1;
+    background-color: rgba(245, 239, 235, 1);
+    background-color: rgba(245, 239, 235, var(--tw-bg-opacity))
+}

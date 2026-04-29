@@ -1,0 +1,6 @@
+/bitrix/
+/upload/
+/.settings.php
+/.settings_extra.php
+*.log
+/restore.php

@@ -1,0 +1,51 @@
+# Сайт: http://localhost:${HTTP_PORT:-18080}/ — до установки Битрикс откройте /bitrixsetup.php
+# В мастере установки хост БД: db, имя БД/логин/пароль — из .env (MYSQL_*).
+# После установки: Настройки → Сайты → шаблон сайта «uuopera». Если установщик перезаписал www/index.php — восстановите его из репозитория.
+# Мегаменю (инфоблок в админке): php local/tools/uuopera_megamenu_iblock_install.php в контейнере php (один раз).
+# Афиша (все карточки): php local/tools/uuopera_afisha_events_install.php && php local/tools/uuopera_afisha_bulk_import_uuopera.php
+# (старые скрипты экскурсий uuopera_excursions_* при желании можно не использовать — данные в «События афиши»).
+
+services:
+  nginx:
+    image: nginx:1.25-alpine
+    ports:
+      - "${HTTP_PORT:-18080}:80"
+    volumes:
+      - ./www:/var/www/bitrix:delegated
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./www:/var/www/bitrix:delegated
+    environment:
+      TZ: ${TZ:-UTC}
+      BX_MEMCACHED_HOST: memcached
+      BITRIX_DEBUG: ${BITRIX_DEBUG:-0}
+    depends_on:
+      - db
+      - memcached
+
+  db:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-bitrix}
+      MYSQL_USER: ${MYSQL_USER:-bitrix}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-bitrix}
+    volumes:
+      - opera_db_data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+  memcached:
+    image: memcached:1.6-alpine
+    command: memcached -m 128
+
+volumes:
+  opera_db_data:

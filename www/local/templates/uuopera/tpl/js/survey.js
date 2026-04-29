@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuuopera=self.webpackChunkuuopera||[]).push([[653],{500:()=>{window.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".ays-survey-popup-survey-window").forEach((function(e){e.setAttribute("data-lenis-prevent","")}))}))}},e=>{e(e.s=500)}]);

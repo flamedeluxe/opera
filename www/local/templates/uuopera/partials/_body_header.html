@@ -1,0 +1,119 @@
+<script async src="https://culturaltracking.ru/static/js/spxl.js?pixelId=12122" data-pixel-id="12122"></script>
+    <script id="sprite-loader">
+        fetch('__SPRITE_URL__')
+            .then(r => r.text())
+            .then(text => {
+                if (!text) return;
+                const div = document.createElement('div');
+                div.innerHTML = text;
+                document.body.insertBefore(div.firstElementChild, document.body.firstElementChild);
+            })
+            .catch().finally(() => {
+                document.getElementById('sprite-loader').remove();
+            });
+    </script>
+    <script src="https://radario.ru/frontend/src/api/openapi/openapi.js"></script>
+        <div class="preloader fixed w-full h-full top-0 left-0 bg-brown-dark z-200 flex flex-col justify-center items-center gap-8 py-8 lg:py-16 [&.preloader-hidden]:opacity-0 [&.preloader-hidden]:-translate-y-full transition-[opacity,transform] duration-600 delay-[0s,0.6s]" data-preloader data-preloader-main>
+    <div>
+        <svg width="147" height="78" viewBox="0 0 147 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.0358708 60V0.0186309C0.95502 0.489909 19.6865 9.74429 73.2794 9.74429C123.903 9.74429 146.55 0 146.55 0V27.9946V60H139.569H0.0358708Z" fill="white" />
+            <rect x="7" y="22" width="21" height="56" rx="10.5" fill="#242120" class="animate-loading" />
+            <rect x="35" y="22" width="21" height="56" rx="10.5" fill="#242120" class="animate-loading" />
+            <rect x="63" y="22" width="21" height="56" rx="10.5" fill="#242120" class="animate-loading" />
+            <rect x="91" y="22" width="21" height="56" rx="10.5" fill="#242120" class="animate-loading" />
+            <rect x="119" y="22" width="21" height="56" rx="10.5" fill="#242120" class="animate-loading" />
+        </svg>
+    </div>
+</div>  <header class="header group/header fixed w-full top-0 left-0 z-30 text-[var(--header-text-color,theme('colors.brown.DEFAULT'))] bg-[var(--header-bg-color,theme('colors.white.DEFAULT'))] border-b border-b-[var(--header-border-color,theme('colors.brown.DEFAULT'))] transition-colors duration-200 [&.menu-open]:lg:border-b-transparent [&.menu-open]:bg-[var(--menu-bg-color,theme('colors.white.DEFAULT'))]" data-header>
+    <div class="h-12 md:h-13 flex justify-between lg:gap-4 wrapper-max relative">
+
+        <div class="absolute top-0 left-0 w-full h-full wrapper-main xl:grid xl:grid-cols-12 pointer-events-none opacity-0 group-[&.menu-open]/header:opacity-100 transition-opacity duration-200">
+            <div class="text-lg xl:text-2xl uppercase h-full flex items-center xl:col-start-5">меню</div>
+        </div>
+
+        <a href="/" class="flex justify-center items-center flex-grow sm:flex-grow-0 gap-3 lg:gap-4 px-3 md:pl-6 md:pr-4 group-[&.menu-open]/header:opacity-0 group-[&.menu-open]/header:pointer-events-none transition-opacity duration-200">
+            <div>
+                <svg class="w-[54px] h-[22px] fill-current">
+                    <use xlink:href="#logo"></use>
+                </svg>
+            </div>
+            <div class="text-xxs/[1.2em] lg:text-xs font-playfair uppercase hidden sm:block">
+                бурятский театр
+                <br>
+                оперы и балета
+            </div>
+        </a>
+        <div class="flex items-center 2xl:min-w-[calc(50%-10px)]">
+            <button class="group/button button-default border-l border-l-[var(--header-border-color,theme('colors.brown.DEFAULT'))] group-[&.menu-open]/header:border-l-transparent order-1 lg:-order-1 w-[86px] sm:w-24 h-full" data-modal-menu-open-button>
+                <span class="w-8 h-3 relative">
+                    <span class="w-full border-b-2 border-b-[var(--header-text-color,theme('colors.brown.DEFAULT'))] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[6px] group-[&.open]/button:-translate-y-[50%] group-[&.open]/button:rotate-[20deg] transition-transform duration-300"></span>
+                    <span class="w-full border-b-2 border-b-[var(--header-text-color,theme('colors.brown.DEFAULT'))] absolute bottom-[50%] left-[50%] -translate-x-[50%] translate-y-[6px] group-[&.open]/button:translate-y-[50%] group-[&.open]/button:-rotate-[20deg] transition-transform duration-300"></span>
+                </span>
+            </button>
+            <div class="flex h-full items-center 2xl:flex-grow 2xl:justify-center gap-6 xl:gap-8 2xl:gap-10 border-l border-l-[var(--header-border-color,theme('colors.brown.DEFAULT'))] px-4 md:px-6 lg:px-16 group-[&.menu-open]/header:opacity-0 group-[&.menu-open]/header:pointer-events-none transition-opacity duration-200">
+                <ul class="hidden md:flex gap-6 xl:gap-8 2xl:gap-10 text-xs lowercase [&amp;_li]:link-hover"><li><a href="/balet_na_baikale/">Балет на Байкале</a></li>
+<li><a href="/afisha/">Афиша</a></li>
+<li><a href="/projects/">Проекты</a></li>
+<li><a href="/category/news/">Новости</a></li>
+<li><a href="/contacts/">Контакты</a></li>
+</ul>               <button class="bvi-open">
+                    <svg class="w-[22px] h-[8px] fill-none stroke-current">
+                        <use xlink:href="#eye"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="h-full group-[&.menu-open]/header:opacity-0 group-[&.menu-open]/header:pointer-events-none transition-opacity duration-200">
+<!--                            <a href="https://radario.ru/customer" class="button-default h-full w-[140px] border-l border-[var(--header-border-color,theme('colors.brown.DEFAULT'))] text-xs lowercase flex-grow [@media(min-width:1601px)]:border-r">
+                        <span class="link-hover">купить билеты</span>
+                    </a> 
+                 -->
+<!-- Кнопка Купить билеты в меню главной страницы. Радарио. Начало -->
+    <div class="button-default h-full w-[140px] border-l border-[var(--header-border-color,theme('colors.brown.DEFAULT'))] text-xs lowercase flex-grow [@media(min-width:1601px)]:border-r">
+        <style>
+            .radario-button__main {
+                            color: #fff;
+                            background: rgba(0, 0, 0, 0);
+            }
+        </style>
+                    <script>
+                            radario.Widgets.Afisha({"params":{"accentColor":"rgba(61, 54, 52, 1)","textBtnColor":"#FFFFFF","textColor":"#3D3634","backgroundColor":"rgba(245, 239, 235, 1)"},"buttonText":"купить билеты","buttonPadding":"8px 12px","buttonBorderRadius":"0","standalone":false,"createButton":true,"key":"074874652e6205f2f7855003388d0e6e756bba0e7e3abbd"})
+                    </script>
+<!-- Кнопка Купить билеты в меню главной страницы. Радарио. Конец -->
+            </div>
+        </div>
+    </div>
+</header>   <div class="fixed w-full h-full left-0 top-0 opacity-0 translate-x-full [&.open]:translate-x-0 [&.open]:opacity-100 transition-[transform,opacity] delay-[300ms,0ms] [&.open]:delay-0 duration-[0ms,300ms] z-20 overflow-hidden" data-modal-menu data-lenis-prevent>
+    <div class="absolute inset-0 bg-brown-dark opacity-60" data-modal-menu-bg></div>
+    <div class="text-[var(--menu-text-color,theme('colors.brown.DEFAULT'))] bg-[var(--menu-bg-color,theme('colors.white.DEFAULT'))] pt-12 md:pt-13 max-h-full overflow-auto no-scrollbar relative">
+        <div>
+                        <ul class="flex flex-col lg:grid lg:grid-cols-4 lg:gap-x-5 lg:gap-y-25 lg:wrapper-main wrapper-max pb-10">
+__UUOPERA_MEGAMENU__
+                                                                                            <li class="group/item flex flex-col lg:gap-10" >
+                                                            <a href="/category/news/" class="relative link-hover text-p2 lg:text-p1 flex justify-center lg:justify-start px-3 md:px-6 lg:px-5 py-4 md:py-6 lg:py-0 border-b border-b-[var(--menu-border-color,theme('colors.brown.DEFAULT'))] lg:border-none  " >
+                                    <span>Новости</span>
+                                                                    </a>
+                                                                                            </li>
+                                                                                                <li class="group/item flex flex-col lg:gap-10" >
+                                                            <a href="/contacts/" class="relative link-hover text-p2 lg:text-p1 flex justify-center lg:justify-start px-3 md:px-6 lg:px-5 py-4 md:py-6 lg:py-0 border-b border-b-[var(--menu-border-color,theme('colors.brown.DEFAULT'))] lg:border-none  " >
+                                    <span>Контакты</span>
+                                                                    </a>
+                                                                                            </li>
+                                                    
+            <li class="flex flex-col items-center gap-8 px-5 max-w-[768px] xl:items-start mt-16 md:mt-25 lg:mt-0">
+                <ul class="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:flex-wrap text-p2 [&amp;_a]:whitespace-nowrap xl:order-1"><li><a target="_blank" href="https://vk.com/uuopera">Вконтакте</a></li>
+<li><a target="_blank" href="https://ok.ru/group/70000001560984">Одноклассники</a></li>
+<li><a target="_blank" href="https://t.me/uuopera03">Телеграм</a></li>
+<li><a href="https://max.ru/uuopera">Мax</a></li>
+</ul>               <div class="flex gap-4 justify-between lg:flex-col text-p2 w-full">
+                                                                <div>
+                            Республика Бурятия,<br>Улан-Удэ, Ленина 51                      </div>
+                                                                <div class="flex flex-col">
+                                                            <a href="tel:+73012213600">8 (3012) 21-36-00 Касса режим работы с 10:00 до 19:00</a>
+                                                            <a href="mailto:uuopera@govrb.ru">uuopera@govrb.ru</a>
+                                                    </div>
+                                    </div>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
