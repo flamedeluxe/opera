@@ -1,6 +1,4 @@
 .env
-db/bitrix.sql.gz
-db/bitrix.sql
 wp-old/
 C:/
 .claude/
