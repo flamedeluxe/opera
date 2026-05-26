@@ -24,9 +24,11 @@ if (!\Bitrix\Main\Loader::includeModule('iblock')) {
 require $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/uuopera_cms_iblocks_bootstrap.php';
 
 $ids = uuopera_cms_bootstrap_iblocks();
+echo "uuopera_contacts_settings: {$ids['contacts']}\n";
 echo "uuopera_static_pages: {$ids['static_pages']}\n";
 echo "uuopera_home_slides: {$ids['home_slides']}\n";
 echo "uuopera_projects: {$ids['projects']}\n";
 echo "uuopera_about_blocks: {$ids['about']}\n";
 echo "uuopera_service_faq: {$ids['service_faq']}\n";
+echo "В инфоблоках включены разделы; папки созданы (при повторном создании — только отсутствующие).\n";
 echo "OK\n";

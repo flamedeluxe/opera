@@ -8,5 +8,5 @@ uuopera_page([
     'title' => 'Бурятский театр оперы и балета',
     'include' => '/local/templates/uuopera/includes/main_home.php',
     'extra_css' => [],
-    'footer_js' => ['tpl/js/page-index.js'],
+    'footer_js' => ['tpl/js/page-index.js', 'tpl/js/video-cover.js'],
 ]);

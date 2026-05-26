@@ -11,7 +11,7 @@ $code = (string) ($GLOBALS['UUOPERA_NEWS_ELEMENT_CODE'] ?? '');
 $id = (int) ($GLOBALS['UUOPERA_NEWS_ELEMENT_ID'] ?? 0);
 
 $detailParams = [
-        'IBLOCK_TYPE' => 'news',
+        'IBLOCK_TYPE' => 'uuopera',
         'IBLOCK_ID' => uuopera_news_iblock_id(),
         'FIELD_CODE' => ['NAME', 'DETAIL_TEXT', 'PREVIEW_TEXT', 'DETAIL_PICTURE', 'PREVIEW_PICTURE', 'DATE_ACTIVE_FROM'],
         'PROPERTY_CODE' => [],

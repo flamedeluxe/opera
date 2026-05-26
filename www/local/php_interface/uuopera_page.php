@@ -13,6 +13,7 @@ declare(strict_types=1);
  */
 function uuopera_page(array $config): void
 {
+    global $APPLICATION;
     $doc = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT'] ?? ''), '/');
 
     $include = (string) ($config['include'] ?? '');

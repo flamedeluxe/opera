@@ -3,7 +3,7 @@
         <div class="relative" data-header-color-schema="transparent">
 
             
-                                                            <img width="1920" height="1080" src="https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1.jpg" class="absolute w-full h-full image-cover wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1.jpg 1920w, https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-300x169.jpg 300w, https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-1024x576.jpg 1024w, https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-768x432.jpg 768w, https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-1536x864.jpg 1536w, https://uuopera.ru/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-600x338.jpg 600w" sizes="auto, (max-width: 1920px) 100vw, 1920px" />                                  
+                                                            <img width="1920" height="1080" src="/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1.jpg" class="absolute w-full h-full image-cover wp-post-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2024/10/krasavica-angara-1920h1080-1.jpg 1920w, /wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-300x169.jpg 300w, /wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-1024x576.jpg 1024w, /wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-768x432.jpg 768w, /wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-1536x864.jpg 1536w, /wp-content/uploads/2024/10/krasavica-angara-1920h1080-1-600x338.jpg 600w" sizes="auto, (max-width: 1920px) 100vw, 1920px" />                                  
             
             <div class="absolute inset-0 bg-black-40"></div>
             <div class="flex portrait:min-h-[133vw] md:portrait:min-h-[100vw] min-h-[50vw]">
@@ -118,102 +118,102 @@
                 <div class="swiper-wrapper">
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8833-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8833-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8829-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8829-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8822-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8822-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8815-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8815-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8765-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8765-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8768-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8768-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8776-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8776-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8802-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8802-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8787-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8787-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8966-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8966-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8871-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8871-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8891-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8891-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8901-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8901-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8884-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8884-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_8991-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_8991-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_9002-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_9002-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_9015-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_9015-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_9041-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_9041-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_9067-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_9067-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                             <div class="swiper-slide" data-slide>
                             <div class="relative pb-16/9">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/12/img_9083-scaled.jpg" alt="" class="absolute image-cover" data-img>
+                                <img decoding="async" src="/wp-content/uploads/2024/12/img_9083-scaled.jpg" alt="" class="absolute image-cover" data-img>
                             </div>
                         </div>
                                     </div>

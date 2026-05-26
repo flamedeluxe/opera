@@ -38,6 +38,7 @@ function uuopera_afisha_event_empty_data(): array
         'sessions' => [],
         'participants_html' => '',
         'description_html' => '',
+        'content_html' => '',
         'footer_duration' => '',
         'footer_price' => '',
         'slider_id' => 'slider',
@@ -228,26 +229,23 @@ function uuopera_afisha_event_get_data(string $code): array
     }
 
     $fields = $ob->GetFields();
-    $props = $ob->GetProperties();
+    // GetProperties() fails in demo mode; use GetProperty()-based helper instead
+    $elementId = (int) ($fields['ID'] ?? 0);
+    $propCodes = [
+        'CATEGORY', 'LAYOUT', 'AGE', 'SESSIONS_JSON', 'PARTICIPANTS_HTML',
+        'CONTENT_HTML', 'RADARIO_AFISHA_KEY', 'RADARIO_HERO_EVENT_ID', 'RADARIO_HERO_MODE',
+        'HERO_META_HTML', 'HERO_IMAGE', 'HERO_SRCSET', 'SLIDER_ID',
+        'FOOTER_DURATION', 'FOOTER_PRICE', 'PUSHKIN_CARD', 'GALLERY',
+    ];
+    $props = uuopera_afisha_read_props($iblockId, $elementId, $propCodes);
 
     $str = static function (array $p): string {
         $v = $p['VALUE'] ?? '';
         return is_array($v) ? trim((string) ($v[0] ?? '')) : trim((string) $v);
     };
 
+    require_once __DIR__ . '/uuopera_iblock_gallery.php';
     $gallery = uuopera_iblock_gallery_paths_from_file_property($props['GALLERY'] ?? null);
-    if ($gallery === []) {
-        $gal = $props['GALLERY_URL'] ?? [];
-        if (!empty($gal['VALUE'])) {
-            $vals = is_array($gal['VALUE']) ? $gal['VALUE'] : [$gal['VALUE']];
-            foreach ($vals as $u) {
-                $u = trim((string) $u);
-                if ($u !== '') {
-                    $gallery[] = $u;
-                }
-            }
-        }
-    }
 
     $heroEventId = (int) $str($props['RADARIO_HERO_EVENT_ID'] ?? []);
 
@@ -280,6 +278,13 @@ function uuopera_afisha_event_get_data(string $code): array
 
     $pushkin = strtoupper($str($props['PUSHKIN_CARD'] ?? [])) === 'Y';
 
+    $contentHtml = uuopera_afisha_prop_text_html($props['CONTENT_HTML'] ?? []);
+    // When local gallery is present the slider lives in _afisha_slider_fragment.php;
+    // strip duplicate lazyblock-image-slider-* divs from scraped content_html.
+    if ($gallery !== []) {
+        $contentHtml = trim(uuopera_afisha_strip_slider_blocks($contentHtml));
+    }
+
     return [
         'name' => trim((string) ($fields['NAME'] ?? '')),
         'layout' => $layout,
@@ -294,6 +299,7 @@ function uuopera_afisha_event_get_data(string $code): array
         'sessions' => $sessions,
         'participants_html' => uuopera_afisha_prop_text_html($props['PARTICIPANTS_HTML'] ?? []),
         'description_html' => (string) ($fields['DETAIL_TEXT'] ?? ''),
+        'content_html' => $contentHtml,
         'footer_duration' => $str($props['FOOTER_DURATION'] ?? []),
         'footer_price' => $str($props['FOOTER_PRICE'] ?? []),
         'slider_id' => $sliderId,
@@ -317,6 +323,7 @@ function uuopera_afisha_format_sessions_line(array $sessions): string
         5 => 'мая', 6 => 'июня', 7 => 'июля', 8 => 'августа',
         9 => 'сентября', 10 => 'октября', 11 => 'ноября', 12 => 'декабря',
     ];
+    $now = time();
     $sep = str_repeat("\xc2\xa0", 4);
     $parts = [];
     foreach ($sessions as $pair) {
@@ -325,9 +332,18 @@ function uuopera_afisha_format_sessions_line(array $sessions): string
         }
         $label = trim((string) $pair[0]);
         // Формат: "9 апреля 14:00" или "31 января"
-        if (preg_match('/^(\d{1,2})\s+(' . implode('|', array_keys($monthMap)) . ')/u', $label, $m)) {
+        if (preg_match('/^(\d{1,2})\s+(' . implode('|', array_keys($monthMap)) . ')(?:\s+(\d{2}:\d{2}))?/u', $label, $m)) {
             $day = (int) $m[1];
             $monthNum = $monthMap[$m[2]] ?? 0;
+            $timeParts = isset($m[3]) ? explode(':', $m[3]) : ['0', '0'];
+            $year = (int) date('Y');
+            $ts = mktime((int) $timeParts[0], (int) ($timeParts[1] ?? 0), 0, $monthNum, $day, $year);
+            if ($ts < $now) {
+                $ts = mktime((int) $timeParts[0], (int) ($timeParts[1] ?? 0), 0, $monthNum, $day, $year + 1);
+            }
+            if ($ts < $now) {
+                continue;
+            }
             $parts[] = $day . "\xc2\xa0" . ($monthNames[$monthNum] ?? '');
         } else {
             $parts[] = $label;
@@ -421,17 +437,59 @@ function uuopera_afisha_resolve_listing_category_slug(array $props, string $elem
  *
  * @return array<string, array{VALUE: mixed, PROPERTY_TYPE: string}>
  */
+/**
+ * Strips <div class="lazyblock-image-slider-*"> blocks from HTML, leaving surrounding content intact.
+ * Used to avoid duplicate sliders when a local GALLERY property is present.
+ */
+function uuopera_afisha_strip_slider_blocks(string $html): string
+{
+    $result = '';
+    $pos = 0;
+    $len = strlen($html);
+    while ($pos < $len) {
+        $found = strpos($html, '<div class="lazyblock-image-slider-', $pos);
+        if ($found === false) {
+            $result .= substr($html, $pos);
+            break;
+        }
+        $result .= substr($html, $pos, $found - $pos);
+        // Find end of this div block via depth counting
+        $depth = 1;
+        $inner = $found + 4; // skip '<div'
+        while ($depth > 0 && $inner < $len) {
+            $nextOpen  = strpos($html, '<div', $inner);
+            $nextClose = strpos($html, '</div>', $inner);
+            if ($nextClose === false) {
+                break;
+            }
+            if ($nextOpen !== false && $nextOpen < $nextClose) {
+                $depth++;
+                $inner = $nextOpen + 4;
+            } else {
+                $depth--;
+                $inner = $nextClose + 6;
+            }
+        }
+        $pos = $inner;
+    }
+    return $result;
+}
+
 function uuopera_afisha_read_props(int $iblockId, int $elementId, array $codes): array
 {
     $result = [];
     foreach ($codes as $code) {
         $res = CIBlockElement::GetProperty($iblockId, $elementId, ['sort' => 'asc'], ['CODE' => $code]);
         $values = [];
+        $propType = '';
         while ($p = $res->Fetch()) {
             $values[] = $p['VALUE'];
+            if ($propType === '') {
+                $propType = (string) ($p['PROPERTY_TYPE'] ?? '');
+            }
         }
         if ($values !== []) {
-            $result[$code] = ['VALUE' => count($values) === 1 ? $values[0] : $values, 'PROPERTY_TYPE' => ''];
+            $result[$code] = ['VALUE' => count($values) === 1 ? $values[0] : $values, 'PROPERTY_TYPE' => $propType];
         }
     }
     return $result;
@@ -453,7 +511,7 @@ function uuopera_afisha_read_props(int $iblockId, int $elementId, array $codes):
  *   pushkin_card: bool
  * }>
  */
-function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0): array
+function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0, string $sortActiveFrom = 'DESC', string $minActiveFrom = ''): array
 {
     $iblockId = uuopera_afisha_events_iblock_id();
     if ($iblockId <= 0 || !Loader::includeModule('iblock')) {
@@ -465,6 +523,9 @@ function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0): arr
         'ACTIVE' => 'Y',
         'CHECK_PERMISSIONS' => 'Y',
     ];
+    if ($minActiveFrom !== '') {
+        $filter['>=ACTIVE_FROM'] = $minActiveFrom;
+    }
     $cat = strtolower(trim($categoryFilter));
 
     $nav = false;
@@ -472,8 +533,10 @@ function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0): arr
         $nav = ['nTopCount' => $limit];
     }
 
+    $sortDir = strtoupper($sortActiveFrom) === 'ASC' ? 'ASC' : 'DESC';
+
     $res = CIBlockElement::GetList(
-        ['SORT' => 'ASC', 'ACTIVE_FROM' => 'DESC', 'ID' => 'DESC'],
+        ['SORT' => 'ASC', 'ACTIVE_FROM' => $sortDir, 'ID' => 'DESC'],
         $filter,
         false,
         $nav,
@@ -486,20 +549,53 @@ function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0): arr
     };
 
     $propCodes = ['CATEGORY', 'SESSIONS_JSON', 'RADARIO_AFISHA_KEY', 'RADARIO_HERO_EVENT_ID', 'AGE', 'HERO_IMAGE', 'HERO_SRCSET', 'PUSHKIN_CARD', 'SOURCE_URL'];
-    $out = [];
-    while ($row = $res->Fetch()) {
-        $code = trim((string) ($row['CODE'] ?? ''));
-        if ($code === '') {
-            continue;
-        }
-        $elementId = (int) $row['ID'];
-        $sectionId = (int) ($row['IBLOCK_SECTION_ID'] ?? 0);
 
-        // Свойства через GetProperty (GetNextElement->GetProperties не работает в демо)
-        $props = uuopera_afisha_read_props($iblockId, $elementId, $propCodes);
+    // First pass: collect all rows (avoids N×M per-element property queries)
+    $allRows = [];
+    while ($row = $res->Fetch()) {
+        $elCode = trim((string) ($row['CODE'] ?? ''));
+        if ($elCode !== '') {
+            $allRows[(int) $row['ID']] = $row;
+        }
+    }
+
+    if (empty($allRows)) {
+        return [];
+    }
+
+    // Batch-load all properties for all elements in one call
+    $rawAll = [];
+    CIBlockElement::GetPropertyValuesArray(
+        $rawAll,
+        $iblockId,
+        ['ID' => array_keys($allRows)],
+        false
+    );
+
+    // Normalize to ['VALUE' => ...] format expected by $str() and callers
+    $propsMap = [];
+    foreach ($rawAll as $elId => $propsByCode) {
+        foreach ($propsByCode as $pCode => $rawVal) {
+            if (!is_array($rawVal) || array_key_exists('VALUE', $rawVal)) {
+                $val = is_array($rawVal) ? ($rawVal['VALUE'] ?? '') : $rawVal;
+            } else {
+                $val = count($rawVal) === 1 ? ($rawVal[0] ?? '') : $rawVal;
+            }
+            $propsMap[(int) $elId][$pCode] = ['VALUE' => $val, 'PROPERTY_TYPE' => ''];
+        }
+    }
+
+    $out = [];
+    foreach ($allRows as $elementId => $row) {
+        $props = $propsMap[$elementId] ?? [];
+        $sectionId = (int) ($row['IBLOCK_SECTION_ID'] ?? 0);
+        $code = (string) ($row['CODE'] ?? '');
 
         $slug = uuopera_afisha_resolve_listing_category_slug($props, $code, $sectionId, $iblockId);
         if ($cat !== '' && $cat !== 'all' && $slug !== $cat) {
+            continue;
+        }
+        if ($cat === '' && $slug === 'news') {
             continue;
         }
         $sessions = uuopera_afisha_event_parse_sessions_json(uuopera_afisha_prop_value_plain($props['SESSIONS_JSON'] ?? []));
@@ -547,12 +643,13 @@ function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0): arr
  *
  * @return array{grid: list<array<string, mixed>>, slides: list<array{name: string, link_url: string, subtext_html: string, age_mark: string, radario_afisha_key: string, intickets_url: string, image: string, srcset: string}>}
  */
-function uuopera_afisha_home_bundle(int $gridLimit = 12, int $sliderLimit = 4): array
+function uuopera_afisha_home_bundle(int $gridLimit = 8, int $sliderLimit = 4): array
 {
     $gridLimit = max(1, min(40, $gridLimit));
     $sliderLimit = max(0, min(12, $sliderLimit));
     $pool = max($gridLimit + $sliderLimit + 10, 24);
-    $flat = uuopera_afisha_list_events('', $pool);
+    $today = date('d.m.Y H:i:s');
+    $flat = uuopera_afisha_list_events('', $pool, 'ASC', $today);
 
     $exc = [];
     $rest = [];

@@ -7,7 +7,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  * Как на https://uuopera.ru/ : слайдер из 4 спектаклей/концертов (без экскурсии),
  * сетка — экскурсии сверху, затем остальное. ИБ «Главная: слайды» переопределяет только слайдер.
  */
-$homeBundle = uuopera_afisha_home_bundle(12, 4);
+$homeBundle = uuopera_afisha_home_bundle(8, 4);
 $homeAfishaCards = $homeBundle['grid'];
 
 // Сначала пробуем взять слайды из специального ИБ (если он настроен)
@@ -59,6 +59,8 @@ if ($homeSlides === []) {
                     $sub = (string) ($slide['subtext_html'] ?? '');
                     $intickets = trim((string) ($slide['intickets_url'] ?? ''));
                     $radKey = (string) ($slide['radario_afisha_key'] ?? '');
+                    $sVideoUrl = htmlspecialchars((string) ($slide['video_url'] ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                    $sVideoPortrait = htmlspecialchars((string) ($slide['video_portrait_url'] ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8');
                     ?>
                     <div class="swiper-slide" data-event-slider-slide>
                         <a href="<?= $sLink ?>" class="block relative text-white"
@@ -66,7 +68,24 @@ if ($homeSlides === []) {
                                 data-intickets-url="<?= htmlspecialchars($intickets, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>"
                             <?php } ?>>
 
-                            <?php if ($sImg !== '') { ?>
+                            <?php if ($sVideoUrl !== '') { ?>
+                                <div class="absolute inset-0" data-video-cover>
+                                    <video class="absolute inset-0 w-full h-full object-cover"
+                                           data-landscape="<?= $sVideoUrl ?>"
+                                           <?php if ($sVideoPortrait !== '') { ?>data-portrait="<?= $sVideoPortrait ?>"<?php } ?>
+                                           playsinline muted loop preload="auto"
+                                           data-video></video>
+                                    <?php if ($sImg !== '') { ?>
+                                        <img width="1920" height="1080"
+                                             src="<?= htmlspecialchars($sImg, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>"
+                                             class="absolute inset-0 w-full h-full object-cover wp-post-image transition-opacity duration-300"
+                                             alt="<?= $sName ?>" decoding="async"
+                                             <?php if ($idx === 0) { ?>fetchpriority="high"<?php } ?>
+                                             <?php if ($sSrcset !== '') { ?>srcset="<?= htmlspecialchars($sSrcset, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>" sizes="(max-width: 1920px) 100vw, 1920px"<?php } ?>
+                                             data-image />
+                                    <?php } ?>
+                                </div>
+                            <?php } elseif ($sImg !== '') { ?>
                                 <img width="1920" height="1080"
                                      src="<?= htmlspecialchars($sImg, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>"
                                      class="absolute image-cover wp-post-image" alt="<?= $sName ?>" decoding="async"
@@ -89,7 +108,9 @@ if ($homeSlides === []) {
                                         </div>
                                         <?php if ($sub !== '') { ?>
                                             <div class="sm:grid md:grid-cols-2 xl:grid-cols-12 sm:gap-5">
-                                                
+                                                <div class="text-h2 xl:col-span-4">
+                                                    <?= $sub ?>
+                                                </div>
                                             </div>
                                         <?php } ?>
                                         <?php if ($radKey !== '') {
@@ -154,16 +175,16 @@ if ($homeSlides === []) {
                 }
                 ?>
             </div>
+            <a href="/afisha/" class="group text-p2 button-default gap-6">
+                <span>ко всем событиям</span>
+                <span class="flex items-center -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
+                    <span class="w-3 border-b border-current"></span>
+                    <svg class="w-[8px] h-[10px] fill-current">
+                        <use xlink:href="#arrow-tip"></use>
+                    </svg>
+                </span>
+            </a>
         </div>
-        <a href="/afisha/" class="group text-p2 button-default gap-6">
-            <span>ко всем событиям</span>
-            <span class="flex items-center -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
-                <span class="w-3 border-b border-current"></span>
-                <svg class="w-[8px] h-[10px] fill-current">
-                    <use xlink:href="#arrow-tip"></use>
-                </svg>
-            </span>
-        </a>
     </div>
 
     <?php include __DIR__ . '/_main_home_news_block.inc.php'; ?>

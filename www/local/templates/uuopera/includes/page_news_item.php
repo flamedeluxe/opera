@@ -3,7 +3,7 @@
         <div class="flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-5">
             <div class="lg:order-1">
                 <div class="relative pb-16/9">
-                    <img width="2560" height="1707" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-scaled.jpg" class="absolute image-cover wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-scaled.jpg 2560w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-2048x1365.jpg 2048w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6387-600x400.jpg 600w" sizes="auto, (max-width: 2560px) 100vw, 2560px" />             </div>
+                    <img width="2560" height="1707" src="/wp-content/uploads/2026/03/dg7a6387-scaled.jpg" class="absolute image-cover wp-post-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2026/03/dg7a6387-scaled.jpg 2560w, /wp-content/uploads/2026/03/dg7a6387-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a6387-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a6387-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a6387-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a6387-2048x1365.jpg 2048w, /wp-content/uploads/2026/03/dg7a6387-600x400.jpg 600w" sizes="auto, (max-width: 2560px) 100vw, 2560px" />             </div>
             </div>
             <div class="md:grid md:grid-cols-12 lg:grid-cols-6 md:gap-5">
                 <div class="flex flex-col gap-5 md:gap-16 md:col-span-10 lg:col-span-5">
@@ -25,7 +25,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-1024x683.jpg" alt="" class="wp-image-37883" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-2048x1365.jpg 2048w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6345-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/2026/03/dg7a6345-1024x683.jpg" alt="" class="wp-image-37883" srcset="/wp-content/uploads/2026/03/dg7a6345-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a6345-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a6345-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a6345-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a6345-2048x1365.jpg 2048w, /wp-content/uploads/2026/03/dg7a6345-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -37,7 +37,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-1024x683.jpg" alt="" class="wp-image-37890" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-2048x1365.jpg 2048w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6425-2-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/2026/03/dg7a6425-2-1024x683.jpg" alt="" class="wp-image-37890" srcset="/wp-content/uploads/2026/03/dg7a6425-2-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a6425-2-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a6425-2-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a6425-2-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a6425-2-2048x1365.jpg 2048w, /wp-content/uploads/2026/03/dg7a6425-2-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-1024x683.jpg" alt="" class="wp-image-37886" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-2048x1365.jpg 2048w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a9234-2-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/2026/03/dg7a9234-2-1024x683.jpg" alt="" class="wp-image-37886" srcset="/wp-content/uploads/2026/03/dg7a9234-2-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a9234-2-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a9234-2-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a9234-2-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a9234-2-2048x1365.jpg 2048w, /wp-content/uploads/2026/03/dg7a9234-2-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -53,7 +53,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-1024x683.jpg" alt="" class="wp-image-37884" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-2048x1365.jpg 2048w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a6524-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/2026/03/dg7a6524-1024x683.jpg" alt="" class="wp-image-37884" srcset="/wp-content/uploads/2026/03/dg7a6524-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a6524-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a6524-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a6524-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a6524-2048x1365.jpg 2048w, /wp-content/uploads/2026/03/dg7a6524-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -61,7 +61,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-1024x683.jpg" alt="" class="wp-image-37888" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-2048x1365.jpg 2048w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7567-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/2026/03/dg7a7567-1024x683.jpg" alt="" class="wp-image-37888" srcset="/wp-content/uploads/2026/03/dg7a7567-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a7567-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a7567-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a7567-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a7567-2048x1365.jpg 2048w, /wp-content/uploads/2026/03/dg7a7567-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -69,7 +69,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="https://uuopera.ru/wp-content/uploads/2026/03/dg7a7602-1024x683.jpg" alt="" class="wp-image-37887" srcset="https://uuopera.ru/wp-content/uploads/2026/03/dg7a7602-1024x683.jpg 1024w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7602-300x200.jpg 300w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7602-768x512.jpg 768w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7602-1536x1024.jpg 1536w, https://uuopera.ru/wp-content/uploads/2026/03/dg7a7602-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="683" src="/wp-content/uploads/2026/03/dg7a7602-1024x683.jpg" alt="" class="wp-image-37887" srcset="/wp-content/uploads/2026/03/dg7a7602-1024x683.jpg 1024w, /wp-content/uploads/2026/03/dg7a7602-300x200.jpg 300w, /wp-content/uploads/2026/03/dg7a7602-768x512.jpg 768w, /wp-content/uploads/2026/03/dg7a7602-1536x1024.jpg 1536w, /wp-content/uploads/2026/03/dg7a7602-600x400.jpg 600w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 

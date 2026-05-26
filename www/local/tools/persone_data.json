@@ -1,0 +1,5305 @@
+[
+  {
+    "id": 38052,
+    "name": "Раданжапова Алина Солбоновна",
+    "slug": "radanzhapova-alina-solbonovna",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел рекламы и маркетинга",
+    "sub_cats": [
+      "Отдел рекламы и маркетинга"
+    ],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37058,
+    "name": "Елена Николаевна Шекунова",
+    "slug": "elena-nikolaevna-shekunova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел продаж",
+    "sub_cats": [
+      "Отдел продаж"
+    ],
+    "photo_url": "",
+    "sort": 2
+  },
+  {
+    "id": 37057,
+    "name": "Валентина Владимировна Дармахеева",
+    "slug": "valentina-vladimirovna-darmaheeva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Юридический отдел",
+    "sub_cats": [
+      "Юридический отдел"
+    ],
+    "photo_url": "",
+    "sort": 4
+  },
+  {
+    "id": 37056,
+    "name": "Батор Сында-Аюшеевич Баторов",
+    "slug": "bator-synda-ajusheevich-batorov",
+    "categories": [
+      "administration",
+      "direction"
+    ],
+    "role": "Административно-хозяйственная часть",
+    "sub_cats": [
+      "Административно-хозяйственная часть",
+      "Заместители директора"
+    ],
+    "photo_url": "",
+    "sort": 5
+  },
+  {
+    "id": 36674,
+    "name": "Елена Владимировна Костогорова",
+    "slug": "elena-vladimirovna-kostogorova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Планово-экономический отдел",
+    "sub_cats": [
+      "Планово-экономический отдел"
+    ],
+    "photo_url": "",
+    "sort": 9
+  },
+  {
+    "id": 32499,
+    "name": "Саяна Викторовна Доржиева",
+    "slug": "sajana-viktorovna-dorzhieva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел кадров",
+    "sub_cats": [
+      "Отдел кадров"
+    ],
+    "photo_url": "",
+    "sort": 48
+  },
+  {
+    "id": 32503,
+    "name": "Татьяна Александровна Аюрова",
+    "slug": "tatjana-aleksandrovna-ajurova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел кадров",
+    "sub_cats": [
+      "Отдел кадров"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/ajurova-tatjana.png",
+    "sort": 49
+  },
+  {
+    "id": 32501,
+    "name": "Байгалма Зоригтуевна Дымчикова",
+    "slug": "bajgalma-zorigtuevna-dymchikova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел кадров",
+    "sub_cats": [
+      "Отдел кадров"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/dymchikova-bajgalma.png",
+    "sort": 50
+  },
+  {
+    "id": 34309,
+    "name": "Мария Андреевна Хамаганова",
+    "slug": "ekaterina-viktorovna-utjasheva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел кадров",
+    "sub_cats": [
+      "Отдел кадров"
+    ],
+    "photo_url": "",
+    "sort": 51
+  },
+  {
+    "id": 34300,
+    "name": "Людмила Викторовна Сосновская",
+    "slug": "ljudmila-viktorovna-sosnovskaja",
+    "categories": [
+      "administration"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 54
+  },
+  {
+    "id": 32507,
+    "name": "Дари-Сурун Данзаннимаевна Банзаракцаева",
+    "slug": "dari-surun-danzannimaevna-banzarakcaeva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Административно-хозяйственная часть",
+    "sub_cats": [
+      "Административно-хозяйственная часть"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/33.png",
+    "sort": 93
+  },
+  {
+    "id": 32505,
+    "name": "Ольга Викторовна Бондарева",
+    "slug": "olga-viktorovna-bondareva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Административно-хозяйственная часть",
+    "sub_cats": [
+      "Административно-хозяйственная часть"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/32.png",
+    "sort": 94
+  },
+  {
+    "id": 32509,
+    "name": "Саргылана Мавлеевна Петрова",
+    "slug": "sargylana-mavleevna-petrova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Административно-хозяйственная часть",
+    "sub_cats": [
+      "Административно-хозяйственная часть"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/petrova-sargylana.png",
+    "sort": 95
+  },
+  {
+    "id": 35891,
+    "name": "Юрий Владимирович Попов",
+    "slug": "jurij-vladimirovich-popov",
+    "categories": [
+      "administration"
+    ],
+    "role": "Административно-хозяйственная часть",
+    "sub_cats": [
+      "Административно-хозяйственная часть"
+    ],
+    "photo_url": "",
+    "sort": 96
+  },
+  {
+    "id": 32511,
+    "name": "Татьяна Петровна Ульзутуева",
+    "slug": "tatjana-petrovna-ulzutueva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Билетная касса",
+    "sub_cats": [
+      "Билетная касса"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/ulzutueva-tatjana.png",
+    "sort": 97
+  },
+  {
+    "id": 32523,
+    "name": "Татьяна Аюшеевна Зандакова",
+    "slug": "tatjana-ajusheevna-zandakova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Билетная касса",
+    "sub_cats": [
+      "Билетная касса"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/37.png",
+    "sort": 98
+  },
+  {
+    "id": 32521,
+    "name": "Лариса Георгиевна Шурдыдель",
+    "slug": "larisa-georgievna-shurdydel",
+    "categories": [
+      "administration"
+    ],
+    "role": "Билетная касса",
+    "sub_cats": [
+      "Билетная касса"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/shurdydel-larisa.png",
+    "sort": 99
+  },
+  {
+    "id": 32495,
+    "name": "Аюна Будаевна Гатыпова",
+    "slug": "ajuna-budaevna-gatypova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Юридический отдел",
+    "sub_cats": [
+      "Юридический отдел"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/7.png",
+    "sort": 100
+  },
+  {
+    "id": 32485,
+    "name": "Татьяна Еша-Доржиевна Батуева",
+    "slug": "tatjana-esha-dorzhievna-batueva",
+    "categories": [
+      "administration"
+    ],
+    "role": "Планово-экономический отдел",
+    "sub_cats": [
+      "Планово-экономический отдел"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/15.png",
+    "sort": 101
+  },
+  {
+    "id": 32493,
+    "name": "Людмила Геннадьевна Семёнова",
+    "slug": "ljudmila-gennadevna-semjonova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Планово-экономический отдел",
+    "sub_cats": [
+      "Планово-экономический отдел"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/3-1.png",
+    "sort": 102
+  },
+  {
+    "id": 32489,
+    "name": "Сергей Алексеевич Савельев",
+    "slug": "sergej-anatolevich-savelev",
+    "categories": [
+      "administration"
+    ],
+    "role": "Планово-экономический отдел",
+    "sub_cats": [
+      "Планово-экономический отдел"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/16.png",
+    "sort": 104
+  },
+  {
+    "id": 35319,
+    "name": "Ринчин Леонидович Доржиев",
+    "slug": "rinchin-leonidovich-dorzhiev",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел цифрового развития",
+    "sub_cats": [
+      "Отдел цифрового развития"
+    ],
+    "photo_url": "",
+    "sort": 105
+  },
+  {
+    "id": 32483,
+    "name": "Александр Владимирович Архипов",
+    "slug": "aleksandr-vladimirovich-arhipov",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел цифрового развития",
+    "sub_cats": [
+      "Отдел цифрового развития"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/arhipov-aleksandr.png",
+    "sort": 106
+  },
+  {
+    "id": 32477,
+    "name": "Валентина Викторовна Бадмажапова",
+    "slug": "valentina-viktorovna-badmazhapovna",
+    "categories": [
+      "administration",
+      "direction"
+    ],
+    "role": "Пресс-служба",
+    "sub_cats": [
+      "Пресс-служба",
+      "Начальник пресс-службы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/badmazhapova-valentina.png",
+    "sort": 107
+  },
+  {
+    "id": 32475,
+    "name": "Рената Львовна Мягкова",
+    "slug": "renata-lvovna-mjagkova",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел продаж",
+    "sub_cats": [
+      "Отдел продаж"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/mjagkova-renata.png",
+    "sort": 108
+  },
+  {
+    "id": 32471,
+    "name": "Анна Викторовна Покацкая",
+    "slug": "anna-viktorovna-pokackaja",
+    "categories": [
+      "administration"
+    ],
+    "role": "Отдел рекламы и маркетинга",
+    "sub_cats": [
+      "Отдел рекламы и маркетинга"
+    ],
+    "photo_url": "",
+    "sort": 109
+  },
+  {
+    "id": 36762,
+    "name": "Виктория Кротова",
+    "slug": "viktorija-krotova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "",
+    "sort": 8
+  },
+  {
+    "id": 35320,
+    "name": "Анастасия Парамонова",
+    "slug": "anastasija-romanovna-paramonova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "",
+    "sort": 25
+  },
+  {
+    "id": 32346,
+    "name": "Миядзаки Рука",
+    "slug": "mijadzaki-ruka",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/36-1.png",
+    "sort": 124
+  },
+  {
+    "id": 32163,
+    "name": "Гармацырен Томитов",
+    "slug": "garmacyren-vladimirovich-tomitov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/34-1.png",
+    "sort": 129
+  },
+  {
+    "id": 32161,
+    "name": "Александра Рыжова",
+    "slug": "aleksandra-denisovna-ryzhova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/32.png",
+    "sort": 130
+  },
+  {
+    "id": 32158,
+    "name": "Аяка Иноуэ",
+    "slug": "ajaka-inouje",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/37.png",
+    "sort": 131
+  },
+  {
+    "id": 32156,
+    "name": "Алаш Балдан",
+    "slug": "alash-azijatovich-baldan",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (мужской состав)",
+    "sub_cats": [
+      "Артист I-категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/30.png",
+    "sort": 132
+  },
+  {
+    "id": 32148,
+    "name": "Виктория Ильина",
+    "slug": "viktorija-semjonovna-ilina",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/31.png",
+    "sort": 133
+  },
+  {
+    "id": 32100,
+    "name": "Тимур Матханов",
+    "slug": "timur-jurevich-mathanov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/33-1.png",
+    "sort": 134
+  },
+  {
+    "id": 32080,
+    "name": "Лили Тамия",
+    "slug": "lili-tamija",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/38.png",
+    "sort": 135
+  },
+  {
+    "id": 29337,
+    "name": "Александр Абашеев",
+    "slug": "aleksandr-abasheev",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (мужской состав)",
+    "sub_cats": [
+      "Артист I-категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/12/26.png",
+    "sort": 205
+  },
+  {
+    "id": 28723,
+    "name": "Кимура Куруми",
+    "slug": "kimura-kurumi",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/10/29.png",
+    "sort": 211
+  },
+  {
+    "id": 25720,
+    "name": "Будаева Чинчи Чечен-Ооловна",
+    "slug": "chinchi-ondar",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/14.png",
+    "sort": 243
+  },
+  {
+    "id": 25716,
+    "name": "Тамирлан Будаев",
+    "slug": "tamirlan-budaev",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/17.png",
+    "sort": 244
+  },
+  {
+    "id": 24009,
+    "name": "Угулза Оюн",
+    "slug": "ugulza-oyun",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/27.png",
+    "sort": 272
+  },
+  {
+    "id": 24008,
+    "name": "Аямэ Такаяма",
+    "slug": "takayama-masuoka",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/8.png",
+    "sort": 273
+  },
+  {
+    "id": 24006,
+    "name": "Аюна Гомбожапова",
+    "slug": "ayuna-gombozhapova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/28.png",
+    "sort": 275
+  },
+  {
+    "id": 24005,
+    "name": "Антонина Волгина",
+    "slug": "antonina-volgina",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/21.png",
+    "sort": 276
+  },
+  {
+    "id": 24001,
+    "name": "Анна Буркова",
+    "slug": "anna-burkova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/25.png",
+    "sort": 277
+  },
+  {
+    "id": 21545,
+    "name": "Эльдар Ванданов",
+    "slug": "dansaran-vandanov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (мужской состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/01/5.png",
+    "sort": 302
+  },
+  {
+    "id": 21064,
+    "name": "Алдар Болтанов",
+    "slug": "aldar-boltanov-2",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (мужской состав)",
+    "sub_cats": [
+      "Артисты высшей категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/11/7.png",
+    "sort": 304
+  },
+  {
+    "id": 19751,
+    "name": "Татьяна Михайловна Муруева",
+    "slug": "tatyana-murueva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Балетмейстеры",
+    "sub_cats": [
+      "Балетмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/15.png",
+    "sort": 316
+  },
+  {
+    "id": 19749,
+    "name": "Юрий Фролович Муруев",
+    "slug": "yuriy-muruev",
+    "categories": [
+      "balet",
+      "hudr"
+    ],
+    "role": "Балетмейстеры",
+    "sub_cats": [
+      "Балетмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/16.png",
+    "sort": 317
+  },
+  {
+    "id": 19745,
+    "name": "Ольга Рупышева",
+    "slug": "olga-rupysheva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Концертмейстеры",
+    "sub_cats": [
+      "Концертмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/rupysheva.png",
+    "sort": 318
+  },
+  {
+    "id": 19729,
+    "name": "Кономи Цукада",
+    "slug": "konomi-cukada",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/3.png",
+    "sort": 320
+  },
+  {
+    "id": 19686,
+    "name": "Александра Богданова",
+    "slug": "aleksandra-bogdanova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/6.png",
+    "sort": 323
+  },
+  {
+    "id": 18898,
+    "name": "Аюша Аюшеев",
+    "slug": "ayusha-ayusheev",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (мужской состав)",
+    "sub_cats": [
+      "Артисты высшей категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/9.png",
+    "sort": 369
+  },
+  {
+    "id": 18892,
+    "name": "Харука Ямада",
+    "slug": "kharuka-yamada",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/49.png",
+    "sort": 370
+  },
+  {
+    "id": 15187,
+    "name": "Экер Хунакаа",
+    "slug": "yeker-khunakaa",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (мужской состав)",
+    "sub_cats": [
+      "Артист I-категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/18.png",
+    "sort": 388
+  },
+  {
+    "id": 15184,
+    "name": "Зоригто Дашиев",
+    "slug": "zorigto-dashiev",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (мужской состав)",
+    "sub_cats": [
+      "Артисты высшей категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/47.png",
+    "sort": 389
+  },
+  {
+    "id": 15178,
+    "name": "Виталий Базаржапов",
+    "slug": "vitaliy-bazarzhapov-2",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/vitalij-bazarzhapov.png",
+    "sort": 391
+  },
+  {
+    "id": 15176,
+    "name": "Дарья Башинова",
+    "slug": "darya-imenokhoeva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/bashinova.png",
+    "sort": 392
+  },
+  {
+    "id": 9898,
+    "name": "Валерия Васильева",
+    "slug": "valeriya-vasileva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/09/vasileva.png",
+    "sort": 409
+  },
+  {
+    "id": 8333,
+    "name": "Батор Надмитов",
+    "slug": "bator-nadmitov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/2-1.png",
+    "sort": 423
+  },
+  {
+    "id": 8331,
+    "name": "Лариса Цыденовна Башинова",
+    "slug": "larisa-bashinova-2",
+    "categories": [
+      "balet"
+    ],
+    "role": "Репетиторы",
+    "sub_cats": [
+      "Репетиторы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/23.png",
+    "sort": 424
+  },
+  {
+    "id": 6763,
+    "name": "Елена Григорьевна Дамбаева",
+    "slug": "elena-dambaeva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Репетиторы",
+    "sub_cats": [
+      "Репетиторы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/10.png",
+    "sort": 480
+  },
+  {
+    "id": 6686,
+    "name": "Сергей Бородин",
+    "slug": "sergey-borodin",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/13.png",
+    "sort": 485
+  },
+  {
+    "id": 6683,
+    "name": "Наталия Бородина",
+    "slug": "natalya-borodina",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/2.png",
+    "sort": 486
+  },
+  {
+    "id": 6674,
+    "name": "Олег Монтоев",
+    "slug": "oleg-montoev",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (мужской состав)",
+    "sub_cats": [
+      "Артисты высшей категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/42-1.png",
+    "sort": 487
+  },
+  {
+    "id": 6664,
+    "name": "Алина Нимаева",
+    "slug": "alina-shargaeva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/20-1.png",
+    "sort": 489
+  },
+  {
+    "id": 5091,
+    "name": "Борис Ламажапов",
+    "slug": "boris-lamazhapov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (мужской состав)",
+    "sub_cats": [
+      "Артисты балета (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/05/33.png",
+    "sort": 494
+  },
+  {
+    "id": 5089,
+    "name": "Мария Зонхоева",
+    "slug": "mariya-belous",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/05/12.png",
+    "sort": 495
+  },
+  {
+    "id": 5087,
+    "name": "Ольга Дылгерова",
+    "slug": "olga-dylgerova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/05/37.png",
+    "sort": 496
+  },
+  {
+    "id": 5084,
+    "name": "Юлия Жамбалова",
+    "slug": "yulya-banzarakcaeva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/05/zhambalova.png",
+    "sort": 497
+  },
+  {
+    "id": 5082,
+    "name": "Анна Кирилова",
+    "slug": "anna-kirilova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/05/4.png",
+    "sort": 498
+  },
+  {
+    "id": 4031,
+    "name": "Маргарита Эрдыниева",
+    "slug": "margarita-yerdynieva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/19.png",
+    "sort": 507
+  },
+  {
+    "id": 3911,
+    "name": "Иннокентий Львович Иванов",
+    "slug": "innokentiy-lvovich-ivanov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Репетиторы",
+    "sub_cats": [
+      "Репетиторы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/43.png",
+    "sort": 508
+  },
+  {
+    "id": 3907,
+    "name": "Оюна Кынзыбеева",
+    "slug": "oyuna-bayarovna-kynzybeeva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (женский состав)",
+    "sub_cats": [
+      "Артисты высшей категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/11.png",
+    "sort": 510
+  },
+  {
+    "id": 3905,
+    "name": "Алиса Сергеевна Шикина",
+    "slug": "alisa-sergeevna-shikina",
+    "categories": [
+      "balet"
+    ],
+    "role": "Балетмейстеры",
+    "sub_cats": [
+      "Балетмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/shikina-alisa-balet.png",
+    "sort": 511
+  },
+  {
+    "id": 3899,
+    "name": "Виктор Дампилов",
+    "slug": "viktor-stanislavovich-dampilov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (мужской состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/38.png",
+    "sort": 512
+  },
+  {
+    "id": 3893,
+    "name": "Елена Баяртуева",
+    "slug": "elena-sergeevna-tarkhaeva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артист I-категории (женский состав)",
+    "sub_cats": [
+      "Артист I-категории (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/39.png",
+    "sort": 515
+  },
+  {
+    "id": 2034,
+    "name": "Анна Петушинова",
+    "slug": "anna-petushinova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (женский состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/10/petushinova.png",
+    "sort": 519
+  },
+  {
+    "id": 2002,
+    "name": "Евгения Цыренова",
+    "slug": "evgeniya-cyrenova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (женский состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/48.png",
+    "sort": 521
+  },
+  {
+    "id": 1990,
+    "name": "Михаил Овчаров",
+    "slug": "mikhail-ovcharov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (мужской состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/46.png",
+    "sort": 523
+  },
+  {
+    "id": 1960,
+    "name": "Баир Цыдыпылов",
+    "slug": "bair-cydypylov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (мужской состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/cydypylov.png",
+    "sort": 524
+  },
+  {
+    "id": 1954,
+    "name": "Вячеслав Намжилон",
+    "slug": "vyacheslav-namzhilon",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты высшей категории (мужской состав)",
+    "sub_cats": [
+      "Артисты высшей категории (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/1-1.png",
+    "sort": 525
+  },
+  {
+    "id": 950,
+    "name": "Баир Жамбалов",
+    "slug": "bair-zhambalov",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (мужской состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (мужской состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/03/41.png",
+    "sort": 545
+  },
+  {
+    "id": 944,
+    "name": "Лия Балданова",
+    "slug": "liya-baldanova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (женский состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/03/22.png",
+    "sort": 546
+  },
+  {
+    "id": 933,
+    "name": "Елена Хишиктуева",
+    "slug": "elena-khishiktueva",
+    "categories": [
+      "balet"
+    ],
+    "role": "Артисты балета (женский состав)",
+    "sub_cats": [
+      "Артисты балета (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/03/hishiktueva-elena.png",
+    "sort": 547
+  },
+  {
+    "id": 929,
+    "name": "Вероника Миронова",
+    "slug": "veronika-mironova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Ведущий мастер сцены (женский состав)",
+    "sub_cats": [
+      "Ведущий мастер сцены (женский состав)"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/03/mironova-veronika.png",
+    "sort": 548
+  },
+  {
+    "id": 528,
+    "name": "Анастасия Цыбенова",
+    "slug": "anastasiya-cybenova",
+    "categories": [
+      "balet"
+    ],
+    "role": "Заведующий балетной труппой",
+    "sub_cats": [
+      "Заведующий балетной труппой"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/02/45.png",
+    "sort": 553
+  },
+  {
+    "id": 8328,
+    "name": "Баярто Цырендоржиевич Дамбаев",
+    "slug": "bayarto-dambaev-2",
+    "categories": [
+      "balet",
+      "hudr"
+    ],
+    "role": "Главный балетмейстер",
+    "sub_cats": [
+      "Главный балетмейстер",
+      "Художественное руководство"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/44-1.png",
+    "sort": 563
+  },
+  {
+    "id": 36598,
+    "name": "Алексей Станиславович Цыремпилов",
+    "slug": "aleksej-stanislavovich-cyrempilov",
+    "categories": [
+      "direction"
+    ],
+    "role": "Заместители директора",
+    "sub_cats": [
+      "Заместители директора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/11/c22408f7-0dc0-4c77-a816-e9b1100e96f4.png",
+    "sort": 12
+  },
+  {
+    "id": 34326,
+    "name": "Екатерина Александровна Кирпичёва",
+    "slug": "ekaterina-aleksandrovna-kirpicheva",
+    "categories": [
+      "direction"
+    ],
+    "role": "Заместители директора",
+    "sub_cats": [
+      "Заместители директора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/02/ekaterina_aleksandrovna_kirpicheva.png",
+    "sort": 47
+  },
+  {
+    "id": 24016,
+    "name": "Светлана Николаевна Шарапова",
+    "slug": "valentina-ivanova",
+    "categories": [
+      "direction"
+    ],
+    "role": "Заместители директора",
+    "sub_cats": [
+      "Заместители директора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/svetlana-nikolaevna.png",
+    "sort": 269
+  },
+  {
+    "id": 22923,
+    "name": "Дмитрий Артамонович Дылыков",
+    "slug": "dmitriy-dylykov",
+    "categories": [
+      "direction"
+    ],
+    "role": "Директор",
+    "sub_cats": [
+      "Директор"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/10/dylykov-dmitrij.png",
+    "sort": 281
+  },
+  {
+    "id": 37570,
+    "name": "Гевондов Аркадий Давидович",
+    "slug": "gevondov-arkadij-davidovich",
+    "categories": [
+      "hudr"
+    ],
+    "role": "Художественное руководство",
+    "sub_cats": [
+      "Художественное руководство"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2026/03/gevondov.png",
+    "sort": 21
+  },
+  {
+    "id": 32446,
+    "name": "Алексей Валерьевич Амбаев",
+    "slug": "aleksej-valerevich-ambaev",
+    "categories": [
+      "hudr"
+    ],
+    "role": "Художественное руководство",
+    "sub_cats": [
+      "Художественное руководство"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/ambaev-aleksej.png",
+    "sort": 113
+  },
+  {
+    "id": 32436,
+    "name": "Светлана Николаевна Шмыгина",
+    "slug": "svetlana-nikolaevna-shmygina",
+    "categories": [
+      "hudr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/24-1.png",
+    "sort": 114
+  },
+  {
+    "id": 32434,
+    "name": "Евгений Владиславович Убогонов",
+    "slug": "evgenij-vladislavovich-ubogonov",
+    "categories": [
+      "hudr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/2.png",
+    "sort": 115
+  },
+  {
+    "id": 32432,
+    "name": "Галсан Зоригтоевич Нанзатов",
+    "slug": "galsan-zorigtoevich-nanzatov",
+    "categories": [
+      "hudr"
+    ],
+    "role": "Художественный персонал",
+    "sub_cats": [
+      "Художественный персонал"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/nanzatov-galsan.png",
+    "sort": 116
+  },
+  {
+    "id": 32438,
+    "name": "Татьяна Петровна Тышкенова",
+    "slug": "tatjana-petrovna-tyshkenova",
+    "categories": [
+      "hudr"
+    ],
+    "role": "Художественный персонал",
+    "sub_cats": [
+      "Художественный персонал"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/tyshkenova-tatjana.png",
+    "sort": 117
+  },
+  {
+    "id": 32428,
+    "name": "Ольга Владимировна Шагланова",
+    "slug": "olga-vladimirovna-shaglanova",
+    "categories": [
+      "hudr"
+    ],
+    "role": "Художественный персонал",
+    "sub_cats": [
+      "Художественный персонал"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/shaglanova-olga.png",
+    "sort": 118
+  },
+  {
+    "id": 32558,
+    "name": "Саяна Евгеньевна Урбадаева",
+    "slug": "urbadaeva-sajana",
+    "categories": [
+      "hudr"
+    ],
+    "role": "Художественный персонал",
+    "sub_cats": [
+      "Художественный персонал"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/3-2.png",
+    "sort": 119
+  },
+  {
+    "id": 32422,
+    "name": "Вера Петровна Пнёва",
+    "slug": "vera-petrovna-pnjova",
+    "categories": [
+      "hudr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/pneva-vera.png",
+    "sort": 120
+  },
+  {
+    "id": 32032,
+    "name": "Александр Михайлович Шобогоров",
+    "slug": "shobogorov-aleksandr-mihajlovich",
+    "categories": [
+      "hudr",
+      "khpch"
+    ],
+    "role": "Заведующий художественно-постановочной частью",
+    "sub_cats": [
+      "Заведующий художественно-постановочной частью"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/30-1.png",
+    "sort": 140
+  },
+  {
+    "id": 1918,
+    "name": "Алексей Амбаев",
+    "slug": "ambaev-aleksey-glavnyy-khudozhnik",
+    "categories": [
+      "hudr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2009/09/Aleksey-Ambaev-scaled-e1671780128898.jpg",
+    "sort": 564
+  },
+  {
+    "id": 38142,
+    "name": "Дамбиева Эржэна Митыповна",
+    "slug": "dambieva-jerzhjena-mitypovna",
+    "categories": [
+      "khor"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 33467,
+    "name": "Батор Цыпылов",
+    "slug": "ivan-cypylov",
+    "categories": [
+      "khor"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/cypylov-ivan-hor.png",
+    "sort": 57
+  },
+  {
+    "id": 32339,
+    "name": "Булат Галсанширапов",
+    "slug": "bulat-bairovich-galsanshirapov",
+    "categories": [
+      "khor"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "",
+    "sort": 126
+  },
+  {
+    "id": 32321,
+    "name": "Кристина Маханова",
+    "slug": "kristina-jeduardovna-mahanova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/5.png",
+    "sort": 127
+  },
+  {
+    "id": 31694,
+    "name": "Батумэнхэ",
+    "slug": "batumjenhje",
+    "categories": [
+      "khor"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/18.png",
+    "sort": 185
+  },
+  {
+    "id": 31692,
+    "name": "Михаил Цивилев",
+    "slug": "mihail-civilev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Тенор I",
+    "sub_cats": [
+      "Тенор I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/22.png",
+    "sort": 186
+  },
+  {
+    "id": 31690,
+    "name": "Оюна Жамсаранова",
+    "slug": "ojuna-zhamsaranova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт I",
+    "sub_cats": [
+      "Альт I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/30.png",
+    "sort": 187
+  },
+  {
+    "id": 31689,
+    "name": "Евгения Цыбикова",
+    "slug": "evgenija-cybikova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/23.png",
+    "sort": 188
+  },
+  {
+    "id": 31688,
+    "name": "Анжела Казарян",
+    "slug": "anzhela-kazarjan",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/8.png",
+    "sort": 189
+  },
+  {
+    "id": 29138,
+    "name": "Даши-Тумэн Анудариев",
+    "slug": "dashi-tumyen-anudariev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Тенор I",
+    "sub_cats": [
+      "Тенор I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/11/16.png",
+    "sort": 207
+  },
+  {
+    "id": 28962,
+    "name": "Мария Анудариева",
+    "slug": "mariya-zandynova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/10/15.png",
+    "sort": 208
+  },
+  {
+    "id": 25915,
+    "name": "Санжидма Чернинова",
+    "slug": "sanzhidma-cherninova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/17-1.png",
+    "sort": 223
+  },
+  {
+    "id": 25912,
+    "name": "Аюна Дашиева",
+    "slug": "ayuna-dashieva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт I",
+    "sub_cats": [
+      "Альт I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/28.png",
+    "sort": 226
+  },
+  {
+    "id": 24068,
+    "name": "Наталья Александрова",
+    "slug": "natalya-shigolakova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/aleksandrova.jpg",
+    "sort": 253
+  },
+  {
+    "id": 24059,
+    "name": "Оюна Гармаева",
+    "slug": "oyuna-dashinimaeva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт I",
+    "sub_cats": [
+      "Альт I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/19.png",
+    "sort": 259
+  },
+  {
+    "id": 24058,
+    "name": "Майдар Баирович Дамбаев",
+    "slug": "maydar-dambaev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Хормейстер",
+    "sub_cats": [
+      "Хормейстер"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/dambaev-m.png",
+    "sort": 260
+  },
+  {
+    "id": 24057,
+    "name": "Виктор Базаров",
+    "slug": "viktor-bazarov",
+    "categories": [
+      "khor"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/26.png",
+    "sort": 261
+  },
+  {
+    "id": 22079,
+    "name": "Татьяна Дамбаева (Сантуева)",
+    "slug": "tatyana-santueva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/04/3.png",
+    "sort": 284
+  },
+  {
+    "id": 22077,
+    "name": "Галина Лоскутникова",
+    "slug": "galina-loskutnikova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт I",
+    "sub_cats": [
+      "Альт I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/04/6.png",
+    "sort": 285
+  },
+  {
+    "id": 22073,
+    "name": "Елизавета Ильина",
+    "slug": "elizaveta-ilina",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/04/ilina-elizaveta.-hor.png",
+    "sort": 287
+  },
+  {
+    "id": 19533,
+    "name": "Ольга Ефимова",
+    "slug": "olga-tataurova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/04/29.png",
+    "sort": 342
+  },
+  {
+    "id": 18883,
+    "name": "Дарима Бортоева",
+    "slug": "darima-bortoeva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/bortoeva-darima.-hor.png",
+    "sort": 372
+  },
+  {
+    "id": 13019,
+    "name": "Евгения Равильевна Сулейманова",
+    "slug": "evgeniya-suleymanova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Хормейстер",
+    "sub_cats": [
+      "Хормейстер"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/02/sulejmanova.png",
+    "sort": 401
+  },
+  {
+    "id": 7661,
+    "name": "Сэлмэг Шойенова",
+    "slug": "syelmyeg-shoyenova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/7-2.png",
+    "sort": 450
+  },
+  {
+    "id": 7604,
+    "name": "Наташа Цыденова",
+    "slug": "natasha-cydenova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт II",
+    "sub_cats": [
+      "Альт II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/25.png",
+    "sort": 453
+  },
+  {
+    "id": 7559,
+    "name": "Людмила Хилтунова",
+    "slug": "lyudmila-khiltunova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/4.png",
+    "sort": 454
+  },
+  {
+    "id": 7553,
+    "name": "Людмила Рыбакова",
+    "slug": "lyudmila-rybakova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт II",
+    "sub_cats": [
+      "Альт II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/11.png",
+    "sort": 457
+  },
+  {
+    "id": 7546,
+    "name": "Ирина Пак",
+    "slug": "irina-pak",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/2-2.png",
+    "sort": 459
+  },
+  {
+    "id": 7468,
+    "name": "Альбина Брянская",
+    "slug": "albina-novikova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт I",
+    "sub_cats": [
+      "Альт I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/1.png",
+    "sort": 462
+  },
+  {
+    "id": 7458,
+    "name": "Екатерина Ламожапова",
+    "slug": "ekaterina-lamozhapova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/lamozhapova-e.-hor.jpg",
+    "sort": 465
+  },
+  {
+    "id": 7454,
+    "name": "Эржена Дамбиева",
+    "slug": "yerzhena-dambieva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано I",
+    "sub_cats": [
+      "Сопрано I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/12.png",
+    "sort": 467
+  },
+  {
+    "id": 7452,
+    "name": "Батор Гармаев",
+    "slug": "bator-garmaev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Тенор II",
+    "sub_cats": [
+      "Тенор II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/1-1.png",
+    "sort": 468
+  },
+  {
+    "id": 7449,
+    "name": "Максим Воронин",
+    "slug": "maksim-voronin",
+    "categories": [
+      "khor"
+    ],
+    "role": "Тенор I",
+    "sub_cats": [
+      "Тенор I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/9-1.png",
+    "sort": 469
+  },
+  {
+    "id": 7113,
+    "name": "Владимир Бухаев",
+    "slug": "vladimir-bukhaev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Тенор II",
+    "sub_cats": [
+      "Тенор II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/7-1.png",
+    "sort": 470
+  },
+  {
+    "id": 7107,
+    "name": "Санжана Бальжинимаева",
+    "slug": "sanzhana-balzhinimaeva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт I",
+    "sub_cats": [
+      "Альт I"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/balzhinimaeva.png",
+    "sort": 472
+  },
+  {
+    "id": 7105,
+    "name": "Саян Балдоржиев",
+    "slug": "sayan-baldorzhiev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/20-2.png",
+    "sort": 473
+  },
+  {
+    "id": 7103,
+    "name": "Туяна Балданова",
+    "slug": "tuyana-baldanova",
+    "categories": [
+      "khor"
+    ],
+    "role": "Сопрано II",
+    "sub_cats": [
+      "Сопрано II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/13-1.png",
+    "sort": 474
+  },
+  {
+    "id": 7058,
+    "name": "Баяр Аранжуров",
+    "slug": "bayar-aranzhurov",
+    "categories": [
+      "khor"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/24.png",
+    "sort": 476
+  },
+  {
+    "id": 7056,
+    "name": "Баир Андреев",
+    "slug": "bair-andreev",
+    "categories": [
+      "khor"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/5.png",
+    "sort": 477
+  },
+  {
+    "id": 7054,
+    "name": "Нина Алексеева",
+    "slug": "nina-alekseeva",
+    "categories": [
+      "khor"
+    ],
+    "role": "Альт II",
+    "sub_cats": [
+      "Альт II"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/27-1.png",
+    "sort": 478
+  },
+  {
+    "id": 6690,
+    "name": "Ольга Маратовна Ким",
+    "slug": "olga-kim",
+    "categories": [
+      "khor"
+    ],
+    "role": "Заведующая труппой хора",
+    "sub_cats": [
+      "Заведующая труппой хора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/kim-olga.png",
+    "sort": 483
+  },
+  {
+    "id": 36978,
+    "name": "Дмитрий Викторович Федосов",
+    "slug": "dmitrij-viktorovich-fedosov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех светового сопровождения",
+    "sub_cats": [
+      "Цех светового сопровождения"
+    ],
+    "photo_url": "",
+    "sort": 6
+  },
+  {
+    "id": 34818,
+    "name": "Баир Жаргалович Санжиев",
+    "slug": "bair-zhargalovich-sanzhiev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "",
+    "sort": 32
+  },
+  {
+    "id": 34817,
+    "name": "Евгений Алексеевич Федосеев",
+    "slug": "evgenij-alekseevich-fedoseev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех светового сопровождения",
+    "sub_cats": [
+      "Цех светового сопровождения"
+    ],
+    "photo_url": "",
+    "sort": 33
+  },
+  {
+    "id": 34517,
+    "name": "Нина Андреевна Ганжурова",
+    "slug": "nina-andreevna-ganzhurova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "",
+    "sort": 42
+  },
+  {
+    "id": 32551,
+    "name": "Виктория Александровна Базарова",
+    "slug": "viktorija-aleksandrovna-bazarova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/36.png",
+    "sort": 84
+  },
+  {
+    "id": 32381,
+    "name": "Марина Алексеевна Иванова",
+    "slug": "marina-alekseevna-ivanova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/ivanova-marina.png",
+    "sort": 122
+  },
+  {
+    "id": 32363,
+    "name": "Андрей Иванович Петров",
+    "slug": "andrej-ivanovich-petrov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех звукового сопровождения",
+    "sub_cats": [
+      "Цех звукового сопровождения"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/17.png",
+    "sort": 123
+  },
+  {
+    "id": 32035,
+    "name": "Очир Бимбаевич Эрдынеев",
+    "slug": "ochir-bimbaevich-jerdyneev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/28.png",
+    "sort": 137
+  },
+  {
+    "id": 32034,
+    "name": "Андрей Николаевич Щелгачев",
+    "slug": "andrej-nikolaevich-shhelgachev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех светового сопровождения",
+    "sub_cats": [
+      "Цех светового сопровождения"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/35-1.png",
+    "sort": 138
+  },
+  {
+    "id": 32033,
+    "name": "Роман Александрович Штифонов",
+    "slug": "roman-aleksandrovich-shtifonov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "",
+    "sort": 139
+  },
+  {
+    "id": 32030,
+    "name": "Мария Дамдиновна Цыденова",
+    "slug": "marija-damdinovna-cydenova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/21.png",
+    "sort": 141
+  },
+  {
+    "id": 32029,
+    "name": "Чингис Владимирович Цыбиков",
+    "slug": "chingis-vladimirovich-cybikov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "",
+    "sort": 142
+  },
+  {
+    "id": 32028,
+    "name": "Тумэн Баторович Холхоев",
+    "slug": "tumjen-batorovich-holhoev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/32-1.png",
+    "sort": 143
+  },
+  {
+    "id": 32027,
+    "name": "Александр Игоревич Федосеев",
+    "slug": "aleksandr-igorevich-fedoseev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех светового сопровождения",
+    "sub_cats": [
+      "Цех светового сопровождения"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/36.png",
+    "sort": 144
+  },
+  {
+    "id": 32026,
+    "name": "Иван Федорович Сластин",
+    "slug": "ivan-fedorovich-slastin",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Реквизитный цех",
+    "sub_cats": [
+      "Реквизитный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/30-2.png",
+    "sort": 145
+  },
+  {
+    "id": 32025,
+    "name": "Дмитрий Николаевич Сетов",
+    "slug": "dmitrij-nikolaevich-setov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/31-1.png",
+    "sort": 146
+  },
+  {
+    "id": 32024,
+    "name": "Александр Игоревич Рулев",
+    "slug": "aleksandr-igorevich-rulev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех светового сопровождения",
+    "sub_cats": [
+      "Цех светового сопровождения"
+    ],
+    "photo_url": "",
+    "sort": 147
+  },
+  {
+    "id": 32023,
+    "name": "Александр Георгиевич Ринчинов",
+    "slug": "aleksandr-georgievich-rinchinov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/26.png",
+    "sort": 148
+  },
+  {
+    "id": 32022,
+    "name": "Екатерина Никитична Петинова",
+    "slug": "ekaterina-nikitichna-petinova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/27.png",
+    "sort": 149
+  },
+  {
+    "id": 32020,
+    "name": "Ольга Ивановна Ошуркова",
+    "slug": "olga-ivanovna-oshurkova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/9.png",
+    "sort": 150
+  },
+  {
+    "id": 32019,
+    "name": "Эржэна Содномшираповна Онгороева",
+    "slug": "jerzhjena-sodnomshirapovna-ongoroeva",
+    "categories": [
+      "khpch"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/18.png",
+    "sort": 151
+  },
+  {
+    "id": 32018,
+    "name": "Ирина Валерьевна Овчарова",
+    "slug": "irina-valerevna-ovcharova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/22.png",
+    "sort": 152
+  },
+  {
+    "id": 32017,
+    "name": "Маргарита Федоровна Намжилон",
+    "slug": "margarita-fedorovna-namzhilon",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/23.png",
+    "sort": 153
+  },
+  {
+    "id": 32016,
+    "name": "Жаргалма Баировна Монтоева",
+    "slug": "zhargalma-bairovna-montoeva",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "",
+    "sort": 154
+  },
+  {
+    "id": 32015,
+    "name": "Лариса Робертовна Миронова",
+    "slug": "larisa-robertovna-mironova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/25-1.png",
+    "sort": 155
+  },
+  {
+    "id": 32014,
+    "name": "Лариса Дмитриевна Логинова",
+    "slug": "loginova-larisa-dmitrievna-loginova-larisa-dmitrievna",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/11.png",
+    "sort": 156
+  },
+  {
+    "id": 32013,
+    "name": "Сергей Алексеевич Кожевин",
+    "slug": "sergej-alekseevich-kozhevin",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех светового сопровождения",
+    "sub_cats": [
+      "Цех светового сопровождения"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/34-2.png",
+    "sort": 157
+  },
+  {
+    "id": 32012,
+    "name": "Ульяна Васильевна Карелина",
+    "slug": "uljana-vasilevna-karelina",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Гримерный цех",
+    "sub_cats": [
+      "Гримерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/24.png",
+    "sort": 158
+  },
+  {
+    "id": 32010,
+    "name": "Виктор Яковлевич Ибдиминов",
+    "slug": "viktor-jakovlevich-ibdiminov",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/29.png",
+    "sort": 159
+  },
+  {
+    "id": 32009,
+    "name": "Дыга-Задби Геннадьевна Зугдурова",
+    "slug": "dyga-zadbi-gennadevna-zugdurova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/13.png",
+    "sort": 160
+  },
+  {
+    "id": 32008,
+    "name": "Борис Валерьевич Доржиев",
+    "slug": "boris-valerevich-dorzhiev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/19.png",
+    "sort": 161
+  },
+  {
+    "id": 32007,
+    "name": "Дарима Ростиславовна Дамбаева",
+    "slug": "darima-rostislavovna-dambaeva",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/10.png",
+    "sort": 162
+  },
+  {
+    "id": 32006,
+    "name": "Сентябрина Владимировна Гармаева",
+    "slug": "sentjabrina-vladimirovna-garmaeva",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/14.png",
+    "sort": 163
+  },
+  {
+    "id": 32005,
+    "name": "Галина Бодеевна Гармаева",
+    "slug": "galina-bodeevna-garmaeva",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/20.png",
+    "sort": 164
+  },
+  {
+    "id": 32004,
+    "name": "Виктор Осорович Гармаев",
+    "slug": "viktor-osorovich-garmaev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Монтировочный цех",
+    "sub_cats": [
+      "Монтировочный цех"
+    ],
+    "photo_url": "",
+    "sort": 165
+  },
+  {
+    "id": 32003,
+    "name": "Людмила Гармажаповна Галданова",
+    "slug": "ljudmila-garmazhapovna-galdanova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/8.png",
+    "sort": 166
+  },
+  {
+    "id": 32002,
+    "name": "Игорь Валентинович Воробьев",
+    "slug": "igor-valentinovich-vorobev",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Цех звукового сопровождения",
+    "sub_cats": [
+      "Цех звукового сопровождения"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/12.png",
+    "sort": 167
+  },
+  {
+    "id": 32001,
+    "name": "Виктория Викторовна Булгатова",
+    "slug": "viktorija-viktorovna-bulgatova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/34-3.png",
+    "sort": 168
+  },
+  {
+    "id": 32000,
+    "name": "Дарима Дашибалбаровна Балданова",
+    "slug": "darima-dashibalbarovna-baldanova",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Костюмерный цех",
+    "sub_cats": [
+      "Костюмерный цех"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/15.png",
+    "sort": 169
+  },
+  {
+    "id": 31999,
+    "name": "Валентина Сергеевна Ануфриева",
+    "slug": "anufrieva-valentina-sergeevna",
+    "categories": [
+      "khpch"
+    ],
+    "role": "Реквизитный цех",
+    "sub_cats": [
+      "Реквизитный цех"
+    ],
+    "photo_url": "",
+    "sort": 170
+  },
+  {
+    "id": 33447,
+    "name": "Вера Владимировна Банщикова",
+    "slug": "vera-vladimirovna-banshhikova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Заведующий театрально-производственными мастерскими",
+    "sub_cats": [
+      "Заведующий театрально-производственными мастерскими"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/banshhikova-vera.jpg",
+    "sort": 58
+  },
+  {
+    "id": 32608,
+    "name": "Артем Сергеевич Ульянов",
+    "slug": "artem-sergeevich-uljanov",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/uljanov-artjom.png",
+    "sort": 61
+  },
+  {
+    "id": 32603,
+    "name": "Михаил Зоригтуевич Миронов",
+    "slug": "mihail-zorigtuevich-mironov",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/28.png",
+    "sort": 62
+  },
+  {
+    "id": 32601,
+    "name": "Мария Викторовна Иванова",
+    "slug": "marija-viktorovna-ivanova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/27.png",
+    "sort": 64
+  },
+  {
+    "id": 32597,
+    "name": "Суржана Жаргаловна Цырендоржиева",
+    "slug": "surzhana-zhargalovna-cyrendorzhieva",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/25.png",
+    "sort": 65
+  },
+  {
+    "id": 32589,
+    "name": "Ольга Владиславовна Пичаева",
+    "slug": "olga-vladislavovna-pichaeva",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/22.png",
+    "sort": 66
+  },
+  {
+    "id": 32587,
+    "name": "Дарья Валерьевна Шабаганова",
+    "slug": "darja-valerevna-shabaganova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/19.png",
+    "sort": 67
+  },
+  {
+    "id": 32593,
+    "name": "Бямбацэрэн Батмунх",
+    "slug": "bjambacjerjen-batmunh",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/23.png",
+    "sort": 68
+  },
+  {
+    "id": 32599,
+    "name": "Светлана Александровна Санжиева",
+    "slug": "svetlana-aleksandrovna-sanzhieva",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/26.png",
+    "sort": 69
+  },
+  {
+    "id": 34819,
+    "name": "Светлана Дашеевна Шенхорова",
+    "slug": "svetlana-dasheevna-shenhorova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "",
+    "sort": 70
+  },
+  {
+    "id": 32582,
+    "name": "Баир Базарович Ринчинов",
+    "slug": "bair-bazarovich-rinchinov",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/14.png",
+    "sort": 71
+  },
+  {
+    "id": 32578,
+    "name": "Оюна Геннадьевна Дондокова",
+    "slug": "ojuna-gennadevna-dondokova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/11.png",
+    "sort": 72
+  },
+  {
+    "id": 32580,
+    "name": "Ольга Николаевна Кравцова",
+    "slug": "olga-nikolaevna-kravcova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/13.png",
+    "sort": 73
+  },
+  {
+    "id": 32560,
+    "name": "Лариса Викторовна Хишектуева",
+    "slug": "larisa-viktorovna-hishektueva",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/4-1.png",
+    "sort": 74
+  },
+  {
+    "id": 32576,
+    "name": "Людмила Дмитриевна Турпанова",
+    "slug": "ljudmila-dmitrievna-turpanova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/18.png",
+    "sort": 75
+  },
+  {
+    "id": 32574,
+    "name": "Екатерина Николаевна Балданова",
+    "slug": "ekaterina-nikolaevna-baldanova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/12.png",
+    "sort": 76
+  },
+  {
+    "id": 32570,
+    "name": "Сэрэма Лосоловна Тушинова",
+    "slug": "sjerjema-losolovna-tushinova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/9-1.png",
+    "sort": 77
+  },
+  {
+    "id": 32568,
+    "name": "Вера Анатольевна Климова",
+    "slug": "vera-anatolevna-klimova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/8-1.png",
+    "sort": 78
+  },
+  {
+    "id": 32566,
+    "name": "Любовь Николаевна Костикова",
+    "slug": "ljubov-nikolaevna-kostikova",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/7-2.png",
+    "sort": 79
+  },
+  {
+    "id": 32564,
+    "name": "Мария Константиновна Кулаева",
+    "slug": "marija-konstantinovna-kulaeva",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/6-2.png",
+    "sort": 80
+  },
+  {
+    "id": 32562,
+    "name": "Татьяна Геннадьевна Малых",
+    "slug": "tatjana-gennadevna-malyh",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Заведующие цехами",
+    "sub_cats": [
+      "Заведующие цехами"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/5-3.png",
+    "sort": 81
+  },
+  {
+    "id": 32556,
+    "name": "Инна Петровна Цырендоржиева",
+    "slug": "inna-petrovna-cyrendorzhieva",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/1-2.png",
+    "sort": 82
+  },
+  {
+    "id": 32554,
+    "name": "Алла Владимировна Авдеенко",
+    "slug": "alla-vladimirovna-avdeenko",
+    "categories": [
+      "khpch-hudr-6"
+    ],
+    "role": "Театрально-производственные мастерские",
+    "sub_cats": [
+      "Театрально-производственные мастерские"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/2.png",
+    "sort": 83
+  },
+  {
+    "id": 36230,
+    "name": "Батчимэг Самбуу",
+    "slug": "batchimjeg-sambuu",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/09/batchimjeg.png",
+    "sort": 14
+  },
+  {
+    "id": 34943,
+    "name": "Георгий Дюднев",
+    "slug": "georgij-djudnev",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 26
+  },
+  {
+    "id": 34486,
+    "name": "Влада Огнева",
+    "slug": "vlada-ogneva",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 43
+  },
+  {
+    "id": 34485,
+    "name": "Хайдапов Майдар",
+    "slug": "hajdakov-majdar",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 44
+  },
+  {
+    "id": 34478,
+    "name": "Рябов Станислав",
+    "slug": "rjabov-stanislav",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 45
+  },
+  {
+    "id": 32198,
+    "name": "Надмит Надмитов",
+    "slug": "nadmit-dylgyrovich-nadmitov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/nadmitov.png",
+    "sort": 128
+  },
+  {
+    "id": 28475,
+    "name": "Баир Хандажапов",
+    "slug": "bair-khandazhapov-2",
+    "categories": [
+      "opera"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/08/handazhapov-b.png",
+    "sort": 213
+  },
+  {
+    "id": 28473,
+    "name": "Жамсо Бамбагаев",
+    "slug": "zhamso-bambagaev",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/08/bambagaev.png",
+    "sort": 214
+  },
+  {
+    "id": 26261,
+    "name": "Виктория Викторовна Винс",
+    "slug": "viktoriya-vins",
+    "categories": [
+      "opera"
+    ],
+    "role": "Концертмейстеры",
+    "sub_cats": [
+      "Концертмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/12/vins.png",
+    "sort": 222
+  },
+  {
+    "id": 25913,
+    "name": "Мария  Миронова",
+    "slug": "mariya-mironova-2",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/mironova-marija-opera.png",
+    "sort": 225
+  },
+  {
+    "id": 24234,
+    "name": "Валентин Колесников",
+    "slug": "valentin-kolesnikov-2",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/03/Valentin-Kolesnikov.jpg",
+    "sort": 252
+  },
+  {
+    "id": 24012,
+    "name": "Савелий Александров",
+    "slug": "saveliy-aleksandrov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/3.png",
+    "sort": 270
+  },
+  {
+    "id": 23165,
+    "name": "Арюна Базарсадаева",
+    "slug": "aryuna-bazarsadaeva",
+    "categories": [
+      "opera"
+    ],
+    "role": "Меццо-сопрано",
+    "sub_cats": [
+      "Меццо-сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/11/bazarsadaeva-a.png",
+    "sort": 280
+  },
+  {
+    "id": 19488,
+    "name": "Елена Александровна Березовская",
+    "slug": "elena-berezovskaya-2",
+    "categories": [
+      "opera"
+    ],
+    "role": "Концертмейстеры",
+    "sub_cats": [
+      "Концертмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/04/6.png",
+    "sort": 350
+  },
+  {
+    "id": 19243,
+    "name": "Энхбат Тувшинжаргал",
+    "slug": "yenkhbat-tuvshinzhargal",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/03/YEnkhbat.jpg",
+    "sort": 351
+  },
+  {
+    "id": 18972,
+    "name": "Максим Санкиров",
+    "slug": "maksim-sankirov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/sankirov-1.png",
+    "sort": 364
+  },
+  {
+    "id": 18970,
+    "name": "Ирина Новикова",
+    "slug": "irina-novikova",
+    "categories": [
+      "opera"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/Novikova.jpg",
+    "sort": 365
+  },
+  {
+    "id": 18889,
+    "name": "Саян Цымпилов",
+    "slug": "sayan-cympilov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/cympilov.png",
+    "sort": 371
+  },
+  {
+    "id": 15189,
+    "name": "Дина Санданова",
+    "slug": "dina-sandanova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/sandanova.png",
+    "sort": 387
+  },
+  {
+    "id": 15169,
+    "name": "Соёл Батуев",
+    "slug": "soyol-batuev",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/2.png",
+    "sort": 393
+  },
+  {
+    "id": 12775,
+    "name": "Оксана Хингеева",
+    "slug": "oksana-khingeeva-rukovoditel-operno",
+    "categories": [
+      "opera"
+    ],
+    "role": "Меццо-сопрано",
+    "sub_cats": [
+      "Меццо-сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/02/hingeeva.png",
+    "sort": 402
+  },
+  {
+    "id": 12017,
+    "name": "Оюна Дарижапова",
+    "slug": "oyuna-darizhapova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано",
+      "Заведующая оперной труппой"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/12/darizhapova-1.png",
+    "sort": 404
+  },
+  {
+    "id": 8346,
+    "name": "Ольга Жигмитова",
+    "slug": "olga-zhigmitova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Меццо-сопрано",
+    "sub_cats": [
+      "Меццо-сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/olga-zhigmitova.jpg",
+    "sort": 421
+  },
+  {
+    "id": 7470,
+    "name": "Евгений Островский",
+    "slug": "evgeniy-ostrovskiy",
+    "categories": [
+      "opera",
+      "khor"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/ostrovskij.png",
+    "sort": 461
+  },
+  {
+    "id": 4078,
+    "name": "Саян Сергеевич Манжигеев",
+    "slug": "sayan-manzhigeev",
+    "categories": [
+      "opera"
+    ],
+    "role": "Концертмейстеры",
+    "sub_cats": [
+      "Концертмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/manzhigeev.png",
+    "sort": 501
+  },
+  {
+    "id": 4067,
+    "name": "Лариса Васильевна Соковикова",
+    "slug": "larisa-sokovikova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано",
+      "Педагог по вокалу"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/sokovikova.png",
+    "sort": 504
+  },
+  {
+    "id": 4056,
+    "name": "Галсан Ванданов",
+    "slug": "galsan-vandanov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/vandanov.png",
+    "sort": 505
+  },
+  {
+    "id": 2126,
+    "name": "Валентина Цыдыпова",
+    "slug": "valentina-cydypova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/10/cydypova.png",
+    "sort": 517
+  },
+  {
+    "id": 2124,
+    "name": "Михаил Пирогов",
+    "slug": "mikhail-pirogov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/10/pirogov.png",
+    "sort": 518
+  },
+  {
+    "id": 1866,
+    "name": "Бадма Гомбожапов",
+    "slug": "badma-gombozhapov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/gombozhapov.png",
+    "sort": 527
+  },
+  {
+    "id": 1862,
+    "name": "Эржена Базарсадаева",
+    "slug": "yerzhena-bazarsadaeva",
+    "categories": [
+      "opera"
+    ],
+    "role": "Меццо-сопрано",
+    "sub_cats": [
+      "Меццо-сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/bazarsadaeva.png",
+    "sort": 528
+  },
+  {
+    "id": 1854,
+    "name": "Александр Хандажапов",
+    "slug": "aleksandr-khandazhapov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/handazhapov-a.png",
+    "sort": 530
+  },
+  {
+    "id": 1856,
+    "name": "Чингис Иванов",
+    "slug": "chingis-ivanov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/4.png",
+    "sort": 531
+  },
+  {
+    "id": 1852,
+    "name": "Данзан Бальжинимаев",
+    "slug": "danzan-balzhinimaev",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/balzhinimaev.png",
+    "sort": 532
+  },
+  {
+    "id": 1848,
+    "name": "Мэргэн Санданов",
+    "slug": "myergyen-sandanov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/IMG_8697_1.jpg",
+    "sort": 534
+  },
+  {
+    "id": 1844,
+    "name": "Эдуард Жагбаев",
+    "slug": "yeduard-zhagbaev",
+    "categories": [
+      "opera"
+    ],
+    "role": "Басы",
+    "sub_cats": [
+      "Басы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/zhagbaev.png",
+    "sort": 536
+  },
+  {
+    "id": 1842,
+    "name": "Елена Мохосова",
+    "slug": "elena-mokhosova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/mohosova-1.png",
+    "sort": 537
+  },
+  {
+    "id": 1834,
+    "name": "Мунхзул Намхай",
+    "slug": "namkhayn-munkhzul",
+    "categories": [
+      "opera"
+    ],
+    "role": "Баритоны",
+    "sub_cats": [
+      "Баритоны"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/namhaj.png",
+    "sort": 539
+  },
+  {
+    "id": 764,
+    "name": "Дамба Гуржапович Занданов",
+    "slug": "damba-zandanov",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора",
+      "Педагог по вокалу"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/02/zandanov.png",
+    "sort": 549
+  },
+  {
+    "id": 537,
+    "name": "Галина Шойдагбаева",
+    "slug": "537",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/02/shojdagbaeva.png",
+    "sort": 551
+  },
+  {
+    "id": 523,
+    "name": "Баиржаб Дамбиев",
+    "slug": "bairzhab-dambiev",
+    "categories": [
+      "opera"
+    ],
+    "role": "Тенора",
+    "sub_cats": [
+      "Тенора"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/02/dambiev-bairzhab.png",
+    "sort": 555
+  },
+  {
+    "id": 520,
+    "name": "Билигма Ринчинова",
+    "slug": "biligma-rinchinova",
+    "categories": [
+      "opera"
+    ],
+    "role": "Сопрано",
+    "sub_cats": [
+      "Сопрано"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/02/rinchinova.png",
+    "sort": 556
+  },
+  {
+    "id": 482,
+    "name": "Дарима Лхасарановна Линховоин",
+    "slug": "linkhovoindl",
+    "categories": [
+      "opera"
+    ],
+    "role": "Концертмейстеры",
+    "sub_cats": [
+      "Концертмейстеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/01/darima_ll_3.png",
+    "sort": 557
+  },
+  {
+    "id": 36768,
+    "name": "Александр Хмыльников",
+    "slug": "aleksandr-hmylnikov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/12/hmylnikov.png",
+    "sort": 7
+  },
+  {
+    "id": 36600,
+    "name": "Надежда Шмиголь",
+    "slug": "nadezhda-shmigol",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/11/shmigol.png",
+    "sort": 11
+  },
+  {
+    "id": 36243,
+    "name": "Но Тэ Чол",
+    "slug": "no-tje-chol",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Приглашенные дирижеры",
+    "sub_cats": [
+      "Приглашенные дирижеры"
+    ],
+    "photo_url": "",
+    "sort": 13
+  },
+  {
+    "id": 36150,
+    "name": "Валентин Владимирович Богданов",
+    "slug": "valentin-bogdanov",
+    "categories": [
+      "orkestr",
+      "hudr"
+    ],
+    "role": "Главный дирижер",
+    "sub_cats": [
+      "Главный дирижер",
+      "Художественное руководство"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/09/bogdanov-dirizher-1.png",
+    "sort": 20
+  },
+  {
+    "id": 35450,
+    "name": "Николай Мазаев",
+    "slug": "nikolaj-mazaev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Приглашенные дирижеры",
+    "sub_cats": [
+      "Приглашенные дирижеры"
+    ],
+    "photo_url": "",
+    "sort": 24
+  },
+  {
+    "id": 34940,
+    "name": "Андрей Данилов",
+    "slug": "andrej-danilov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Приглашенные дирижеры",
+    "sub_cats": [
+      "Приглашенные дирижеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/04/danilov-dirizhjor-1.jpg",
+    "sort": 27
+  },
+  {
+    "id": 34939,
+    "name": "Виталий Сергеевич Шевелев",
+    "slug": "vitalij-sergeevich-shevelev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Приглашенные дирижеры",
+    "sub_cats": [
+      "Приглашенные дирижеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/04/shevelev-dirizhjor-1.jpg",
+    "sort": 28
+  },
+  {
+    "id": 34938,
+    "name": "Эльдар Нагиев",
+    "slug": "jeldar-nagiev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Приглашенные дирижеры",
+    "sub_cats": [
+      "Приглашенные дирижеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/04/dirizhjor-nagiev-1.png",
+    "sort": 29
+  },
+  {
+    "id": 34925,
+    "name": "Михаил Леонтьев",
+    "slug": "mihail-leontev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Приглашенные дирижеры",
+    "sub_cats": [
+      "Приглашенные дирижеры"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/dirizhjor-nagiev.jpg",
+    "sort": 30
+  },
+  {
+    "id": 34821,
+    "name": "Георгий Матвеев",
+    "slug": "georgij-valerevich-matveev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "",
+    "sort": 31
+  },
+  {
+    "id": 34307,
+    "name": "Меред Авлиякулыев",
+    "slug": "avlijakulyev-mered-achilovich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "",
+    "sort": 53
+  },
+  {
+    "id": 34299,
+    "name": "Гонсалес Эрнандес Хуан Пабло",
+    "slug": "gonsales-jernandes-huan-pablo",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "",
+    "sort": 55
+  },
+  {
+    "id": 33060,
+    "name": "Дмитрий Варфоломеев",
+    "slug": "dmitrij-maksimovich-varfolomeev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "",
+    "sort": 60
+  },
+  {
+    "id": 32413,
+    "name": "Николай Владимирович Чечнев",
+    "slug": "nikolaj-vladimirovich-chechnev",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 121
+  },
+  {
+    "id": 32340,
+    "name": "Полина Алексеевна Кольм",
+    "slug": "polina-alekseevna-kolm",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Ударные инструменты",
+    "sub_cats": [
+      "Ударные инструменты"
+    ],
+    "photo_url": "",
+    "sort": 125
+  },
+  {
+    "id": 32042,
+    "name": "Екатерина Дюднева",
+    "slug": "ekaterina-vladimirovna-djudneva",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/16.png",
+    "sort": 136
+  },
+  {
+    "id": 31997,
+    "name": "Елена Челнокова",
+    "slug": "elena-jurevna-chelnokova",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/32-2.png",
+    "sort": 171
+  },
+  {
+    "id": 31992,
+    "name": "Ай-Чурек Хертек",
+    "slug": "aj-churek-ajhanovich-hertek",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "",
+    "sort": 172
+  },
+  {
+    "id": 31971,
+    "name": "Кадидя Майга",
+    "slug": "kadidja-aldzhumovna-majga",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "",
+    "sort": 174
+  },
+  {
+    "id": 31968,
+    "name": "Галина Кобезская",
+    "slug": "galina-aleksandrovna-kobezskaja",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/25.png",
+    "sort": 175
+  },
+  {
+    "id": 31958,
+    "name": "Сабина Булгатова",
+    "slug": "bulgatova-sabina-jeduardovna",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/15-1.png",
+    "sort": 176
+  },
+  {
+    "id": 31954,
+    "name": "Балдаева Лидия Георгиевна",
+    "slug": "baldaeva-lidija-georgievna",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 177
+  },
+  {
+    "id": 31708,
+    "name": "Егор Посконный",
+    "slug": "poskonnyj-egor-andreevich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/poskonnyj.png",
+    "sort": 178
+  },
+  {
+    "id": 31702,
+    "name": "Красник Дмитрий Сергеевич",
+    "slug": "krasnik-dmitrij-sergeevich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 180
+  },
+  {
+    "id": 31700,
+    "name": "Иннокентий Игнатюк",
+    "slug": "ignatjuk-innokentij-andreevich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/1.png",
+    "sort": 181
+  },
+  {
+    "id": 31698,
+    "name": "Жамсо Башинов",
+    "slug": "bashinov-zhamso-zoriktuevich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/19.png",
+    "sort": 182
+  },
+  {
+    "id": 31696,
+    "name": "Балданов Максим Бальжинимаевич",
+    "slug": "baldanov-maksim-balzhinimaevich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/10/baldanov.png",
+    "sort": 183
+  },
+  {
+    "id": 25908,
+    "name": "Михаил Хомяков",
+    "slug": "mikhail-khomyakov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Ударные инструменты",
+    "sub_cats": [
+      "Ударные инструменты"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/homjakov.png",
+    "sort": 229
+  },
+  {
+    "id": 25905,
+    "name": "Кирилл Сумцов",
+    "slug": "kirill-sumcov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Ударные инструменты",
+    "sub_cats": [
+      "Ударные инструменты"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/28-1.png",
+    "sort": 232
+  },
+  {
+    "id": 25904,
+    "name": "Никита Подгайнов",
+    "slug": "nikita-podgaynov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/13.png",
+    "sort": 233
+  },
+  {
+    "id": 24054,
+    "name": "Эльмира Орешко",
+    "slug": "yelmira-oreshko",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/8-1.png",
+    "sort": 263
+  },
+  {
+    "id": 22065,
+    "name": "Алексей Хабинский",
+    "slug": "aleksey-khabinskiy",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/04/23.png",
+    "sort": 289
+  },
+  {
+    "id": 19605,
+    "name": "Евгения Именохоева",
+    "slug": "evgeniya-zolotaryova",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/04/imenokhoeva_evgenia.png",
+    "sort": 332
+  },
+  {
+    "id": 19022,
+    "name": "Хонгор Эрдэнэцогт",
+    "slug": "khongor-yerdyenyecogt",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/22.png",
+    "sort": 353
+  },
+  {
+    "id": 19021,
+    "name": "Юлия Шурыгина",
+    "slug": "yuliya-shurygina-2",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/2.png",
+    "sort": 354
+  },
+  {
+    "id": 19020,
+    "name": "Ай-Суу Хунакаа",
+    "slug": "ay-suu-shirbizhik",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/31.png",
+    "sort": 355
+  },
+  {
+    "id": 19015,
+    "name": "Дэлгэрмаа Магван",
+    "slug": "dyelgyermaa-magvan-2",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/magvan.png",
+    "sort": 360
+  },
+  {
+    "id": 15162,
+    "name": "Елизавета Николаева",
+    "slug": "elizaveta-nikolaeva",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/09/2-1.png",
+    "sort": 397
+  },
+  {
+    "id": 8400,
+    "name": "Светлана Хантаева",
+    "slug": "svetlana-khantaeva",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/1-2.png",
+    "sort": 411
+  },
+  {
+    "id": 8389,
+    "name": "Григорий Феоктистов",
+    "slug": "grigoriy-feoktistov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/10-1.png",
+    "sort": 413
+  },
+  {
+    "id": 8385,
+    "name": "Евгения Старосветская",
+    "slug": "evgeniya-starosvetskaya",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/29.png",
+    "sort": 415
+  },
+  {
+    "id": 8383,
+    "name": "Сергей Евгеньевич Струков",
+    "slug": "sergey-strukov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов",
+      "Заведующий труппой оркестра"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/34.png",
+    "sort": 416
+  },
+  {
+    "id": 8381,
+    "name": "Сергей Самсонов",
+    "slug": "sergey-samsonov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Ударные инструменты",
+    "sub_cats": [
+      "Ударные инструменты"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/samsonov.png",
+    "sort": 417
+  },
+  {
+    "id": 8379,
+    "name": "Оюун-Эрдэнэ Болд",
+    "slug": "oyun-bold-yerdyenye",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/21-2.png",
+    "sort": 418
+  },
+  {
+    "id": 8348,
+    "name": "Нямхуу Нацагдорж",
+    "slug": "nyamkhu-nacagdorzh",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/14.png",
+    "sort": 420
+  },
+  {
+    "id": 8321,
+    "name": "Олег Наац",
+    "slug": "oleg-nac",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/5-1.png",
+    "sort": 426
+  },
+  {
+    "id": 8222,
+    "name": "Анжела Наац",
+    "slug": "anzhela-nac",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/6.png",
+    "sort": 427
+  },
+  {
+    "id": 8220,
+    "name": "Александра Наталина",
+    "slug": "aleksandra-natalina",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/9.png",
+    "sort": 428
+  },
+  {
+    "id": 8205,
+    "name": "Софья Аркадьевна Майорова",
+    "slug": "sofya-mayorova",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/3.png",
+    "sort": 430
+  },
+  {
+    "id": 7919,
+    "name": "Вячеслав Крюков",
+    "slug": "vyacheslav-kryukov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/24-1.png",
+    "sort": 431
+  },
+  {
+    "id": 7908,
+    "name": "Вера Именохоева",
+    "slug": "vera-imenokhoeva",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/27.png",
+    "sort": 435
+  },
+  {
+    "id": 7906,
+    "name": "Светлана Именохоева",
+    "slug": "svetlana-imenokhoeva",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/30.png",
+    "sort": 436
+  },
+  {
+    "id": 7904,
+    "name": "Юрий Змитрович",
+    "slug": "yuriy-zmitrovich",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа медных духовых инструментов",
+    "sub_cats": [
+      "Группа медных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/zmitrovich.png",
+    "sort": 437
+  },
+  {
+    "id": 7810,
+    "name": "Анастасия Власюк",
+    "slug": "anastasiya-vlasyuk",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/7.png",
+    "sort": 441
+  },
+  {
+    "id": 7806,
+    "name": "Максим Балданов",
+    "slug": "maksim-baldanov",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа деревянных духовых инструментов",
+    "sub_cats": [
+      "Группа деревянных духовых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/baldanov.png",
+    "sort": 443
+  },
+  {
+    "id": 7718,
+    "name": "Алексей Петручик",
+    "slug": "aleksey-petruchik",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Группа струнных смычковых инструментов",
+    "sub_cats": [
+      "Группа струнных смычковых инструментов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/33.png",
+    "sort": 445
+  },
+  {
+    "id": 7716,
+    "name": "Александра Гоголь",
+    "slug": "aleksandra-gogol",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "Ударные инструменты",
+    "sub_cats": [
+      "Ударные инструменты"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/18.png",
+    "sort": 446
+  },
+  {
+    "id": 562,
+    "name": "Дарья Станишевская - зав. оркестром",
+    "slug": "darya-stanishevskaya",
+    "categories": [
+      "orkestr"
+    ],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 550
+  },
+  {
+    "id": 1994,
+    "name": "Валерий Александрович Волчанецкий",
+    "slug": "valeriy-volchaneckiy-dirizher",
+    "categories": [
+      "orkestr",
+      "hudr",
+      "khor"
+    ],
+    "role": "Главный хормейстер",
+    "sub_cats": [
+      "Главный хормейстер",
+      "Художественное руководство",
+      "Дирижер"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/volchaneckij.png",
+    "sort": 562
+  },
+  {
+    "id": 36673,
+    "name": "Эльвира Даниловна Постникова",
+    "slug": "jelvira-danilova-postnikova",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Администраторы",
+    "sub_cats": [
+      "Администраторы"
+    ],
+    "photo_url": "",
+    "sort": 10
+  },
+  {
+    "id": 36164,
+    "name": "Елена Александровна Батуева",
+    "slug": "elena-aleksandrovna-batueva",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "",
+    "sort": 19
+  },
+  {
+    "id": 35892,
+    "name": "Галина Геннадьевна Русинова",
+    "slug": "galina-gennadevna-rusinova",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "",
+    "sort": 22
+  },
+  {
+    "id": 32548,
+    "name": "Саяна Солбоновна Норбоева",
+    "slug": "sajana-solbonovna-norboeva",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/1-1.png",
+    "sort": 85
+  },
+  {
+    "id": 32546,
+    "name": "Дарья Ивановна Хлебникова",
+    "slug": "darja-ivanovna-hlebnikova",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/7-1.png",
+    "sort": 86
+  },
+  {
+    "id": 32544,
+    "name": "Эрика Демеуловна Беккулова",
+    "slug": "jerika-demeulovna-bekkulova",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/6-1.png",
+    "sort": 87
+  },
+  {
+    "id": 32540,
+    "name": "Надежда Прокопьевна Мангадаева",
+    "slug": "nadezhda-prokopevna-mangadaeva",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/4.png",
+    "sort": 88
+  },
+  {
+    "id": 32538,
+    "name": "Ольга Владимировна Федосеева",
+    "slug": "olga-vladimirovna-fedoseeva",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/1.png",
+    "sort": 89
+  },
+  {
+    "id": 32536,
+    "name": "Марина Алексеевна Торгашина",
+    "slug": "marina-alekseevna-torgashina",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Контролеры билетов",
+    "sub_cats": [
+      "Контролеры билетов"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/5-1.png",
+    "sort": 90
+  },
+  {
+    "id": 32534,
+    "name": "Валерия Вахрамеевна Дуйбанова",
+    "slug": "valerija-vahrameevna-dujbanova",
+    "categories": [
+      "ticketservice"
+    ],
+    "role": "Администраторы",
+    "sub_cats": [
+      "Администраторы"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/lera-dujbanova.png",
+    "sort": 91
+  },
+  {
+    "id": 32532,
+    "name": "Анжелика Анатольевна Смирнова",
+    "slug": "anzhelika-anatolevna-smirnova",
+    "categories": [
+      "ticketservice",
+      "direction"
+    ],
+    "role": "Главный администратор",
+    "sub_cats": [
+      "Главный администратор",
+      "Главный администратор"
+    ],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/21.png",
+    "sort": 92
+  },
+  {
+    "id": 38166,
+    "name": "Александра Балтуева",
+    "slug": "aleksandra-baltueva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37876,
+    "name": "Батуева Наталья Галсановна",
+    "slug": "batueva-natalja-galsanovna",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37810,
+    "name": "Доржиева Светлана Мункоевна",
+    "slug": "dorzhieva-svetlana-munkoevna",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37875,
+    "name": "Дударь Валерия Александровна",
+    "slug": "dudar-valerija-aleksandrovna",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37874,
+    "name": "Дымбрылова Сэсэгма Цырендоржиевна",
+    "slug": "dymbrylova-sjesjegma-cyrendorzhievna",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37995,
+    "name": "Кобезкая Галина Александровна",
+    "slug": "kobezkaja-galina-aleksandrovna",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37952,
+    "name": "Найданов Дондок",
+    "slug": "najdanov-dondok-bairovich",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37843,
+    "name": "Одилия Ямада",
+    "slug": "odilija-jamada",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 37993,
+    "name": "Ооржак  Аржаан Эрес Оглу",
+    "slug": "oorzhak-arzhaan-jeres-oglu",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 0
+  },
+  {
+    "id": 33458,
+    "name": "",
+    "slug": "33458",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 3
+  },
+  {
+    "id": 36202,
+    "name": "Монгуш Монгун-Даш",
+    "slug": "mongush-mongun-dash",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 15
+  },
+  {
+    "id": 36201,
+    "name": "Хертек Айбек",
+    "slug": "hertek-ajbek",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 16
+  },
+  {
+    "id": 36200,
+    "name": "Кирсан Сактоев",
+    "slug": "kirsan-saktoev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 17
+  },
+  {
+    "id": 36199,
+    "name": "Ардан Ардаев",
+    "slug": "ardan-ardaev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 18
+  },
+  {
+    "id": 34757,
+    "name": "Дамдиндурэв Батжаргал",
+    "slug": "d-batzhargal",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/gonec-1.jpeg",
+    "sort": 34
+  },
+  {
+    "id": 34755,
+    "name": "Ганболд Шижирболд",
+    "slug": "g-shizhirbold",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/golos-zhricy-1.jpeg",
+    "sort": 35
+  },
+  {
+    "id": 34753,
+    "name": "Жаргалсайхан Бямбажав",
+    "slug": "zh-bjambazhav",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/image10.jpeg",
+    "sort": 36
+  },
+  {
+    "id": 34751,
+    "name": "Оюунчимэг Хурэлбаатар",
+    "slug": "o-hurjelbaatar",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/image5.jpeg",
+    "sort": 37
+  },
+  {
+    "id": 34749,
+    "name": "Энхбаяр Бумхуу",
+    "slug": "je-bumhuu",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/image4.jpeg",
+    "sort": 38
+  },
+  {
+    "id": 34747,
+    "name": "Мягмарсурэн Даваадорж",
+    "slug": "m-davaadorzh",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/image3.jpeg",
+    "sort": 39
+  },
+  {
+    "id": 34745,
+    "name": "Мягмар Дариймаа",
+    "slug": "m-darijmaa",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/image2.jpeg",
+    "sort": 40
+  },
+  {
+    "id": 34743,
+    "name": "Балгансурэн Эрдэнэтуяа",
+    "slug": "b-jerdjenjetujaa",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2025/03/image1.jpeg",
+    "sort": 41
+  },
+  {
+    "id": 33509,
+    "name": "Гэрэлцэцэг Туулайхуу",
+    "slug": "gjerjelcjecjeg-tuulajhuu",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 56
+  },
+  {
+    "id": 33198,
+    "name": "Техтелева Марина",
+    "slug": "tehteleva-marina",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 59
+  },
+  {
+    "id": 32467,
+    "name": "Игорь Иванович Жарков",
+    "slug": "igor-ivanovich-zharkov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/3.png",
+    "sort": 110
+  },
+  {
+    "id": 32465,
+    "name": "Александр Евгеньевич Черняев",
+    "slug": "aleksandr-evgenevich-chernjaev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/12/5.png",
+    "sort": 111
+  },
+  {
+    "id": 32449,
+    "name": "Людмила Васильевна Перевалова",
+    "slug": "ljudmila-vasilevna-perevalova",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/11/perevalova-ljudmila.png",
+    "sort": 112
+  },
+  {
+    "id": 30590,
+    "name": "Элина Рихтер",
+    "slug": "yelina-rikhter",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/05/jelina-rihter.png",
+    "sort": 190
+  },
+  {
+    "id": 29942,
+    "name": "Анатолий Чепурной",
+    "slug": "anatoliy-chepurnoy",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/03/person_foto_104.jpg",
+    "sort": 191
+  },
+  {
+    "id": 29913,
+    "name": "Константин Буинов",
+    "slug": "konstantin-buinov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 192
+  },
+  {
+    "id": 29912,
+    "name": "Шагдар Зондуев",
+    "slug": "shagdar-zonduev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 193
+  },
+  {
+    "id": 29904,
+    "name": "Игорь Морозов",
+    "slug": "igor-morozov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/03/image-18-01-24-01-40-1.jpeg",
+    "sort": 194
+  },
+  {
+    "id": 29901,
+    "name": "Ирина Новикова",
+    "slug": "irina-novikova-2",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/03/IMG_5436-1.jpg",
+    "sort": 195
+  },
+  {
+    "id": 29898,
+    "name": "Зинаида Царенко",
+    "slug": "zinaida-carenko",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/03/IMG_3520.jpg",
+    "sort": 196
+  },
+  {
+    "id": 29891,
+    "name": "Сергей Скороходов",
+    "slug": "sergey-skorokhodov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/03/skorokhodov_sergei_2023.png",
+    "sort": 197
+  },
+  {
+    "id": 29848,
+    "name": "Иван Оскорбин",
+    "slug": "ivan-oskorbin",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 198
+  },
+  {
+    "id": 29610,
+    "name": "Рипсиме Сехлеян",
+    "slug": "ripsime-sekhleyan",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 200
+  },
+  {
+    "id": 29609,
+    "name": "Байирта Бадма-Халгаева",
+    "slug": "bayirta-badma-khalgaeva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/01/photo_2024-01-30_16-01-55.jpg",
+    "sort": 201
+  },
+  {
+    "id": 29569,
+    "name": "Юрий Кудрявцев",
+    "slug": "yuriy-kudryavcev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 202
+  },
+  {
+    "id": 29562,
+    "name": "Андрей Коденко",
+    "slug": "andrey-kodenko",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2024/01/photo_2024-01-15_17-03-21.jpg",
+    "sort": 203
+  },
+  {
+    "id": 29179,
+    "name": "Ксения Гирина",
+    "slug": "kseniya-girina",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 206
+  },
+  {
+    "id": 28544,
+    "name": "Ильгам Валиев",
+    "slug": "ilgam-valiev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2023/08/Muzhskoy-siluyet-3.webp",
+    "sort": 212
+  },
+  {
+    "id": 27171,
+    "name": "Чингис Аюшеев",
+    "slug": "chingis-ayusheev-2",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 215
+  },
+  {
+    "id": 27170,
+    "name": "Елена Аюшеева",
+    "slug": "elena-ayusheeva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 216
+  },
+  {
+    "id": 27169,
+    "name": "Олег Ромашин",
+    "slug": "oleg-romashin",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 217
+  },
+  {
+    "id": 27168,
+    "name": "Наталья Савченко",
+    "slug": "natalya-savchenko",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 218
+  },
+  {
+    "id": 26609,
+    "name": "Чингис Раднаев",
+    "slug": "chingis-radnaev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 219
+  },
+  {
+    "id": 25909,
+    "name": "Чулуунчимэг Чулуунхишиг",
+    "slug": "chuluunchimyeg-chuluunkhishig",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/chuluunkhishig-chuluunchimyeg-scaled-1.jpg",
+    "sort": 228
+  },
+  {
+    "id": 25907,
+    "name": "Асхат Уланов",
+    "slug": "askhat-ulanov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/Muzhskoy-siluyet-2-1.jpg",
+    "sort": 230
+  },
+  {
+    "id": 25896,
+    "name": "Дугармаа Бадарч",
+    "slug": "dugarmaa-badarch",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/dugarmaa-badarch-scaled-1.jpg",
+    "sort": 239
+  },
+  {
+    "id": 25894,
+    "name": "Софья Алексеева",
+    "slug": "sofya-alekseeva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/ZHenskiy-siluyet-2-1.jpg",
+    "sort": 240
+  },
+  {
+    "id": 25818,
+    "name": "Роман Широких",
+    "slug": "roman-shirokikh",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/Muzhskoy-siluyet-2.jpg",
+    "sort": 241
+  },
+  {
+    "id": 25760,
+    "name": "Давит Есаян",
+    "slug": "davit-esayan",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/10/Muzhskoy-siluyet-2.jpg",
+    "sort": 242
+  },
+  {
+    "id": 25625,
+    "name": "Мэдэгма Доржиева",
+    "slug": "myedyegma-dorzhieva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/03/ZHenskiy-siluyet.jpg",
+    "sort": 249
+  },
+  {
+    "id": 25624,
+    "name": "Чимит Дондоков",
+    "slug": "chimit-dondokov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/Muzhskoy-siluyet.jpg",
+    "sort": 250
+  },
+  {
+    "id": 24052,
+    "name": "Игорь Кузнецов",
+    "slug": "igor-kuznecov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2022/02/Igor-Kuznecov-scaled-1.jpg",
+    "sort": 265
+  },
+  {
+    "id": 22833,
+    "name": "Чингис Баиров",
+    "slug": "chingis-bairov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/09/IMG_20200614_142650-scaled-1.jpg",
+    "sort": 282
+  },
+  {
+    "id": 21735,
+    "name": "Елизавета Григорьева",
+    "slug": "elizaveta-grigoreva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2021/02/Grigoreva-scaled-1.jpg",
+    "sort": 296
+  },
+  {
+    "id": 20413,
+    "name": "Людмила Швецова",
+    "slug": "lyudmila-shvecova",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 307
+  },
+  {
+    "id": 20412,
+    "name": "Валентин Седаков",
+    "slug": "valentin-sedakov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 308
+  },
+  {
+    "id": 20411,
+    "name": "Александр Миндрин",
+    "slug": "aleksandr-mindrin",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 309
+  },
+  {
+    "id": 20410,
+    "name": "Илья Оши",
+    "slug": "ilya-oshi",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 310
+  },
+  {
+    "id": 20409,
+    "name": "Александра Разина",
+    "slug": "aleksandra-razina",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 311
+  },
+  {
+    "id": 20408,
+    "name": "Владимир Бочаров",
+    "slug": "vladimir-bocharov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 312
+  },
+  {
+    "id": 19972,
+    "name": "Дзюри Сикатани",
+    "slug": "dzyuri-sikitakani",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/Sikatani-Dzyuri-scaled-1.jpg",
+    "sort": 314
+  },
+  {
+    "id": 19743,
+    "name": "Ванда Кальянова",
+    "slug": "vanda-kalyanova",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/05/IMG_9465-1.jpg",
+    "sort": 319
+  },
+  {
+    "id": 18900,
+    "name": "Екатерина Первушина",
+    "slug": "ekaterina-pervushina",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2020/01/Pervushina_E.jpg",
+    "sort": 368
+  },
+  {
+    "id": 17943,
+    "name": "Савва Хастаев",
+    "slug": "savva-khastaev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2019/08/khastaev.jpg",
+    "sort": 373
+  },
+  {
+    "id": 17941,
+    "name": "Аюна Базаргуруева",
+    "slug": "ayuna-bazargurueva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2019/08/aunabazargurueva_bio-1.jpg",
+    "sort": 374
+  },
+  {
+    "id": 12127,
+    "name": "Уянга Унушихбаярын",
+    "slug": "uyanga-unushikhbayaryn",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 403
+  },
+  {
+    "id": 11476,
+    "name": "Владимир Доржиев",
+    "slug": "vladimir-dorzhiev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 405
+  },
+  {
+    "id": 9942,
+    "name": "Виталий Шевелев",
+    "slug": "vitaliy-shevelev-dirizher",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/09/IMG_5760.jpg",
+    "sort": 406
+  },
+  {
+    "id": 9899,
+    "name": "Галина Дагаева",
+    "slug": "galina-dagaeva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "",
+    "sort": 408
+  },
+  {
+    "id": 8323,
+    "name": "Светлана Шмыгина",
+    "slug": "svetlana-shmygina-repetitor",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/IMG_9513-scaled-1.jpg",
+    "sort": 425
+  },
+  {
+    "id": 7900,
+    "name": "Наталия Гриб",
+    "slug": "nataliya-grib",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/IMG_6893-1.jpg",
+    "sort": 439
+  },
+  {
+    "id": 7663,
+    "name": "Ольга Шункова",
+    "slug": "olga-shunkova",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/IMG_5342-1.jpg",
+    "sort": 449
+  },
+  {
+    "id": 7652,
+    "name": "Батор Цыдыпович Цыпылов",
+    "slug": "bator-cypylov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/06/IMG_4963-2.jpg",
+    "sort": 452
+  },
+  {
+    "id": 1846,
+    "name": "Туяна Зориктуева",
+    "slug": "tuyana-zoriktueva",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/IMG_7837-1.jpg",
+    "sort": 535
+  },
+  {
+    "id": 1832,
+    "name": "Ариунбаатар Ганбаатар",
+    "slug": "ganbaataryn-ariunbaatar",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/09/ganbaatar2023.jpg",
+    "sort": 540
+  },
+  {
+    "id": 975,
+    "name": "Евгений Тарханов",
+    "slug": "evgeniy-tarkhanov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/03/izobrazhenie_viber_2020-04-27_10-09-30.jpg",
+    "sort": 543
+  },
+  {
+    "id": 3776,
+    "name": "Юрий Лаптев",
+    "slug": "yuriy-laptev-khudozhestvennyy-rukovodi",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/03/Laptev-foto.jpg",
+    "sort": 544
+  },
+  {
+    "id": 534,
+    "name": "Владимир Кожевников",
+    "slug": "vladimir-kozhevnikov",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2016/02/IMG_6108-1.jpg",
+    "sort": 552
+  },
+  {
+    "id": 15032,
+    "name": "Чингис Аюшеев",
+    "slug": "chingis-ayusheev",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2018/08/CHingis-Ayusheev.jpg",
+    "sort": 560
+  },
+  {
+    "id": 3778,
+    "name": "Леонид Корчмар",
+    "slug": "leonid-korchmar-priglashennyy-glavnyy",
+    "categories": [],
+    "role": "",
+    "sub_cats": [],
+    "photo_url": "https://uuopera.ru/wp-content/uploads/2017/04/korchmar.jpg",
+    "sort": 561
+  }
+]

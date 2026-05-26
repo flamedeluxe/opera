@@ -23,6 +23,7 @@ require_once __DIR__ . '/uuopera_excursion_parse_uuopera.php';
  *   sessions: list<array{0: string, 1: int}>,
  *   participants_html: string,
  *   description_html: string,
+ *   content_html: string,
  *   footer_duration: string,
  *   footer_price: string,
  *   slider_id: string,
@@ -45,11 +46,55 @@ function uuopera_afisha_parse_empty_payload(): array
         'sessions' => [],
         'participants_html' => '',
         'description_html' => '',
+        'content_html' => '',
         'footer_duration' => '',
         'footer_price' => '',
         'slider_id' => '',
         'gallery' => [],
     ];
+}
+
+/**
+ * Извлекает внутренний HTML div с заданным точным классом (поиск по атрибуту class="...").
+ * Возвращает пустую строку, если не найдено.
+ */
+function uuopera_afisha_extract_div_inner_html(string $html, string $exactClass): string
+{
+    $marker = '<div class="' . $exactClass . '">';
+    $start = strpos($html, $marker);
+    if ($start === false) {
+        return '';
+    }
+    $innerStart = $start + strlen($marker);
+    $depth = 1;
+    $pos = $innerStart;
+    $len = strlen($html);
+    $innerEnd = null;
+    while ($pos < $len && $depth > 0) {
+        $openPos  = strpos($html, '<div', $pos);
+        $closePos = strpos($html, '</div>', $pos);
+        if ($openPos === false) {
+            $openPos = PHP_INT_MAX;
+        }
+        if ($closePos === false) {
+            break;
+        }
+        if ($openPos < $closePos) {
+            $depth++;
+            $pos = $openPos + 4;
+        } else {
+            $depth--;
+            if ($depth === 0) {
+                $innerEnd = $closePos;
+            } else {
+                $pos = $closePos + 6;
+            }
+        }
+    }
+    if ($innerEnd === null) {
+        return '';
+    }
+    return trim(substr($html, $innerStart, $innerEnd - $innerStart));
 }
 
 /**
@@ -178,7 +223,10 @@ function uuopera_afisha_parse_uuopera_page(string $html, string $category = ''):
         if ($pStart !== false) {
             $pEnd = strpos($main, $pEndMarker, $pStart);
             if ($pEnd !== false && $pEnd > $pStart) {
-                $out['participants_html'] = trim(substr($main, $pStart, $pEnd - $pStart));
+                $participantsHtml = trim(substr($main, $pStart, $pEnd - $pStart));
+                // Ссылки на персон ведут на uuopera.ru — делаем относительными для локального сайта
+                $participantsHtml = str_replace('https://uuopera.ru/', '/', $participantsHtml);
+                $out['participants_html'] = $participantsHtml;
             }
         }
     }
@@ -189,6 +237,14 @@ function uuopera_afisha_parse_uuopera_page(string $html, string $category = ''):
         $textBlock
     )) {
         $out['description_html'] = trim($textBlock[1]);
+    }
+
+    $contentHtml = uuopera_afisha_extract_div_inner_html(
+        $main,
+        'flex flex-col gap-12 md:gap-15 2xl:gap-25 wrapper-main wrapper-max w-full'
+    );
+    if ($contentHtml !== '') {
+        $out['content_html'] = $contentHtml;
     }
 
     if (preg_match('/<div class="swiper slider-default" data-slider-default="([^"]+)"/u', $main, $sl)) {

@@ -44,5 +44,5 @@ try {
     exit(1);
 }
 
-echo "Готово. Инфоблок «События афиши» ID={$r['iblock_id']}.\n";
+echo "Готово. Инфоблок «События афиши» ID={$r['iblock_id']}, разделы категорий (опера, балет, …) созданы.\n";
 echo "Импорт: php local/tools/uuopera_afisha_bulk_import_uuopera.php\n";

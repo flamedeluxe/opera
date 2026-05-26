@@ -16,8 +16,9 @@ if (empty($arResult)) {
 }
 
 $item = $arResult;
-$name = (string) ($item['NAME'] ?? '');
-$detailText = (string) ($item['DETAIL_TEXT'] ?? $item['PREVIEW_TEXT'] ?? '');
+$name        = (string) ($item['NAME'] ?? '');
+$previewText = (string) ($item['PREVIEW_TEXT'] ?? '');
+$detailText  = (string) ($item['DETAIL_TEXT'] ?? '');
 $dateStr = '';
 if (!empty($item['DISPLAY_ACTIVE_FROM'])) {
     $dateStr = (string) $item['DISPLAY_ACTIVE_FROM'];
@@ -25,25 +26,27 @@ if (!empty($item['DISPLAY_ACTIVE_FROM'])) {
     $dateStr = (string) FormatDate('j.m.Y', MakeTimeStamp($item['ACTIVE_FROM'], FORMAT_DATETIME));
 }
 
+// The component runs getFieldImageData() — picture fields are arrays with SRC/WIDTH/HEIGHT,
+// not raw file IDs. Fall back to CFile::GetFileArray for integer IDs (legacy data).
 $imgSrc = '';
-$imgW = 2560;
-$imgH = 1707;
-if (!empty($item['DETAIL_PICTURE'])) {
-    $file = CFile::GetFileArray((int) $item['DETAIL_PICTURE']);
-    if (is_array($file) && ($file['SRC'] ?? '') !== '') {
-        $imgSrc = (string) $file['SRC'];
-        if (!empty($file['WIDTH'])) {
-            $imgW = (int) $file['WIDTH'];
-        }
-        if (!empty($file['HEIGHT'])) {
-            $imgH = (int) $file['HEIGHT'];
-        }
+$imgW   = 0;
+$imgH   = 0;
+foreach (['DETAIL_PICTURE', 'PREVIEW_PICTURE'] as $picField) {
+    if ($imgSrc !== '' || empty($item[$picField])) {
+        continue;
     }
-}
-if ($imgSrc === '' && !empty($item['PREVIEW_PICTURE'])) {
-    $file = CFile::GetFileArray((int) $item['PREVIEW_PICTURE']);
-    if (is_array($file) && ($file['SRC'] ?? '') !== '') {
-        $imgSrc = (string) $file['SRC'];
+    $pic = $item[$picField];
+    if (is_array($pic) && ($pic['SRC'] ?? '') !== '') {
+        $imgSrc = (string) $pic['SRC'];
+        $imgW   = (int) ($pic['WIDTH'] ?? 0);
+        $imgH   = (int) ($pic['HEIGHT'] ?? 0);
+    } elseif (is_numeric($pic)) {
+        $file = CFile::GetFileArray((int) $pic);
+        if (is_array($file) && ($file['SRC'] ?? '') !== '') {
+            $imgSrc = (string) $file['SRC'];
+            $imgW   = (int) ($file['WIDTH'] ?? 0);
+            $imgH   = (int) ($file['HEIGHT'] ?? 0);
+        }
     }
 }
 ?>
@@ -53,7 +56,7 @@ if ($imgSrc === '' && !empty($item['PREVIEW_PICTURE'])) {
             <div class="lg:order-1">
                 <?php if ($imgSrc !== ''): ?>
                 <div class="relative pb-16/9">
-                    <img width="<?= $imgW ?>" height="<?= $imgH ?>" src="<?= htmlspecialcharsbx($imgSrc) ?>"
+                    <img <?= $imgW > 0 ? 'width="' . $imgW . '" ' : '' ?><?= $imgH > 0 ? 'height="' . $imgH . '" ' : '' ?>src="<?= htmlspecialcharsbx($imgSrc) ?>"
                         class="absolute image-cover wp-post-image" alt="<?= htmlspecialcharsbx($name) ?>" decoding="async" loading="lazy" />
                 </div>
                 <?php endif; ?>
@@ -64,11 +67,18 @@ if ($imgSrc === '' && !empty($item['PREVIEW_PICTURE'])) {
                     <?php if ($dateStr !== ''): ?>
                     <div class="text-p3"><?= htmlspecialcharsbx($dateStr) ?></div>
                     <?php endif; ?>
-                    <?php if ($detailText !== ''): ?>
-                    <div class="text-p1"><?= $detailText ?></div>
+                    <?php if ($previewText !== ''): ?>
+                    <div class="text-p1"><?= $previewText ?></div>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
+    <?php if ($detailText !== ''): ?>
+    <div class="bg-beige" data-header-color-schema="beige">
+        <div class="wrapper-main wrapper-max w-full pt-12 pb-20 2xl:pt-20 flex flex-col gap-20">
+            <?= $detailText ?>
+        </div>
+    </div>
+    <?php endif; ?>
 </main>

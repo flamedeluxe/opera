@@ -1,1 +1,9 @@
 .env
+db/bitrix.sql.gz
+db/bitrix.sql
+wp-old/
+C:/
+.claude/
+www/wp-content/
+www/wp-json/
+www/local/tools/_last_seed_output.txt

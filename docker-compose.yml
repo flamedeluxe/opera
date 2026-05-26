@@ -26,6 +26,14 @@ services:
       TZ: ${TZ:-UTC}
       BX_MEMCACHED_HOST: memcached
       BITRIX_DEBUG: ${BITRIX_DEBUG:-0}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-bitrix}
+      MYSQL_USER: ${MYSQL_USER:-bitrix}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-bitrix}
+      WP_IMPORT_DB_HOST: ${WP_IMPORT_DB_HOST:-db}
+      WP_IMPORT_DB_NAME: ${WP_IMPORT_DB_NAME:-wordpress}
+      WP_IMPORT_DB_USER: ${WP_IMPORT_DB_USER:-}
+      WP_IMPORT_DB_PASSWORD: ${WP_IMPORT_DB_PASSWORD:-}
+      WP_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_}
     depends_on:
       - db
       - memcached

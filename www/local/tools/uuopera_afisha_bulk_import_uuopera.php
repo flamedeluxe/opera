@@ -155,6 +155,7 @@ foreach ($urls as $url) {
             : '',
         'SESSIONS_JSON' => $sessionsJson,
         'PARTICIPANTS_HTML' => (string) ($payload['participants_html'] ?? ''),
+        'CONTENT_HTML' => (string) ($payload['content_html'] ?? ''),
         'SLIDER_ID' => (string) ($payload['slider_id'] ?? ''),
         'FOOTER_DURATION' => (string) ($payload['footer_duration'] ?? ''),
         'FOOTER_PRICE' => (string) ($payload['footer_price'] ?? ''),

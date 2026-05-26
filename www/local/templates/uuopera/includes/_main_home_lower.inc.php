@@ -26,7 +26,7 @@
                 <div class="flex flex-col gap-5 w-full lg:col-start-2">
                                             <div>
                             <div class="relative pb-[50%]">
-                                <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/08/hall.jpg" alt="" class="absolute image-cover">
+                                <img decoding="async" src="/wp-content/uploads/2024/08/hall.jpg" alt="" class="absolute image-cover">
                             </div>
                         </div>
                                         <div class="flex flex-col gap-12 md:grid md:grid-cols-2 md:gap-5">
@@ -58,7 +58,7 @@
     <div class="wrapper-main wrapper-max">
         <div class="flex flex-col gap-8 md:gap-16 xl:gap-25">
                             <div class="flex justify-end md:pr-[8%]">
-                    <img decoding="async" class="w-25 md:w-44" src="https://uuopera.ru/wp-content/uploads/2024/07/pushkin.svg" alt="Пушкинская карта для молодежи">
+                    <img decoding="async" class="w-25 md:w-44" src="/wp-content/uploads/2024/07/pushkin.svg" alt="Пушкинская карта для молодежи">
                 </div>
                         <div class="grid gap-8 md:gap-12 xl:grid-cols-12 xl:gap-x-5">
                                     <h2 class="text-lg uppercase tracking-wide md:text-3xl xl:text-4xl text-justify xl:col-span-12">
@@ -117,7 +117,7 @@
                                                                     </div>
 
                                                                     <div class="absolute md:static bottom-4 w-full opacity-20 md:opacity-100 md:col-span-5 md:col-start-8 lg:col-span-3 lg:col-start-10">
-                                        <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/08/mission-1.svg" alt="" class="w-full">
+                                        <img decoding="async" src="/wp-content/uploads/2024/08/mission-1.svg" alt="" class="w-full">
                                     </div>
                                                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                                                     </div>
 
                                                                     <div class="absolute md:static bottom-4 w-full opacity-20 md:opacity-100 md:col-span-5 md:col-start-8 lg:col-span-3 lg:col-start-10">
-                                        <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/08/mission-2.svg" alt="" class="w-full">
+                                        <img decoding="async" src="/wp-content/uploads/2024/08/mission-2.svg" alt="" class="w-full">
                                     </div>
                                                             </div>
                         </div>
@@ -151,7 +151,7 @@
                                                                     </div>
 
                                                                     <div class="absolute md:static bottom-4 w-full opacity-20 md:opacity-100 md:col-span-5 md:col-start-8 lg:col-span-3 lg:col-start-10">
-                                        <img decoding="async" src="https://uuopera.ru/wp-content/uploads/2024/08/mission-3.svg" alt="" class="w-full">
+                                        <img decoding="async" src="/wp-content/uploads/2024/08/mission-3.svg" alt="" class="w-full">
                                     </div>
                                                             </div>
                         </div>
@@ -172,28 +172,28 @@
                     <div class="py-5">Альфа-банк</div>
                                             <div class="col-start-2 py-5">Партнёр</div>
                                                                 <div class="col-start-3 flex items-center py-1">
-                            <img decoding="async" class="w-full h-10 object-contain" src="https://uuopera.ru/wp-content/uploads/2025/10/alfa-full-rockstar-logo_page-0001.jpg" alt="Альфа-банк">
+                            <img decoding="async" class="w-full h-10 object-contain" src="/wp-content/uploads/2025/10/alfa-full-rockstar-logo_page-0001.jpg" alt="Альфа-банк">
                         </div>
                                     </div>
                             <div class="grid grid-cols-3 gap-5 border-t">
                     <div class="py-5">Телекомпания АТВ</div>
                                             <div class="col-start-2 py-5">Медиа партнёр</div>
                                                                 <div class="col-start-3 flex items-center py-1">
-                            <img decoding="async" class="w-full h-10 object-contain" src="https://uuopera.ru/wp-content/uploads/2024/10/atv.png" alt="Телекомпания АТВ">
+                            <img decoding="async" class="w-full h-10 object-contain" src="/wp-content/uploads/2024/10/atv.png" alt="Телекомпания АТВ">
                         </div>
                                     </div>
                             <div class="grid grid-cols-3 gap-5 border-t">
                     <div class="py-5">Байкал Daily</div>
                                             <div class="col-start-2 py-5">Медиа партнёр</div>
                                                                 <div class="col-start-3 flex items-center py-1">
-                            <img decoding="async" class="w-full h-10 object-contain" src="https://uuopera.ru/wp-content/uploads/2024/10/bd.png" alt="Байкал Daily">
+                            <img decoding="async" class="w-full h-10 object-contain" src="/wp-content/uploads/2024/10/bd.png" alt="Байкал Daily">
                         </div>
                                     </div>
                             <div class="grid grid-cols-3 gap-5 border-t">
                     <div class="py-5">Радио Монте Карло 101.9</div>
                                             <div class="col-start-2 py-5">Медиа партнёр</div>
                                                                 <div class="col-start-3 flex items-center py-1">
-                            <img decoding="async" class="w-full h-10 object-contain" src="https://uuopera.ru/wp-content/uploads/2024/10/montekarlo.png" alt="Радио Монте Карло 101.9">
+                            <img decoding="async" class="w-full h-10 object-contain" src="/wp-content/uploads/2024/10/montekarlo.png" alt="Радио Монте Карло 101.9">
                         </div>
                                     </div>
                     </div>

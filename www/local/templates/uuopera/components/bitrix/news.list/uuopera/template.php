@@ -12,7 +12,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 $iblockId = uuopera_news_iblock_id();
 ?>
 <div class="flex flex-col gap-16 2xl:gap-28 pt-32 wrapper-main wrapper-max">
-    <h1 class="text-h1">Новости</h1>
+    <h1 class="text-h1"><?= htmlspecialcharsbx($GLOBALS['UUOPERA_NEWS_LIST_TITLE'] ?? 'Новости') ?></h1>
 
     <?php if (empty($arResult['ITEMS'])): ?>
         <div class="text-p2 max-w-2xl">
@@ -32,9 +32,13 @@ $iblockId = uuopera_news_iblock_id();
             $name = $item['NAME'] ?? '';
             $previewSrc = '';
             if (!empty($item['PREVIEW_PICTURE'])) {
-                $file = CFile::GetFileArray((int) $item['PREVIEW_PICTURE']);
-                if (is_array($file) && ($file['SRC'] ?? '') !== '') {
-                    $previewSrc = (string) $file['SRC'];
+                if (is_array($item['PREVIEW_PICTURE'])) {
+                    $previewSrc = (string) ($item['PREVIEW_PICTURE']['SRC'] ?? '');
+                } else {
+                    $file = CFile::GetFileArray((int) $item['PREVIEW_PICTURE']);
+                    if (is_array($file)) {
+                        $previewSrc = (string) ($file['SRC'] ?? '');
+                    }
                 }
             }
             $dateStr = '';

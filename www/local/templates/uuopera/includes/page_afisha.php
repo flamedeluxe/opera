@@ -17,7 +17,7 @@ $afishaCats = [
 ];
 
 $currentCat = (string) ($GLOBALS['UUOPERA_AFISHA_LIST_CATEGORY'] ?? '');
-$events = uuopera_afisha_list_events($currentCat);
+$events = uuopera_afisha_list_events($currentCat, 0, 'ASC', date('d.m.Y H:i:s'));
 ?>
 <div class="flex flex-col gap-10 pt-32 wrapper-main wrapper-max" data-header-color-schema="beige">
     <h1 class="text-h1">Афиша</h1>

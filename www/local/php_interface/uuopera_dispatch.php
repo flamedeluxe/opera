@@ -9,13 +9,26 @@ require_once __DIR__ . '/uuopera_page.php';
  */
 function uuopera_dispatch_from_script(): void
 {
-    $script = (string) ($_SERVER['SCRIPT_NAME'] ?? '');
-    $dir = str_replace('\\', '/', dirname($script));
-    $path = rtrim($dir, '/');
-    if ($path === '' || $path === '.') {
+    $script = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+    if ($script === '') {
+        uuopera_dispatch_for_path('/');
+        return;
+    }
+
+    $name = (string) pathinfo($script, PATHINFO_FILENAME);
+    $dirRaw = dirname($script);
+    $dirTail = trim(str_replace('\\', '/', $dirRaw), '/');
+
+    if ($name !== '' && strcasecmp($name, 'index') !== 0) {
+        $path = ($dirTail === '') ? '/' . $name : '/' . $dirTail . '/' . $name;
+    } else {
+        $path = ($dirTail === '') ? '/' : '/' . $dirTail;
+    }
+
+    $path = rtrim(str_replace('//', '/', $path), '/');
+    if ($path === '') {
         $path = '/';
     }
-    // Если запрос попал в корневой index.php (try_files), SCRIPT_NAME = /index.php — берём путь из URI.
     if ($path === '/') {
         $raw = parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH);
         $req = $raw !== false && $raw !== null ? rtrim(str_replace('\\', '/', (string) $raw), '/') : '';
@@ -33,6 +46,15 @@ function uuopera_dispatch_for_path(string $path): void
     $path = rtrim(str_replace('\\', '/', $path), '/');
     if ($path === '') {
         $path = '/';
+    }
+
+    if ($path === '/company/history') {
+        header('Location: /missiya-i-cennosti/#history', true, 301);
+        exit;
+    }
+    if ($path === '/company/mission') {
+        header('Location: /missiya-i-cennosti/#mission', true, 301);
+        exit;
     }
 
     $afishaCats = [
@@ -92,24 +114,78 @@ function uuopera_dispatch_for_path(string $path): void
         uuopera_page([
             'title_callback' => 'uuopera_cms_project_apply_title',
             'include' => '/local/templates/uuopera/includes/page_projects.php',
-            'extra_css' => ['tpl/css/page-blue.css'],
+            'extra_css' => ['tpl/css/page-beige.css'],
             'footer_js' => [],
         ]);
         return;
     }
 
-    if (preg_match('#^/personalii/#', $path)) {
-        uuopera_stub_page('Персоны', 'Список персон будет вынесен в инфоблоки Битрикс.');
+    if ($path === '/services') {
+        uuopera_page([
+            'title' => 'Платные услуги - Бурятский театр оперы и балета',
+            'include' => '/local/templates/uuopera/includes/page_services.php',
+            'extra_css' => ['tpl/css/page-beige.css'],
+            'footer_js' => [],
+        ]);
         return;
     }
 
-    if (preg_match('#^/for-visitors/#', $path)) {
-        uuopera_stub_page('Посетителям', 'Материалы для посетителей переносятся из WordPress.');
+    $personaliiCats = [
+        'direction'     => 'Дирекция',
+        'hudr'          => 'Художественное руководство',
+        'opera'         => 'Оперная труппа',
+        'balet'         => 'Балетная труппа',
+        'orkestr'       => 'Оркестр',
+        'khor'          => 'Хор',
+        'khpch'         => 'Художественно-постановочная часть',
+        'ticketservice' => 'Служба главного администратора',
+        'administration' => 'Административный блок',
+        'khpch-hudr-6'  => 'Театрально-производственные мастерские',
+    ];
+    // Canonical group display order per category (derived from WP term_order)
+    $personaliiGroupOrder = [
+        'opera' => ['Заведующая оперной труппой','Педагог по вокалу','Сопрано','Меццо-сопрано','Тенора','Баритоны','Басы','Концертмейстеры'],
+        'balet' => ['Художественный руководитель балета','Балетмейстеры-репетиторы','Солисты балета','Артисты высшей категории (женский состав)','Артисты I-категории (женский состав)','Артисты балета (женский состав)','Артисты балета (мужской состав)','Концертмейстеры'],
+        'orkestr' => ['Дирижёры','Группа струнных смычковых инструментов','Группа деревянных духовых инструментов','Группа медных духовых инструментов','Группа ударных инструментов','Группа клавишных инструментов','Концертмейстеры'],
+        'khor' => ['Художественный руководитель хора','Хормейстеры-репетиторы','Сопрано I','Сопрано II','Альт I','Альт II','Тенора','Баритоны','Басы','Концертмейстеры'],
+    ];
+
+    if (preg_match('#^/personalii/([^/]+)$#', $path, $ppm)) {
+        $catSlug = (string) $ppm[1];
+        if (isset($personaliiCats[$catSlug])) {
+            $GLOBALS['UUOPERA_PERSONALII_CATEGORY'] = $catSlug;
+            $GLOBALS['UUOPERA_PERSONALII_TITLE'] = $personaliiCats[$catSlug];
+            $GLOBALS['UUOPERA_PERSONALII_CATS'] = $personaliiCats;
+            $GLOBALS['UUOPERA_PERSONALII_GROUP_ORDER'] = $personaliiGroupOrder[$catSlug] ?? [];
+            uuopera_page([
+                'title' => $personaliiCats[$catSlug] . ' - Бурятский театр оперы и балета',
+                'include' => '/local/templates/uuopera/includes/page_personalii.php',
+                'extra_css' => ['tpl/css/page-beige.css'],
+                'footer_js' => [],
+            ]);
+            return;
+        }
+    }
+
+    if (preg_match('#^/persone/([^/]+)$#', $path, $ppm)) {
+        $GLOBALS['UUOPERA_PERSONE_SLUG'] = (string) $ppm[1];
+        uuopera_page([
+            'title_callback' => 'uuopera_persone_apply_title',
+            'include' => '/local/templates/uuopera/includes/page_persone_detail.php',
+            'extra_css' => ['tpl/css/page-beige.css'],
+            'footer_js' => [],
+        ]);
         return;
     }
 
-    if (preg_match('#^/persone/#', $path)) {
-        uuopera_stub_page('Персона', 'Карточка персоны будет в Битрикс.');
+    if ($path === '/for-visitors' || str_starts_with($path, '/for-visitors/')) {
+        $GLOBALS['UUOPERA_FOR_VISITORS_PATH'] = $path;
+        uuopera_page([
+            'title' => 'Посетителям театра - Бурятский театр оперы и балета',
+            'include' => '/local/templates/uuopera/includes/page_for_visitors.php',
+            'extra_css' => ['tpl/css/page-beige.css'],
+            'footer_js' => [],
+        ]);
         return;
     }
 
@@ -119,6 +195,7 @@ function uuopera_dispatch_for_path(string $path): void
 
     $static = uuopera_cms_static_page_find($path);
     if ($static !== null) {
+        $GLOBALS['UUOPERA_CMS_STATIC_ID'] = $static['id'] ?? 0;
         $GLOBALS['UUOPERA_CMS_STATIC_TITLE'] = $static['title'];
         $GLOBALS['UUOPERA_CMS_STATIC_HTML'] = $static['html'];
         $GLOBALS['UUOPERA_CMS_STATIC_HEADER_SCHEMA'] = $static['header_schema'];
@@ -131,11 +208,21 @@ function uuopera_dispatch_for_path(string $path): void
         return;
     }
 
+    if (preg_match('#^/category/([a-z0-9_-]+)$#', $path, $catM)) {
+        $GLOBALS['UUOPERA_NEWS_CATEGORY_CODE'] = (string) $catM[1];
+        uuopera_page([
+            'title' => 'Новости - Бурятский театр оперы и балета',
+            'include' => '/local/templates/uuopera/includes/page_news_category.php',
+            'extra_css' => ['tpl/css/page-beige.css'],
+            'footer_js' => [],
+        ]);
+        return;
+    }
+
     $stubMap = [
-        '/documents' => 'Документы',
-        '/brandbook' => 'Брендбук',
-        '/category/oficialnaya-informaciya' => 'Официальная информация',
         '/soglasie-na-obrabotku-personalnykh-d' => 'Согласие на обработку персональных данных',
+        '/company/management' => 'Руководство',
+        '/company/vacancies' => 'Вакансии',
     ];
     if (isset($stubMap[$path])) {
         uuopera_stub_page($stubMap[$path], '');

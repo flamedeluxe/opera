@@ -179,6 +179,12 @@ $showHeroRadario = ($d['radario_hero_mode'] === 'afisha' && $d['radario_afisha_k
             </div>
             </div>
 
+    <?php if (trim((string) $d['content_html']) !== ''): ?>
+    <div class="flex flex-col gap-12 md:gap-15 2xl:gap-25 wrapper-main wrapper-max w-full">
+        <?= $d['content_html'] ?>
+    </div>
+    <?php endif; ?>
+
     <?php if ($hasGallery) {
         include __DIR__ . '/_afisha_slider_fragment.php';
     } ?>

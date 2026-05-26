@@ -6,29 +6,63 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 $projectCode = (string) ($GLOBALS['UUOPERA_PROJECT_CODE'] ?? '');
 if ($projectCode !== '') {
     $proj = uuopera_cms_project_by_code($projectCode);
-    ?>
-    <div class="flex flex-col gap-10 pt-32 wrapper-main wrapper-max" data-header-color-schema="blue">
-        <?php if ($proj === null) { ?>
-            <h1 class="text-h1">Проект</h1>
-            <p class="text-p2 max-w-2xl">Материал не найден. Добавьте элемент в инфоблок «Проекты» с символьным кодом <?= htmlspecialchars($projectCode, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>.</p>
-        <?php } else {
-            $pname = htmlspecialchars($proj['name'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
-            ?>
-            <h1 class="text-h1"><?= $pname ?></h1>
-            <?php if ($proj['image'] !== '') { ?>
-                <div class="block relative pb-16/9 overflow-hidden max-w-5xl">
-                    <img width="1920" height="1080" src="<?= htmlspecialchars($proj['image'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>"
-                         class="absolute image-cover wp-post-image" alt="<?= $pname ?>" decoding="async"
-                         <?php if ($proj['srcset'] !== '') { ?>srcset="<?= htmlspecialchars($proj['srcset'], ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>" sizes="(max-width: 1920px) 100vw, 1920px"<?php } ?> />
+
+    if ($proj === null) { ?>
+        <main class="page-padding">
+            <div class="wrapper-main wrapper-max pt-10">
+                <h1 class="text-h1">Проект не найден</h1>
+                <p class="text-p2 mt-6 max-w-2xl opacity-70">Символьный код: <?= htmlspecialchars($projectCode, ENT_QUOTES | ENT_HTML5, 'UTF-8') ?></p>
+            </div>
+        </main>
+    <?php } else {
+        $pname  = htmlspecialchars($proj['name'],   ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $pimg   = htmlspecialchars($proj['image'],  ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $psrcset = htmlspecialchars($proj['srcset'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        ?>
+    <main class="page-padding flex flex-col gap-20 2xl:gap-25">
+
+        <div class="page-padding pb-12 lg:pb-25 bg-beige overflow-hidden" data-header-color-schema="beige">
+            <div class="wrapper-main wrapper-max w-full pt-3 lg:pt-25">
+                <div class="relative">
+                    <div class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] mt-10 w-full px-15 hidden lg:block">
+                        <div class="relative pb-[40.74%] opacity-50">
+                            <svg class="absolute top-0 left-0 w-full h-full fill-white">
+                                <use xlink:href="#logo"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-5 relative xl:min-h-[500px]">
+                        <div class="lg:order-1">
+                            <div class="relative pb-16/9 min-h-full">
+                                <?php if ($proj['image'] !== '') { ?>
+                                    <img width="1920" height="1080" src="<?= $pimg ?>"
+                                         class="absolute image-cover wp-post-image" alt="<?= $pname ?>"
+                                         decoding="async" loading="lazy"
+                                         <?php if ($proj['srcset'] !== '') { ?>srcset="<?= $psrcset ?>" sizes="(max-width: 1920px) 100vw, 1920px"<?php } ?> />
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-12 lg:grid-cols-6 md:gap-5">
+                            <div class="flex flex-col justify-between gap-5 md:gap-16 md:col-span-10 lg:col-span-5">
+                                <h1 class="text-h1 text-balance"><?= $pname ?></h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <?php } ?>
-            <div class="text-p2 max-w-4xl">
+            </div>
+        </div>
+
+        <?php if (trim($proj['detail_html']) !== '') { ?>
+        <div class="wrapper-main wrapper-max w-full">
+            <div class="flex flex-col gap-20 text-p2">
                 <?= $proj['detail_html'] ?>
             </div>
+        </div>
         <?php } ?>
-    </div>
-    <?php
-    return;
+
+    </main>
+    <?php } ?>
+    <?php return;
 }
 
 $projects = uuopera_cms_projects_list();

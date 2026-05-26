@@ -25,7 +25,7 @@ function uuopera_cms_ensure_properties(int $iblockId, array $definitions): void
     }
 }
 
-function uuopera_cms_ensure_iblock(string $code, string $name, int $sort, array $propertyDefs): int
+function uuopera_cms_ensure_iblock(string $code, string $name, int $sort, array $propertyDefs, bool $useSections = false): int
 {
     $siteRes = CSite::GetList($by = 'sort', $order = 'asc', ['ACTIVE' => 'Y']);
     $siteId = 's1';
@@ -52,6 +52,12 @@ function uuopera_cms_ensure_iblock(string $code, string $name, int $sort, array 
     $row = CIBlock::GetList([], ['TYPE' => 'uuopera', 'CODE' => $code, 'CHECK_PERMISSIONS' => 'N'])->Fetch();
     if ($row) {
         $bid = (int) $row['ID'];
+        if ($useSections) {
+            (new CIBlock())->Update($bid, [
+                'SECTIONS' => 'Y',
+                'INDEX_SECTION' => 'Y',
+            ]);
+        }
     } else {
         $bid = (int) (new CIBlock())->Add([
             'ACTIVE' => 'Y',
@@ -61,9 +67,9 @@ function uuopera_cms_ensure_iblock(string $code, string $name, int $sort, array 
             'LID' => [$siteId],
             'SORT' => $sort,
             'GROUP_ID' => ['2' => 'R', '1' => 'X'],
-            'INDEX_SECTION' => 'N',
+            'INDEX_SECTION' => $useSections ? 'Y' : 'N',
             'INDEX_ELEMENT' => 'Y',
-            'SECTIONS' => 'N',
+            'SECTIONS' => $useSections ? 'Y' : 'N',
             'SECTION_PAGE_URL' => '',
             'LIST_PAGE_URL' => '',
             'DETAIL_PAGE_URL' => '',
@@ -82,8 +88,82 @@ function uuopera_cms_ensure_iblock(string $code, string $name, int $sort, array 
     return $bid;
 }
 
+function uuopera_cms_ensure_iblock_section(int $iblockId, string $sectionCode, string $sectionName, int $sort): int
+{
+    if ($iblockId <= 0 || !\Bitrix\Main\Loader::includeModule('iblock')) {
+        return 0;
+    }
+    $sectionCode = strtolower((string) (preg_replace('/[^a-z0-9_-]/', '', $sectionCode) ?? ''));
+    if ($sectionCode === '') {
+        return 0;
+    }
+    $secRes = CIBlockSection::GetList([], ['IBLOCK_ID' => $iblockId, '=CODE' => $sectionCode, 'CHECK_PERMISSIONS' => 'N'], false, ['ID']);
+    if ($row = $secRes->Fetch()) {
+        return (int) $row['ID'];
+    }
+    $id = (int) (new CIBlockSection())->Add([
+        'IBLOCK_ID' => $iblockId,
+        'ACTIVE' => 'Y',
+        'NAME' => $sectionName !== '' ? $sectionName : $sectionCode,
+        'CODE' => $sectionCode,
+        'SORT' => $sort,
+    ]);
+    return $id > 0 ? $id : 0;
+}
+
+/**
+ * @param array{
+ *   contacts?: int,
+ *   static_pages: int,
+ *   home_slides: int,
+ *   projects: int,
+ *   about: int,
+ *   service_faq: int
+ * } $ids
+ */
+function uuopera_cms_seed_iblock_admin_sections(array $ids): void
+{
+    if (!\Bitrix\Main\Loader::includeModule('iblock')) {
+        return;
+    }
+    $sp = (int) ($ids['static_pages'] ?? 0);
+    if ($sp > 0) {
+        uuopera_cms_ensure_iblock_section($sp, 'common', 'Общие страницы', 100);
+        uuopera_cms_ensure_iblock_section($sp, 'theatre', 'Театр', 200);
+        uuopera_cms_ensure_iblock_section($sp, 'visitors', 'Посетителям', 300);
+        uuopera_cms_ensure_iblock_section($sp, 'legal', 'Юридические страницы', 400);
+    }
+    $hs = (int) ($ids['home_slides'] ?? 0);
+    if ($hs > 0) {
+        uuopera_cms_ensure_iblock_section($hs, 'main_slider', 'Слайды главной', 100);
+    }
+    $pr = (int) ($ids['projects'] ?? 0);
+    if ($pr > 0) {
+        uuopera_cms_ensure_iblock_section($pr, 'current', 'Текущие', 100);
+        uuopera_cms_ensure_iblock_section($pr, 'archive', 'Архив', 200);
+    }
+    $ab = (int) ($ids['about'] ?? 0);
+    if ($ab > 0) {
+        uuopera_cms_ensure_iblock_section($ab, 'mission', 'Миссия и ценности', 100);
+        uuopera_cms_ensure_iblock_section($ab, 'history', 'История', 200);
+        uuopera_cms_ensure_iblock_section($ab, 'management', 'Руководство', 300);
+        uuopera_cms_ensure_iblock_section($ab, 'other', 'Прочее', 900);
+    }
+    $fq = (int) ($ids['service_faq'] ?? 0);
+    if ($fq > 0) {
+        uuopera_cms_ensure_iblock_section($fq, 'intro', 'Вводные блоки', 100);
+        uuopera_cms_ensure_iblock_section($fq, 'questions', 'Вопросы', 200);
+        uuopera_cms_ensure_iblock_section($fq, 'files', 'Файлы и реквизиты', 300);
+    }
+    $ct = (int) ($ids['contacts'] ?? 0);
+    if ($ct > 0) {
+        uuopera_cms_ensure_iblock_section($ct, 'main', 'Контент страницы', 100);
+    }
+}
+
 /**
  * @return array{
+ *   contacts: int,
  *   static_pages: int,
  *   home_slides: int,
  *   projects: int,
@@ -93,6 +173,72 @@ function uuopera_cms_ensure_iblock(string $code, string $name, int $sort, array 
  */
 function uuopera_cms_bootstrap_iblocks(): array
 {
+    $contactsProps = [
+        [
+            'NAME' => 'Адрес (HTML, колонка слева)',
+            'ACTIVE' => 'Y',
+            'SORT' => 100,
+            'CODE' => 'ADDRESS_HTML',
+            'PROPERTY_TYPE' => 'T',
+            'ROW_COUNT' => 12,
+            'COL_COUNT' => 80,
+        ],
+        [
+            'NAME' => 'Телефоны и email (HTML, сетка справа)',
+            'ACTIVE' => 'Y',
+            'SORT' => 110,
+            'CODE' => 'GRID_HTML',
+            'PROPERTY_TYPE' => 'T',
+            'ROW_COUNT' => 24,
+            'COL_COUNT' => 80,
+        ],
+        [
+            'NAME' => 'Карта: координаты (широта, долгота)',
+            'ACTIVE' => 'Y',
+            'SORT' => 120,
+            'CODE' => 'MAP_LATLNG',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 80,
+        ],
+        [
+            'NAME' => 'Карта: API-ключ Яндекс.Карт',
+            'ACTIVE' => 'Y',
+            'SORT' => 130,
+            'CODE' => 'MAP_API_KEY',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 80,
+        ],
+        [
+            'NAME' => 'Форма: URL отправки (action)',
+            'ACTIVE' => 'Y',
+            'SORT' => 140,
+            'CODE' => 'FORM_ACTION',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 200,
+        ],
+        [
+            'NAME' => 'Блок «обратная связь»: картинка (файл)',
+            'ACTIVE' => 'Y',
+            'SORT' => 150,
+            'CODE' => 'FEEDBACK_IMAGE',
+            'PROPERTY_TYPE' => 'F',
+            'MULTIPLE' => 'N',
+            'FILE_TYPE' => 'jpg, jpeg, png, gif, webp',
+        ],
+        [
+            'NAME' => 'Блок «обратная связь»: URL картинки (если без файла)',
+            'ACTIVE' => 'Y',
+            'SORT' => 160,
+            'CODE' => 'FEEDBACK_IMAGE_URL',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 500,
+        ],
+    ];
+
     $staticProps = [
         [
             'NAME' => 'Путь URL (например /documents)',
@@ -160,6 +306,22 @@ function uuopera_cms_bootstrap_iblocks(): array
             'PROPERTY_TYPE' => 'S',
             'ROW_COUNT' => 1,
             'COL_COUNT' => 200,
+        ],
+        [
+            'NAME' => 'Видео (MP4, горизонтальное)',
+            'ACTIVE' => 'Y',
+            'SORT' => 150,
+            'CODE' => 'VIDEO_MP4',
+            'PROPERTY_TYPE' => 'F',
+            'FILE_TYPE' => 'mp4,webm',
+        ],
+        [
+            'NAME' => 'Видео (MP4, вертикальное — для мобильных)',
+            'ACTIVE' => 'Y',
+            'SORT' => 160,
+            'CODE' => 'VIDEO_MP4_PORTRAIT',
+            'PROPERTY_TYPE' => 'F',
+            'FILE_TYPE' => 'mp4,webm',
         ],
     ];
 
@@ -246,28 +408,113 @@ function uuopera_cms_bootstrap_iblocks(): array
             'PROPERTY_TYPE' => 'F',
             'MULTIPLE' => 'N',
         ],
+        [
+            'NAME' => 'URL изображения сбоку (запасной)',
+            'ACTIVE' => 'Y',
+            'SORT' => 91,
+            'CODE' => 'SIDE_IMAGE_URL',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 500,
+        ],
+        [
+            'NAME' => 'Подпись к изображению сбоку',
+            'ACTIVE' => 'Y',
+            'SORT' => 92,
+            'CODE' => 'SIDE_CAPTION',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 200,
+        ],
+        [
+            'NAME' => 'URL диаграммы (запасной)',
+            'ACTIVE' => 'Y',
+            'SORT' => 97,
+            'CODE' => 'DIAGRAM_IMAGE_URL',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 500,
+        ],
     ];
 
     $faqProps = [
         [
-            'NAME' => 'Ответ (HTML)',
+            'NAME' => 'Тип элемента (service | intro | file)',
             'ACTIVE' => 'Y',
-            'SORT' => 100,
-            'CODE' => 'ANSWER_HTML',
+            'SORT' => 10,
+            'CODE' => 'ELEMENT_TYPE',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 20,
+        ],
+        [
+            'NAME' => 'Контактное лицо',
+            'ACTIVE' => 'Y',
+            'SORT' => 20,
+            'CODE' => 'CONTACT_PERSON',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 200,
+        ],
+        [
+            'NAME' => 'Телефон',
+            'ACTIVE' => 'Y',
+            'SORT' => 30,
+            'CODE' => 'PHONE',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 60,
+        ],
+        [
+            'NAME' => 'Email',
+            'ACTIVE' => 'Y',
+            'SORT' => 40,
+            'CODE' => 'EMAIL',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 100,
+        ],
+        [
+            'NAME' => 'URL изображения',
+            'ACTIVE' => 'Y',
+            'SORT' => 50,
+            'CODE' => 'IMAGE_URL',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 200,
+        ],
+        [
+            'NAME' => 'Дополнительное описание (HTML)',
+            'ACTIVE' => 'Y',
+            'SORT' => 60,
+            'CODE' => 'DESCRIPTION_EXTRA',
             'PROPERTY_TYPE' => 'T',
-            'ROW_COUNT' => 16,
+            'ROW_COUNT' => 10,
             'COL_COUNT' => 80,
+        ],
+        [
+            'NAME' => 'URL файла (для type=file)',
+            'ACTIVE' => 'Y',
+            'SORT' => 70,
+            'CODE' => 'FILE_URL',
+            'PROPERTY_TYPE' => 'S',
+            'ROW_COUNT' => 1,
+            'COL_COUNT' => 200,
         ],
     ];
 
     $ids = [
-        'static_pages' => uuopera_cms_ensure_iblock('uuopera_static_pages', 'Статические страницы', 430, $staticProps),
-        'home_slides' => uuopera_cms_ensure_iblock('uuopera_home_slides', 'Главная: слайды', 440, $slideProps),
-        'projects' => uuopera_cms_ensure_iblock('uuopera_projects', 'Проекты', 450, $projectProps),
-        'about' => uuopera_cms_ensure_iblock('uuopera_about_blocks', 'О театре: блоки', 460, $aboutProps),
-        'service_faq' => uuopera_cms_ensure_iblock('uuopera_service_faq', 'Платные услуги: вопросы', 470, $faqProps),
+        'contacts' => uuopera_cms_ensure_iblock('uuopera_contacts_settings', 'Страница «Контакты»', 426, $contactsProps, true),
+        'static_pages' => uuopera_cms_ensure_iblock('uuopera_static_pages', 'Статические страницы', 430, $staticProps, true),
+        'home_slides' => uuopera_cms_ensure_iblock('uuopera_home_slides', 'Главная: слайды', 440, $slideProps, true),
+        'projects' => uuopera_cms_ensure_iblock('uuopera_projects', 'Проекты', 450, $projectProps, true),
+        'about' => uuopera_cms_ensure_iblock('uuopera_about_blocks', 'О театре: блоки', 460, $aboutProps, true),
+        'service_faq' => uuopera_cms_ensure_iblock('uuopera_service_faq', 'Платные услуги', 470, $faqProps, true),
     ];
 
+    uuopera_cms_seed_iblock_admin_sections($ids);
+
+    Option::set('uuopera', 'cms_contacts_iblock_id', (string) $ids['contacts']);
     Option::set('uuopera', 'cms_static_pages_iblock_id', (string) $ids['static_pages']);
     Option::set('uuopera', 'cms_home_slides_iblock_id', (string) $ids['home_slides']);
     Option::set('uuopera', 'cms_projects_iblock_id', (string) $ids['projects']);

@@ -99,6 +99,16 @@ function uuopera_afisha_events_property_definitions(): array
             'COL_COUNT' => 80,
         ],
         [
+            'NAME' => 'Контент (HTML)',
+            'ACTIVE' => 'Y',
+            'SORT' => 410,
+            'CODE' => 'CONTENT_HTML',
+            'PROPERTY_TYPE' => 'T',
+            'ROW_COUNT' => 20,
+            'COL_COUNT' => 80,
+            'HINT' => 'Блок постановочной группы и прочих текстовых блоков после описания.',
+        ],
+        [
             'NAME' => 'ID слайдера',
             'ACTIVE' => 'Y',
             'SORT' => 500,
@@ -198,7 +208,7 @@ function uuopera_afisha_events_deactivate_legacy_gallery_url(int $iblockId): voi
     }
 }
 
-function uuopera_afisha_events_ensure_section(int $iblockId, string $sectionCode, string $sectionName): int
+function uuopera_afisha_events_ensure_section(int $iblockId, string $sectionCode, string $sectionName, int $sort = 100): int
 {
     $sectionCode = preg_replace('/[^a-z0-9_-]/i', '', $sectionCode) ?? '';
     if ($sectionCode === '') {
@@ -213,9 +223,31 @@ function uuopera_afisha_events_ensure_section(int $iblockId, string $sectionCode
         'ACTIVE' => 'Y',
         'NAME' => $sectionName !== '' ? $sectionName : $sectionCode,
         'CODE' => $sectionCode,
-        'SORT' => 100,
+        'SORT' => $sort,
     ]);
     return $id > 0 ? $id : 0;
+}
+
+function uuopera_afisha_events_seed_category_sections(int $iblockId): void
+{
+    if ($iblockId <= 0 || !\Bitrix\Main\Loader::includeModule('iblock')) {
+        return;
+    }
+    $rows = [
+        ['opera', 'Опера', 100],
+        ['ballet', 'Балет', 200],
+        ['concert', 'Концерты', 300],
+        ['excursions', 'Экскурсии', 400],
+        ['festivals', 'Фестивали', 500],
+        ['online', 'Онлайн', 600],
+        ['performances', 'Представления', 650],
+        ['no-category', 'Без категории', 700],
+        ['abonement', 'Абонемент', 750],
+        ['musical', 'Мюзикл', 800],
+    ];
+    foreach ($rows as $r) {
+        uuopera_afisha_events_ensure_section($iblockId, (string) $r[0], (string) $r[1], (int) $r[2]);
+    }
 }
 
 /**
@@ -278,6 +310,7 @@ function uuopera_afisha_events_bootstrap_iblock(): array
     uuopera_afisha_events_ensure_properties($bid, uuopera_afisha_events_property_definitions());
     uuopera_afisha_events_deactivate_legacy_hero_props($bid);
     uuopera_afisha_events_deactivate_legacy_gallery_url($bid);
+    uuopera_afisha_events_seed_category_sections($bid);
 
     return ['iblock_id' => $bid];
 }
