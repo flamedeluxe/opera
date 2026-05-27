@@ -47,7 +47,7 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
         $filter,
         false,
         ['nPageSize' => 12, 'iNumPage' => $navPage],
-        ['ID', 'NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'ACTIVE_FROM', 'CODE', 'DATE_ACTIVE_FROM']
+        ['ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PREVIEW_PICTURE', 'ACTIVE_FROM', 'CODE', 'DATE_ACTIVE_FROM']
     );
 
     $navPageCount = (int) ($res->NavPageCount ?? 1);
@@ -93,7 +93,10 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
             } elseif (!empty($item['ACTIVE_FROM'])) {
                 $dateStr = ConvertDateTime($item['ACTIVE_FROM'], 'DD.MM.YYYY');
             }
-            $previewText = (string) ($item['PREVIEW_TEXT'] ?? '');
+            $previewHtml = uuopera_afisha_card_teaser_html(
+                (string) ($item['PREVIEW_TEXT'] ?? ''),
+                (string) ($item['DETAIL_TEXT'] ?? '')
+            );
             ?>
         <div class="flex flex-col gap-5 relative group">
             <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="group-hover:[&_img]:scale-105 [&_img]:transition-transform [&_img]:duration-600 link-stretching">
@@ -108,8 +111,8 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
                 <div class="text-xs"><?= htmlspecialcharsbx($dateStr) ?></div>
                 <?php endif; ?>
                 <h3 class="text-h2"><?= htmlspecialcharsbx($name) ?></h3>
-                <?php if ($previewText !== ''): ?>
-                <div class="text-p3"><?= $previewText ?></div>
+                <?php if ($previewHtml !== ''): ?>
+                <div class="text-p3"><?= $previewHtml ?></div>
                 <?php endif; ?>
             </div>
         </div>

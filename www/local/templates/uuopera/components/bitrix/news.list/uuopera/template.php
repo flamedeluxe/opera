@@ -10,6 +10,22 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 /** @var array $arParams */
 
 $iblockId = uuopera_news_iblock_id();
+
+$uuNewsHasMore = false;
+$uuNewsNextUrl = '';
+$nav = $arResult['NAV_RESULT'] ?? null;
+if (is_object($nav)) {
+    $uuCurrentPage = max(1, (int) ($nav->NavPageNomer ?? 1));
+    $uuPageCount = max(1, (int) ($nav->NavPageCount ?? 1));
+    if ($uuCurrentPage < $uuPageCount) {
+        $uuNewsHasMore = true;
+        $path = strtok((string) ($_SERVER['REQUEST_URI'] ?? '/category/news/'), '?') ?: '/category/news/';
+        $params = $_GET;
+        $params['page'] = (string) ($uuCurrentPage + 1);
+        unset($params['PAGEN_1']);
+        $uuNewsNextUrl = $path . '?' . http_build_query($params);
+    }
+}
 ?>
 <div class="flex flex-col gap-16 2xl:gap-28 pt-32 wrapper-main wrapper-max">
     <h1 class="text-h1"><?= htmlspecialcharsbx($GLOBALS['UUOPERA_NEWS_LIST_TITLE'] ?? 'Новости') ?></h1>
@@ -47,10 +63,10 @@ $iblockId = uuopera_news_iblock_id();
             } elseif (!empty($item['ACTIVE_FROM'])) {
                 $dateStr = ConvertDateTime($item['ACTIVE_FROM'], 'DD.MM.YYYY');
             }
-            $previewText = '';
-            if (!empty($item['PREVIEW_TEXT'])) {
-                $previewText = (string) $item['PREVIEW_TEXT'];
-            }
+            $previewHtml = uuopera_afisha_card_teaser_html(
+                (string) ($item['PREVIEW_TEXT'] ?? ''),
+                (string) ($item['DETAIL_TEXT'] ?? '')
+            );
             ?>
         <div class="flex flex-col gap-5 relative group">
             <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="group-hover:[&_img]:scale-105 [&_img]:transition-transform [&_img]:duration-600 link-stretching">
@@ -65,17 +81,26 @@ $iblockId = uuopera_news_iblock_id();
                 <div class="text-xs"><?= htmlspecialcharsbx($dateStr) ?></div>
                 <?php endif; ?>
                 <h3 class="text-h2"><?= htmlspecialcharsbx($name) ?></h3>
-                <?php if ($previewText !== ''): ?>
-                <div class="text-p3"><?= $previewText ?></div>
+                <?php if ($previewHtml !== ''): ?>
+                <div class="text-p3"><?= $previewHtml ?></div>
                 <?php endif; ?>
             </div>
         </div>
         <?php endforeach; ?>
     </div>
 
-    <?php if (!empty($arResult['NAV_STRING'])): ?>
-    <div class="flex justify-center">
-        <?= $arResult['NAV_STRING'] ?>
+    <?php if ($uuNewsHasMore && $uuNewsNextUrl !== ''): ?>
+    <div class="flex justify-center" data-pagination="news">
+        <a href="<?= htmlspecialcharsbx($uuNewsNextUrl) ?>"
+           class="group text-p3 lowercase button-default p-5 w-full lg:max-w-[680px] border-b border-current"
+           data-pagination-load-next="news">
+            <span class="relative px-4 link-hover">
+                <span>загрузить еще</span>
+                <span class="absolute top-[50%] left-full -translate-y-[50%] hidden group-[&.loading]:block">
+                    <div class="spinner w-4 h-4 border-2"></div>
+                </span>
+            </span>
+        </a>
     </div>
     <?php endif; ?>
     <?php endif; ?>

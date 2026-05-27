@@ -45,6 +45,8 @@ function uuopera_afisha_parse_empty_payload(): array
         'radario_hero_event_id' => 0,
         'sessions' => [],
         'participants_html' => '',
+        'wp_post_id' => 0,
+        'session_datetimes' => [],
         'description_html' => '',
         'content_html' => '',
         'footer_duration' => '',
@@ -227,6 +229,17 @@ function uuopera_afisha_parse_uuopera_page(string $html, string $category = ''):
                 // Ссылки на персон ведут на uuopera.ru — делаем относительными для локального сайта
                 $participantsHtml = str_replace('https://uuopera.ru/', '/', $participantsHtml);
                 $out['participants_html'] = $participantsHtml;
+
+                // Извлекаем WP post ID из data-id="..."
+                if (preg_match('/data-particiants-date-select[^>]*data-id="(\d+)"/u', $participantsHtml, $wpIdM)
+                    || preg_match('/data-id="(\d+)"[^>]*data-particiants-date-select/u', $participantsHtml, $wpIdM)) {
+                    $out['wp_post_id'] = (int) $wpIdM[1];
+                }
+
+                // Извлекаем SQL-даты из <option value="YYYY-MM-DD HH:MM:SS">
+                if (preg_match_all('/<option[^>]+value="(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})"/u', $participantsHtml, $dtM)) {
+                    $out['session_datetimes'] = $dtM[1];
+                }
             }
         }
     }

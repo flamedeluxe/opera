@@ -195,15 +195,18 @@ function uuopera_dispatch_for_path(string $path): void
 
     $static = uuopera_cms_static_page_find($path);
     if ($static !== null) {
+        $layout = uuopera_cms_static_page_layout($path);
         $GLOBALS['UUOPERA_CMS_STATIC_ID'] = $static['id'] ?? 0;
         $GLOBALS['UUOPERA_CMS_STATIC_TITLE'] = $static['title'];
         $GLOBALS['UUOPERA_CMS_STATIC_HTML'] = $static['html'];
         $GLOBALS['UUOPERA_CMS_STATIC_HEADER_SCHEMA'] = $static['header_schema'];
+        $GLOBALS['UUOPERA_CMS_STATIC_WRAPPER_CLASS'] = $layout['wrapper_class'];
+        $GLOBALS['UUOPERA_CMS_STATIC_HEADER_SCHEMA_ATTR'] = $layout['header_schema_attr'];
         uuopera_page([
             'title_callback' => 'uuopera_cms_static_page_apply_title',
             'include' => '/local/templates/uuopera/includes/page_static_cms.php',
-            'extra_css' => ['tpl/css/page-beige.css'],
-            'footer_js' => [],
+            'extra_css' => $layout['extra_css'],
+            'footer_js' => uuopera_cms_static_page_footer_js($path),
         ]);
         return;
     }

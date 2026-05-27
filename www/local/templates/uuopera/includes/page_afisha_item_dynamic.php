@@ -167,9 +167,41 @@ $showHeroRadario = ($d['radario_hero_mode'] === 'afisha' && $d['radario_afisha_k
             </div>
 
     <div class="flex flex-col gap-15 md:grid md:grid-cols-12 md:gap-x-5 wrapper-main wrapper-max w-full">
-        <?php if (trim((string) $d['participants_html']) !== ''): ?>
+        <?php
+        $participantsJson = is_array($d['participants_json'] ?? null) ? $d['participants_json'] : [];
+        $participantsHtml = trim((string) ($d['participants_html'] ?? ''));
+        if ($participantsJson !== []):
+            $firstCastHtml = reset($participantsJson);
+            $multiDate = count($participantsJson) > 1;
+        ?>
                     <div class="flex flex-col gap-8 justify-between md:grid md:grid-cols-7 lg:grid-cols-6 xl:grid-cols-5 md:col-span-7 lg:col-span-6 lg:gap-x-5 xl:col-span-5 text-p2">
-                <?= $d['participants_html'] ?>
+                <div class="flex flex-col gap-6 md:col-span-6 xl:col-span-4">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="text-h2">Состав</div>
+                        <?php if ($multiDate): ?>
+                        <div class="flex gap-2 items-center">
+                            <div class="spinner w-4 h-4 border-2 hidden [&.loading]:block" data-particiants-spinner></div>
+                            <select name="date" class="outline-none cursor-pointer" data-code="<?= htmlspecialcharsbx($code) ?>" data-particiants-date-select>
+                                <?php foreach (array_keys($participantsJson) as $sqlDt): ?>
+                                    <?php
+                                    $ts = strtotime($sqlDt);
+                                    static $monthNames = [1=>'января',2=>'февраля',3=>'марта',4=>'апреля',5=>'мая',6=>'июня',7=>'июля',8=>'августа',9=>'сентября',10=>'октября',11=>'ноября',12=>'декабря'];
+                                    $label = $ts ? ((int)date('j',$ts) . ' ' . ($monthNames[(int)date('n',$ts)] ?? '') . ' ' . date('H:i',$ts)) : $sqlDt;
+                                    ?>
+                                    <option value="<?= htmlspecialcharsbx($sqlDt) ?>"><?= htmlspecialcharsbx($label) ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="flex flex-col gap-3" data-particiants-container>
+                        <?= $firstCastHtml ?>
+                    </div>
+                </div>
+                    </div>
+        <?php elseif ($participantsHtml !== ''): ?>
+                    <div class="flex flex-col gap-8 justify-between md:grid md:grid-cols-7 lg:grid-cols-6 xl:grid-cols-5 md:col-span-7 lg:col-span-6 lg:gap-x-5 xl:col-span-5 text-p2">
+                <?= $participantsHtml ?>
                     </div>
         <?php endif; ?>
                     <div class="flex flex-col gap-8 justify-between md:grid md:grid-cols-7 lg:grid-cols-6 xl:grid-cols-5 md:col-span-7 lg:col-span-6 lg:gap-x-5 xl:col-span-5 lg:col-start-7 xl:col-start-7 text-p2">
@@ -188,4 +220,16 @@ $showHeroRadario = ($d['radario_hero_mode'] === 'afisha' && $d['radario_afisha_k
     <?php if ($hasGallery) {
         include __DIR__ . '/_afisha_slider_fragment.php';
     } ?>
+
+    <?php if ($uuoperaAfishaIsAdmin && (int) ($d['element_id'] ?? 0) > 0): ?>
+    <div class="wrapper-main wrapper-max w-full">
+        <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#f5f0eb;border:1px solid #ddd;font-size:13px;border-radius:2px">
+            <span style="opacity:.6">Панель администратора:</span>
+            <a href="/local/admin/afisha_sessions_edit.php?id=<?= (int) $d['element_id'] ?>" target="_blank"
+               style="color:#5b7fbe;text-decoration:none;font-weight:500">✎ Сеансы и состав</a>
+            <a href="/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=<?= $iblockId ?? uuopera_afisha_events_iblock_id() ?>&type=uuopera&ID=<?= (int) $d['element_id'] ?>&lang=ru" target="_blank"
+               style="color:#5b7fbe;text-decoration:none">Открыть в Bitrix ↗</a>
+        </div>
+    </div>
+    <?php endif; ?>
 </main>

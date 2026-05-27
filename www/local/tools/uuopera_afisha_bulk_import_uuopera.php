@@ -143,6 +143,37 @@ foreach ($urls as $url) {
 
     $sessionsJson = json_encode($payload['sessions'], JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
 
+    // Загружаем состав для каждой даты с WP REST API
+    $participantsJsonStr = '';
+    $wpPostId = (int) ($payload['wp_post_id'] ?? 0);
+    $sessionDatetimes = is_array($payload['session_datetimes'] ?? null) ? $payload['session_datetimes'] : [];
+    if ($wpPostId > 0 && $sessionDatetimes !== []) {
+        $participantsMap = [];
+        foreach ($sessionDatetimes as $sqlDt) {
+            $apiUrl = 'https://uuopera.ru/wp-json/uuopera/v1/event-participants/' . $wpPostId
+                . '?date=' . urlencode($sqlDt);
+            try {
+                $ctx = stream_context_create(['http' => ['timeout' => 10, 'ignore_errors' => true]]);
+                $apiBody = @file_get_contents($apiUrl, false, $ctx);
+                if ($apiBody !== false) {
+                    $apiData = json_decode($apiBody, true);
+                    if (is_array($apiData) && ($apiData['status'] ?? '') === 'success' && isset($apiData['html'])) {
+                        $castHtml = str_replace('https://uuopera.ru/', '/', (string) $apiData['html']);
+                        $participantsMap[$sqlDt] = $castHtml;
+                    }
+                }
+            } catch (Throwable $e) {
+                // Пропускаем ошибки API для отдельных дат
+            }
+            if ($sleepSec > 0) {
+                usleep((int) ($sleepSec * 500_000)); // половина паузы между датами
+            }
+        }
+        if ($participantsMap !== []) {
+            $participantsJsonStr = json_encode($participantsMap, JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
+        }
+    }
+
     $scalar = [
         'CATEGORY' => $category,
         'LAYOUT' => (string) ($payload['layout'] ?? 'event'),
@@ -155,6 +186,7 @@ foreach ($urls as $url) {
             : '',
         'SESSIONS_JSON' => $sessionsJson,
         'PARTICIPANTS_HTML' => (string) ($payload['participants_html'] ?? ''),
+        'PARTICIPANTS_JSON' => $participantsJsonStr,
         'CONTENT_HTML' => (string) ($payload['content_html'] ?? ''),
         'SLIDER_ID' => (string) ($payload['slider_id'] ?? ''),
         'FOOTER_DURATION' => (string) ($payload['footer_duration'] ?? ''),

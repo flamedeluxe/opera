@@ -27,3 +27,22 @@ foreach ($arResult['ITEMS'] as &$item) {
     }
 }
 unset($item);
+
+$nav = $arResult['NAV_RESULT'] ?? null;
+$currentPage = 1;
+$pageCount = 1;
+if (is_object($nav)) {
+    $currentPage = max(1, (int) ($nav->NavPageNomer ?? 1));
+    $pageCount = max(1, (int) ($nav->NavPageCount ?? 1));
+}
+
+$arResult['UUOPERA_HAS_MORE'] = $currentPage < $pageCount;
+$arResult['UUOPERA_NEXT_PAGE_URL'] = '';
+if ($arResult['UUOPERA_HAS_MORE']) {
+    $path = strtok((string) ($_SERVER['REQUEST_URI'] ?? '/category/news/'), '?') ?: '/category/news/';
+    $params = $_GET;
+    $next = $currentPage + 1;
+    $params['page'] = (string) $next;
+    unset($params['PAGEN_1']);
+    $arResult['UUOPERA_NEXT_PAGE_URL'] = $path . '?' . http_build_query($params);
+}

@@ -17,8 +17,11 @@ if (empty($arResult)) {
 
 $item = $arResult;
 $name        = (string) ($item['NAME'] ?? '');
-$previewText = (string) ($item['PREVIEW_TEXT'] ?? '');
-$detailText  = (string) ($item['DETAIL_TEXT'] ?? '');
+$previewHtml = uuopera_afisha_card_teaser_html(
+    (string) ($item['PREVIEW_TEXT'] ?? ''),
+    (string) ($item['DETAIL_TEXT'] ?? '')
+);
+$detailText  = uuopera_html_decode_content((string) ($item['DETAIL_TEXT'] ?? ''));
 $dateStr = '';
 if (!empty($item['DISPLAY_ACTIVE_FROM'])) {
     $dateStr = (string) $item['DISPLAY_ACTIVE_FROM'];
@@ -67,8 +70,8 @@ foreach (['DETAIL_PICTURE', 'PREVIEW_PICTURE'] as $picField) {
                     <?php if ($dateStr !== ''): ?>
                     <div class="text-p3"><?= htmlspecialcharsbx($dateStr) ?></div>
                     <?php endif; ?>
-                    <?php if ($previewText !== ''): ?>
-                    <div class="text-p1"><?= $previewText ?></div>
+                    <?php if ($previewHtml !== ''): ?>
+                    <div class="text-p1"><?= $previewHtml ?></div>
                     <?php endif; ?>
                 </div>
             </div>

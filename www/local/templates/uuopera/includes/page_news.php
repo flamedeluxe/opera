@@ -6,6 +6,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
+$pageNum = isset($_GET['page']) ? max(1, (int) $_GET['page']) : 0;
+if ($pageNum > 0) {
+    $_REQUEST['PAGEN_1'] = $pageNum;
+    $_GET['PAGEN_1'] = $pageNum;
+}
+
 /** @var CMain $APPLICATION */
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
@@ -18,7 +24,7 @@ $APPLICATION->IncludeComponent(
         'SORT_ORDER1' => 'DESC',
         'SORT_BY2' => 'SORT',
         'SORT_ORDER2' => 'ASC',
-        'FIELD_CODE' => ['NAME', 'DATE_ACTIVE_FROM', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+        'FIELD_CODE' => ['NAME', 'DATE_ACTIVE_FROM', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
         'PROPERTY_CODE' => [],
         'CHECK_DATES' => 'Y',
         'DISPLAY_BOTTOM_PAGER' => 'Y',

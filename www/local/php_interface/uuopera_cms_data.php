@@ -106,6 +106,79 @@ function uuopera_cms_normalize_request_path(string $path): string
     return $path === '' ? '/' : $path;
 }
 
+function uuopera_cms_static_page_fallback_html(string $requestPath): string
+{
+    $norm = uuopera_cms_normalize_request_path($requestPath);
+    $files = [
+        '/documents' => '_cms_documents_body.html',
+        '/brandbook' => '_cms_brandbook_body.html',
+    ];
+    if (!isset($files[$norm])) {
+        return '';
+    }
+    $doc = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT'] ?? ''), '/');
+    $file = $doc . '/local/templates/uuopera/includes/' . $files[$norm];
+    if (!is_file($file)) {
+        return '';
+    }
+
+    return uuopera_html_decode_content((string) file_get_contents($file));
+}
+
+function uuopera_cms_static_page_prepare_html(string $requestPath, string $html): string
+{
+    $norm = uuopera_cms_normalize_request_path($requestPath);
+    if ($norm === '/brandbook' && trim($html) === '') {
+        $fallback = uuopera_cms_static_page_fallback_html($requestPath);
+        if ($fallback !== '') {
+            return $fallback;
+        }
+    }
+    if ($norm === '/documents') {
+        if (trim($html) === '') {
+            $fallback = uuopera_cms_static_page_fallback_html($requestPath);
+            if ($fallback !== '') {
+                return $fallback;
+            }
+        }
+
+        return uuopera_html_prepare_documents_html($html);
+    }
+
+    return $html;
+}
+
+function uuopera_cms_static_page_footer_js(string $requestPath): array
+{
+    $norm = uuopera_cms_normalize_request_path($requestPath);
+    if ($norm === '/documents') {
+        return ['tpl/js/uuopera-documents-spoilers.js'];
+    }
+
+    return [];
+}
+
+/**
+ * @return array{wrapper_class: string, extra_css: list<string>, header_schema_attr: bool}
+ */
+function uuopera_cms_static_page_layout(string $requestPath): array
+{
+    $norm = uuopera_cms_normalize_request_path($requestPath);
+    if (in_array($norm, ['/documents', '/brandbook'], true)) {
+        return [
+            'wrapper_class'       => 'flex flex-col gap-16 2xl:gap-28 pt-32 wrapper-main wrapper-max',
+            'extra_css'           => [],
+            'header_schema_attr'  => $norm === '/brandbook',
+        ];
+    }
+
+    return [
+        'wrapper_class'       => 'wrapper-main wrapper-max py-24 md:py-32 text-p2',
+        'extra_css'           => ['tpl/css/page-beige.css'],
+        'header_schema_attr'  => true,
+    ];
+}
+
 /**
  * @return array{title: string, html: string, header_schema: string}|null
  */
@@ -157,6 +230,9 @@ function uuopera_cms_static_page_find(string $requestPath): ?array
             }
         }
     }
+
+    $html = uuopera_html_decode_content($html);
+    $html = uuopera_cms_static_page_prepare_html($norm, $html);
 
     return [
         'id'            => $elId,
@@ -274,7 +350,7 @@ function uuopera_cms_home_slides_list(): array
         $out[] = [
             'name'               => trim((string) ($f['NAME'] ?? '')),
             'link_url'           => $strVal($p['LINK_URL'] ?? null) ?: '/afisha/',
-            'subtext_html'       => $strVal($p['SUBTEXT_HTML'] ?? null),
+            'subtext_html'       => uuopera_html_decode_content($strVal($p['SUBTEXT_HTML'] ?? null)),
             'age_mark'           => $strVal($p['AGE_MARK'] ?? null),
             'radario_afisha_key' => $strVal($p['RADARIO_AFISHA_KEY'] ?? null),
             'intickets_url'      => $strVal($p['INTICKETS_URL'] ?? null),
@@ -363,7 +439,7 @@ function uuopera_cms_projects_list(): array
             'code' => $code,
             'name' => trim((string) ($row['NAME'] ?? '')),
             'url' => $url,
-            'teaser_html' => $getProp($rawProps, $elId, 'TEASER_HTML'),
+            'teaser_html' => uuopera_html_decode_content($getProp($rawProps, $elId, 'TEASER_HTML')),
             'image' => $img,
             'srcset' => $srcset,
         ];
@@ -420,7 +496,7 @@ function uuopera_cms_project_by_code(string $code): ?array
 
     return [
         'name' => html_entity_decode(trim((string) ($row['NAME'] ?? '')), ENT_QUOTES | ENT_HTML5, 'UTF-8'),
-        'detail_html' => (string) ($row['DETAIL_TEXT'] ?? ''),
+        'detail_html' => uuopera_html_decode_content((string) ($row['DETAIL_TEXT'] ?? '')),
         'image' => $img,
         'srcset' => $srcset,
     ];
@@ -477,12 +553,13 @@ function uuopera_about_get_data(): array
     $htmlVal = static function (array $prop): string {
         $v = $prop['VALUE'] ?? '';
         if (is_array($v) && isset($v['TEXT'])) {
-            return (string) $v['TEXT'];
+            return uuopera_html_decode_content((string) $v['TEXT']);
         }
         if (is_array($v)) {
-            return trim((string) ($v[0] ?? ''));
+            return uuopera_html_decode_content(trim((string) ($v[0] ?? '')));
         }
-        return (string) $v;
+
+        return uuopera_html_decode_content((string) $v);
     };
 
     $timeline = [];
@@ -549,9 +626,8 @@ function uuopera_services_read_iblock(): array
         return ['intro_html' => '', 'files' => [], 'items' => []];
     }
 
-    // GetFields() HTML-encodes string values; this reverses it
     $decode = static function (string $v): string {
-        return html_entity_decode($v, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        return uuopera_html_decode_content($v);
     };
 
     // Read a single string property via GetProperty() — works in Bitrix demo mode
@@ -587,7 +663,7 @@ function uuopera_services_read_iblock(): array
         $type = strtolower($getProp($iblockId, $elId, 'ELEMENT_TYPE'));
 
         if ($type === 'intro') {
-            $introHtml = (string) ($row['DETAIL_TEXT'] ?? '');
+            $introHtml = uuopera_html_decode_content((string) ($row['DETAIL_TEXT'] ?? ''));
         } elseif ($type === 'file') {
             $url = $getProp($iblockId, $elId, 'FILE_URL');
             if ($url !== '') {
@@ -597,7 +673,7 @@ function uuopera_services_read_iblock(): array
         } else {
             $items[] = [
                 'name'              => $name,
-                'description'       => (string) ($row['DETAIL_TEXT'] ?? ''),
+                'description'       => uuopera_html_decode_content((string) ($row['DETAIL_TEXT'] ?? '')),
                 'contact_person'    => $getProp($iblockId, $elId, 'CONTACT_PERSON'),
                 'phone'             => $getProp($iblockId, $elId, 'PHONE'),
                 'email'             => $getProp($iblockId, $elId, 'EMAIL'),
@@ -715,8 +791,8 @@ HTML,
     }
 
     return [
-        'address_html' => $pick($addressI, 'contacts_address_html', $defaults['address_html']),
-        'grid_html' => $pick($gridI, 'contacts_grid_html', $defaults['grid_html']),
+        'address_html' => uuopera_html_decode_content($pick($addressI, 'contacts_address_html', $defaults['address_html'])),
+        'grid_html' => uuopera_html_decode_content($pick($gridI, 'contacts_grid_html', $defaults['grid_html'])),
         'map_latlng' => $pickLine($latI, 'contacts_map_latlng', $defaults['map_latlng']),
         'map_api_key' => $pickLine($keyI, 'contacts_map_api_key', $defaults['map_api_key']),
         'feedback_image' => $feedback,
@@ -901,8 +977,247 @@ function uuopera_persone_by_slug(string $slug): ?array
         'name'        => html_entity_decode(trim((string) ($row['NAME'] ?? '')), ENT_QUOTES | ENT_HTML5, 'UTF-8'),
         'role'        => $role,
         'photo'       => $photo,
-        'detail_html' => (string) ($row['DETAIL_TEXT'] ?? ''),
+        'detail_html' => uuopera_html_decode_content((string) ($row['DETAIL_TEXT'] ?? '')),
     ];
+}
+
+function uuopera_persone_slug_matches_url(string $url, string $slug): bool
+{
+    $slug = trim($slug);
+    if ($slug === '') {
+        return false;
+    }
+    $url = strtolower(trim($url));
+    if ($url === '') {
+        return false;
+    }
+    $encoded = rawurlencode($slug);
+    $candidates = [
+        '/persone/' . $slug . '/',
+        '/persone/' . $slug,
+        '/persone/' . $encoded . '/',
+        '/persone/' . $encoded,
+    ];
+
+    return in_array($url, $candidates, true)
+        || str_contains($url, '/persone/' . $slug)
+        || str_contains($url, '/persone/' . $encoded);
+}
+
+/**
+ * @param array{label: string, event_id: int, sql_dt: string} $session
+ */
+function uuopera_persone_session_is_upcoming(array $session): bool
+{
+    $sqlDt = trim((string) ($session['sql_dt'] ?? ''));
+    if ($sqlDt !== '') {
+        $ts = strtotime($sqlDt);
+
+        return $ts !== false && $ts >= time();
+    }
+
+    static $monthMap = [
+        'января' => 1, 'февраля' => 2, 'марта' => 3, 'апреля' => 4,
+        'мая' => 5, 'июня' => 6, 'июля' => 7, 'августа' => 8,
+        'сентября' => 9, 'октября' => 10, 'ноября' => 11, 'декабря' => 12,
+    ];
+    $label = trim((string) ($session['label'] ?? ''));
+    if ($label === '') {
+        return false;
+    }
+    if (!preg_match('/^(\d{1,2})\s+(' . implode('|', array_keys($monthMap)) . ')(?:\s+(\d{2}:\d{2}))?/u', $label, $m)) {
+        return true;
+    }
+    $day = (int) $m[1];
+    $monthNum = $monthMap[$m[2]] ?? 0;
+    $timeParts = isset($m[3]) ? explode(':', $m[3]) : ['0', '0'];
+    $year = (int) date('Y');
+    $ts = mktime((int) $timeParts[0], (int) ($timeParts[1] ?? 0), 0, $monthNum, $day, $year);
+    if ($ts < time()) {
+        $ts = mktime((int) $timeParts[0], (int) ($timeParts[1] ?? 0), 0, $monthNum, $day, $year + 1);
+    }
+
+    return $ts >= time();
+}
+
+/**
+ * События афиши, в составе которых участвует персона (как на uuopera.ru/persone/{slug}/).
+ *
+ * @return list<array{
+ *   url: string,
+ *   name: string,
+ *   date_labels: list<string>,
+ *   roles: list<string>,
+ *   hero_image: string,
+ *   hero_srcset: string,
+ *   sort_ts: int
+ * }>
+ */
+function uuopera_persone_afisha_events_for_slug(string $slug): array
+{
+    $slug = trim($slug);
+    if ($slug === '' || !Loader::includeModule('iblock')) {
+        return [];
+    }
+    $iblockId = uuopera_afisha_events_iblock_id();
+    if ($iblockId <= 0) {
+        return [];
+    }
+
+    $res = CIBlockElement::GetList(
+        ['SORT' => 'ASC', 'ID' => 'ASC'],
+        ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y', 'CHECK_PERMISSIONS' => 'N'],
+        false,
+        false,
+        ['ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'IBLOCK_SECTION_ID']
+    );
+
+    $out = [];
+    while ($row = $res->Fetch()) {
+        $elementId = (int) ($row['ID'] ?? 0);
+        $code = trim((string) ($row['CODE'] ?? ''));
+        if ($elementId <= 0 || $code === '') {
+            continue;
+        }
+
+        $castByDate = uuopera_afisha_admin_cast_load_map_raw($iblockId, $elementId);
+        if ($castByDate === []) {
+            continue;
+        }
+
+        $rolesByDate = [];
+        $undatedRoles = [];
+        foreach ($castByDate as $sqlDt => $cast) {
+            $matchedRoles = [];
+            foreach ($cast as $entry) {
+                if (!is_array($entry)) {
+                    continue;
+                }
+                if (!uuopera_persone_slug_matches_url((string) ($entry['url'] ?? ''), $slug)) {
+                    continue;
+                }
+                $role = trim((string) ($entry['role'] ?? ''));
+                if ($role === '' || mb_strtolower($role, 'UTF-8') === 'состав') {
+                    continue;
+                }
+                $matchedRoles[] = $role;
+            }
+            if ($matchedRoles === []) {
+                continue;
+            }
+            $matchedRoles = array_values(array_unique($matchedRoles));
+            if ((string) $sqlDt === '') {
+                $undatedRoles = array_values(array_unique(array_merge($undatedRoles, $matchedRoles)));
+            } else {
+                $rolesByDate[(string) $sqlDt] = $matchedRoles;
+            }
+        }
+
+        if ($rolesByDate === [] && $undatedRoles === []) {
+            continue;
+        }
+
+        $sessions = uuopera_afisha_admin_parse_sessions(
+            uuopera_afisha_admin_read_prop($iblockId, $elementId, 'SESSIONS_JSON')
+        );
+
+        $dateLabels = [];
+        $sortTs = PHP_INT_MAX;
+        $roles = [];
+
+        if ($undatedRoles !== []) {
+            $roles = $undatedRoles;
+            foreach ($sessions as $session) {
+                if (!uuopera_persone_session_is_upcoming($session)) {
+                    continue;
+                }
+                $label = trim((string) ($session['label'] ?? ''));
+                if ($label === '') {
+                    continue;
+                }
+                $dateLabels[] = $label;
+                $sqlDt = trim((string) ($session['sql_dt'] ?? ''));
+                $ts = $sqlDt !== '' ? strtotime($sqlDt) : false;
+                if ($ts !== false && $ts < $sortTs) {
+                    $sortTs = (int) $ts;
+                }
+            }
+        } else {
+            foreach ($sessions as $session) {
+                $sqlDt = trim((string) ($session['sql_dt'] ?? ''));
+                if ($sqlDt === '' || !isset($rolesByDate[$sqlDt])) {
+                    continue;
+                }
+                if (!uuopera_persone_session_is_upcoming($session)) {
+                    continue;
+                }
+                foreach ($rolesByDate[$sqlDt] as $r) {
+                    $roles[] = $r;
+                }
+                $label = trim((string) ($session['label'] ?? ''));
+                if ($label === '') {
+                    $label = uuopera_afisha_admin_cast_label($sqlDt);
+                }
+                $dateLabels[] = $label;
+                $ts = strtotime($sqlDt);
+                if ($ts !== false && $ts < $sortTs) {
+                    $sortTs = (int) $ts;
+                }
+            }
+            $roles = array_values(array_unique($roles));
+        }
+
+        $dateLabels = array_values(array_unique($dateLabels));
+        if ($dateLabels === []) {
+            continue;
+        }
+
+        $propsRes = CIBlockElement::GetProperty($iblockId, $elementId, [], ['CODE' => 'CATEGORY']);
+        $category = '';
+        if ($propRow = $propsRes->Fetch()) {
+            $category = trim((string) ($propRow['VALUE'] ?? ''));
+        }
+        $sectionId = (int) ($row['IBLOCK_SECTION_ID'] ?? 0);
+        $catSlug = uuopera_afisha_resolve_listing_category_slug(
+            ['CATEGORY' => ['VALUE' => $category]],
+            $code,
+            $sectionId,
+            $iblockId
+        );
+
+        $previewId = (int) ($row['PREVIEW_PICTURE'] ?? 0);
+        $heroImage = '';
+        $heroSrcset = '';
+        if ($previewId > 0) {
+            $path = CFile::GetPath($previewId);
+            if ($path !== false && $path !== '') {
+                $heroImage = (string) $path;
+            }
+            $heroSrcset = uuopera_afisha_hero_srcset_from_file_id($previewId);
+        }
+
+        $out[] = [
+            'url' => '/afisha/' . rawurlencode($catSlug) . '/' . rawurlencode($code) . '/',
+            'name' => trim((string) ($row['NAME'] ?? '')),
+            'date_labels' => $dateLabels,
+            'roles' => $roles,
+            'hero_image' => $heroImage,
+            'hero_srcset' => $heroSrcset,
+            'sort_ts' => $sortTs === PHP_INT_MAX ? 0 : $sortTs,
+        ];
+    }
+
+    usort($out, static function (array $a, array $b): int {
+        $ta = (int) ($a['sort_ts'] ?? 0);
+        $tb = (int) ($b['sort_ts'] ?? 0);
+        if ($ta === $tb) {
+            return strcmp((string) ($a['name'] ?? ''), (string) ($b['name'] ?? ''));
+        }
+
+        return $ta <=> $tb;
+    });
+
+    return $out;
 }
 
 /** @param CMain $APPLICATION */

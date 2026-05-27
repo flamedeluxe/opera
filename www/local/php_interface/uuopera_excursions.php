@@ -239,7 +239,7 @@ function uuopera_excursion_get_data(string $code): array
         'sessions' => $sessions,
         'gallery' => $gallery,
         'slider_id' => $sliderId,
-        'body_html' => (string) ($fields['DETAIL_TEXT'] ?? ''),
+        'body_html' => uuopera_html_decode_content((string) ($fields['DETAIL_TEXT'] ?? '')),
         'footer_duration' => $str($props['FOOTER_DURATION'] ?? []),
         'footer_price' => $str($props['FOOTER_PRICE'] ?? []),
     ];

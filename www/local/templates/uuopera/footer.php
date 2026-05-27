@@ -11,8 +11,10 @@ $jsList = $GLOBALS['UUOPERA_FOOTER_JS'] ?? [];
 if (is_array($jsList)) {
     foreach ($jsList as $jsRel) {
         $src = $uuoperaTpl . '/' . ltrim((string) $jsRel, '/');
+        $absPath = $_SERVER['DOCUMENT_ROOT'] . '/local/templates/uuopera/' . ltrim((string) $jsRel, '/');
+        $ver = is_file($absPath) ? filemtime($absPath) : '1';
         $pageScripts .= '<script type="text/javascript" src="'
-            . htmlspecialchars($src, ENT_QUOTES | ENT_HTML5, defined('SITE_CHARSET') ? SITE_CHARSET : 'UTF-8')
+            . htmlspecialchars($src . '?v=' . $ver, ENT_QUOTES | ENT_HTML5, defined('SITE_CHARSET') ? SITE_CHARSET : 'UTF-8')
             . '"></script>' . "\n";
     }
 }

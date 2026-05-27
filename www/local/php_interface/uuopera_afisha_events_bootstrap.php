@@ -88,6 +88,7 @@ function uuopera_afisha_events_property_definitions(): array
             'PROPERTY_TYPE' => 'T',
             'ROW_COUNT' => 16,
             'COL_COUNT' => 80,
+            'HINT' => 'Редактируется на вкладке «Сеансы» в карточке события.',
         ],
         [
             'NAME' => 'Состав (HTML)',
@@ -97,6 +98,17 @@ function uuopera_afisha_events_property_definitions(): array
             'PROPERTY_TYPE' => 'T',
             'ROW_COUNT' => 20,
             'COL_COUNT' => 80,
+            'HINT' => 'Заполняется автоматически при одной дате; иначе вкладка «Состав».',
+        ],
+        [
+            'NAME' => 'Состав по датам (JSON)',
+            'ACTIVE' => 'Y',
+            'SORT' => 405,
+            'CODE' => 'PARTICIPANTS_JSON',
+            'PROPERTY_TYPE' => 'T',
+            'ROW_COUNT' => 20,
+            'COL_COUNT' => 80,
+            'HINT' => 'Редактируется на вкладке «Состав» в карточке события.',
         ],
         [
             'NAME' => 'Контент (HTML)',
@@ -136,13 +148,16 @@ function uuopera_afisha_events_property_definitions(): array
             'COL_COUNT' => 80,
         ],
         [
-            'NAME' => 'Пушкинская карта (Y — показать значок)',
+            'NAME' => 'Пушкинская карта',
             'ACTIVE' => 'Y',
             'SORT' => 615,
             'CODE' => 'PUSHKIN_CARD',
-            'PROPERTY_TYPE' => 'S',
-            'ROW_COUNT' => 1,
-            'COL_COUNT' => 1,
+            'PROPERTY_TYPE' => 'L',
+            'LIST_TYPE' => 'C',
+            'MULTIPLE' => 'N',
+            'VALUES' => [
+                ['VALUE' => 'Да', 'XML_ID' => 'Y', 'SORT' => 100, 'DEF' => 'N'],
+            ],
         ],
         [
             'NAME' => 'Экскурсия: строка цены в тексте',
@@ -194,6 +209,71 @@ function uuopera_afisha_events_deactivate_legacy_hero_props(int $iblockId): void
         if ($p = $res->Fetch()) {
             (new CIBlockProperty())->Update((int) $p['ID'], ['ACTIVE' => 'N']);
         }
+    }
+}
+
+function uuopera_afisha_events_upgrade_pushkin_card_checkbox(int $iblockId): void
+{
+    if ($iblockId <= 0 || !\Bitrix\Main\Loader::includeModule('iblock')) {
+        return;
+    }
+    $propRes = CIBlockProperty::GetList([], ['IBLOCK_ID' => $iblockId, 'CODE' => 'PUSHKIN_CARD']);
+    $prop = $propRes->Fetch();
+    if ($prop && ($prop['PROPERTY_TYPE'] ?? '') === 'L' && ($prop['LIST_TYPE'] ?? '') === 'C') {
+        if ((string) ($prop['NAME'] ?? '') !== 'Пушкинская карта') {
+            (new CIBlockProperty())->Update((int) $prop['ID'], ['NAME' => 'Пушкинская карта']);
+        }
+        return;
+    }
+
+    $yesElementIds = [];
+    if ($prop) {
+        $elRes = CIBlockElement::GetList(
+            [],
+            ['IBLOCK_ID' => $iblockId, 'CHECK_PERMISSIONS' => 'N'],
+            false,
+            false,
+            ['ID']
+        );
+        while ($el = $elRes->Fetch()) {
+            $elId = (int) $el['ID'];
+            $pRes = CIBlockElement::GetProperty($iblockId, $elId, ['sort' => 'asc'], ['CODE' => 'PUSHKIN_CARD']);
+            if ($pRow = $pRes->Fetch()) {
+                $v = $pRow['VALUE'];
+                if (is_array($v)) {
+                    $v = $v[0] ?? '';
+                }
+                if (strtoupper(trim((string) $v)) === 'Y') {
+                    $yesElementIds[] = $elId;
+                }
+            }
+        }
+        (new CIBlockProperty())->Delete((int) $prop['ID']);
+    }
+
+    $def = null;
+    foreach (uuopera_afisha_events_property_definitions() as $row) {
+        if (($row['CODE'] ?? '') === 'PUSHKIN_CARD') {
+            $def = $row;
+            break;
+        }
+    }
+    if ($def === null) {
+        return;
+    }
+    $def['IBLOCK_ID'] = $iblockId;
+    $newPropId = (int) (new CIBlockProperty())->Add($def);
+    if ($newPropId <= 0) {
+        return;
+    }
+
+    require_once __DIR__ . '/uuopera_afisha_events.php';
+    $enumId = uuopera_afisha_pushkin_card_enum_id($iblockId);
+    if ($enumId <= 0) {
+        return;
+    }
+    foreach ($yesElementIds as $elId) {
+        CIBlockElement::SetPropertyValuesEx($elId, $iblockId, ['PUSHKIN_CARD' => $enumId]);
     }
 }
 
@@ -308,6 +388,7 @@ function uuopera_afisha_events_bootstrap_iblock(): array
 
     Option::set('uuopera', 'afisha_events_iblock_id', (string) $bid);
     uuopera_afisha_events_ensure_properties($bid, uuopera_afisha_events_property_definitions());
+    uuopera_afisha_events_upgrade_pushkin_card_checkbox($bid);
     uuopera_afisha_events_deactivate_legacy_hero_props($bid);
     uuopera_afisha_events_deactivate_legacy_gallery_url($bid);
     uuopera_afisha_events_seed_category_sections($bid);

@@ -24,7 +24,7 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
             ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y', 'CHECK_PERMISSIONS' => 'Y'],
             false,
             ['nTopCount' => 4],
-            ['ID', 'NAME', 'CODE', 'DATE_ACTIVE_FROM', 'PREVIEW_TEXT', 'PREVIEW_PICTURE']
+            ['ID', 'NAME', 'CODE', 'DATE_ACTIVE_FROM', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PREVIEW_PICTURE']
         );
         while ($row = $res->GetNext()) {
             $dateStr = (string) ($row['DATE_ACTIVE_FROM'] ?? '');
@@ -55,7 +55,10 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
                 'year'      => $year,
                 'dayMonth'  => $dayMonth,
                 'name'      => (string) ($row['NAME'] ?? ''),
-                'excerpt'   => (string) ($row['PREVIEW_TEXT'] ?? ''),
+                'excerpt'   => uuopera_afisha_card_teaser_html(
+                    (string) ($row['PREVIEW_TEXT'] ?? ''),
+                    (string) ($row['DETAIL_TEXT'] ?? '')
+                ),
                 'img'       => $picSrc,
             ];
         }

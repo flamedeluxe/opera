@@ -8,5 +8,5 @@ uuopera_page([
     'title' => 'Новости - Бурятский театр оперы и балета',
     'include' => '/local/templates/uuopera/includes/page_news.php',
     'extra_css' => [],
-    'footer_js' => [],
+    'footer_js' => ['tpl/js/uuopera-news-load-more.js'],
 ]);

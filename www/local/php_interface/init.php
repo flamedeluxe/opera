@@ -83,7 +83,35 @@ function uuopera_megamenu_iblock_id(): int
 /**
  * Экскурсии: install + импорт (uuopera_excursions_iblock_install.php, uuopera_excursions_import_uuopera.php) → uuopera/excursions_iblock_id.
  */
+require_once __DIR__ . '/uuopera_html.php';
 require_once __DIR__ . '/uuopera_iblock_gallery.php';
 require_once __DIR__ . '/uuopera_excursions.php';
 require_once __DIR__ . '/uuopera_afisha_events.php';
+require_once __DIR__ . '/uuopera_afisha_events_bootstrap.php';
 require_once __DIR__ . '/uuopera_cms_data.php';
+
+require_once __DIR__ . '/uuopera_afisha_admin.php';
+
+AddEventHandler('main', 'OnProlog', 'uuopera_afisha_upgrade_pushkin_card_on_admin');
+
+function uuopera_afisha_upgrade_pushkin_card_on_admin(): void
+{
+    if (!defined('ADMIN_SECTION') || ADMIN_SECTION !== true) {
+        return;
+    }
+    static $done = false;
+    if ($done) {
+        return;
+    }
+    $done = true;
+    if (!\Bitrix\Main\Loader::includeModule('iblock')) {
+        return;
+    }
+    $iblockId = uuopera_afisha_events_iblock_id();
+    if ($iblockId > 0) {
+        uuopera_afisha_events_upgrade_pushkin_card_checkbox($iblockId);
+    }
+}
+
+AddEventHandler('main', 'OnAdminIBlockElementEdit', 'uuopera_afisha_admin_tab_engine_handler');
+AddEventHandler('main', 'OnEpilog', 'uuopera_afisha_admin_hide_technical_props_epilog');

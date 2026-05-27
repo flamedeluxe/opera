@@ -36,7 +36,9 @@ function uuopera_afisha_event_empty_data(): array
         'radario_afisha_key' => '',
         'radario_hero_event_id' => 0,
         'sessions' => [],
+        'element_id' => 0,
         'participants_html' => '',
+        'participants_json' => [],
         'description_html' => '',
         'content_html' => '',
         'footer_duration' => '',
@@ -98,15 +100,81 @@ function uuopera_afisha_prop_text_html(array $prop): string
 {
     $v = $prop['VALUE'] ?? '';
     if (is_array($v) && isset($v['TEXT'])) {
-        return (string) $v['TEXT'];
+        return uuopera_html_decode_content((string) $v['TEXT']);
     }
     if (is_array($v)) {
-        return (string) ($v[0] ?? '');
+        return uuopera_html_decode_content((string) ($v[0] ?? ''));
     }
-    return (string) $v;
+
+    return uuopera_html_decode_content((string) $v);
 }
 
 /** Строковые свойства и JSON в полях типа «текст» (VALUE = ['TEXT' => …]). */
+function uuopera_afisha_pushkin_card_enum_id(int $iblockId): int
+{
+    static $cache = [];
+    if (array_key_exists($iblockId, $cache)) {
+        return $cache[$iblockId];
+    }
+    $cache[$iblockId] = 0;
+    if ($iblockId <= 0 || !Loader::includeModule('iblock')) {
+        return 0;
+    }
+    $propRes = CIBlockProperty::GetList([], ['IBLOCK_ID' => $iblockId, 'CODE' => 'PUSHKIN_CARD']);
+    if (!$prop = $propRes->Fetch()) {
+        return 0;
+    }
+    if (($prop['PROPERTY_TYPE'] ?? '') !== 'L') {
+        return 0;
+    }
+    $enumRes = CIBlockPropertyEnum::GetList(
+        ['SORT' => 'ASC'],
+        ['PROPERTY_ID' => (int) $prop['ID'], 'XML_ID' => 'Y']
+    );
+    if ($enum = $enumRes->Fetch()) {
+        $cache[$iblockId] = (int) $enum['ID'];
+    }
+    return $cache[$iblockId];
+}
+
+function uuopera_afisha_pushkin_card_is_yes(mixed $rawValue): bool
+{
+    if (is_array($rawValue)) {
+        $rawValue = $rawValue[0] ?? '';
+    }
+    $v = trim((string) $rawValue);
+    if ($v === '' || $v === '0' || strtoupper($v) === 'N') {
+        return false;
+    }
+    if (strtoupper($v) === 'Y') {
+        return true;
+    }
+    if (ctype_digit($v)) {
+        $enum = CIBlockPropertyEnum::GetByID((int) $v);
+        if (is_array($enum)) {
+            $xmlId = strtoupper(trim((string) ($enum['XML_ID'] ?? '')));
+            if ($xmlId === 'Y') {
+                return true;
+            }
+            $label = mb_strtolower(trim((string) ($enum['VALUE'] ?? '')), 'UTF-8');
+            if ($label === 'да' || $label === 'y') {
+                return true;
+            }
+        }
+        $iblockId = uuopera_afisha_events_iblock_id();
+        if ($iblockId > 0 && (int) $v === uuopera_afisha_pushkin_card_enum_id($iblockId)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/** @param array<string, mixed> $prop */
+function uuopera_afisha_pushkin_card_from_prop(array $prop): bool
+{
+    return uuopera_afisha_pushkin_card_is_yes($prop['VALUE'] ?? '');
+}
+
 function uuopera_afisha_prop_value_plain(array $prop): string
 {
     $v = $prop['VALUE'] ?? '';
@@ -125,11 +193,11 @@ function uuopera_afisha_prop_value_plain(array $prop): string
  */
 function uuopera_afisha_card_teaser_html(string $previewText, string $detailHtml, int $maxPlainChars = 300): string
 {
-    $previewText = trim($previewText);
+    $previewText = trim(uuopera_html_decode_content($previewText));
     if ($previewText !== '') {
         return $previewText;
     }
-    $detailHtml = trim($detailHtml);
+    $detailHtml = trim(uuopera_html_decode_content($detailHtml));
     if ($detailHtml === '') {
         return '';
     }
@@ -232,7 +300,7 @@ function uuopera_afisha_event_get_data(string $code): array
     // GetProperties() fails in demo mode; use GetProperty()-based helper instead
     $elementId = (int) ($fields['ID'] ?? 0);
     $propCodes = [
-        'CATEGORY', 'LAYOUT', 'AGE', 'SESSIONS_JSON', 'PARTICIPANTS_HTML',
+        'CATEGORY', 'LAYOUT', 'AGE', 'SESSIONS_JSON', 'PARTICIPANTS_HTML', 'PARTICIPANTS_JSON',
         'CONTENT_HTML', 'RADARIO_AFISHA_KEY', 'RADARIO_HERO_EVENT_ID', 'RADARIO_HERO_MODE',
         'HERO_META_HTML', 'HERO_IMAGE', 'HERO_SRCSET', 'SLIDER_ID',
         'FOOTER_DURATION', 'FOOTER_PRICE', 'PUSHKIN_CARD', 'GALLERY',
@@ -276,7 +344,7 @@ function uuopera_afisha_event_get_data(string $code): array
         $heroSrcset = $str($props['HERO_SRCSET'] ?? []);
     }
 
-    $pushkin = strtoupper($str($props['PUSHKIN_CARD'] ?? [])) === 'Y';
+    $pushkin = uuopera_afisha_pushkin_card_from_prop($props['PUSHKIN_CARD'] ?? []);
 
     $contentHtml = uuopera_afisha_prop_text_html($props['CONTENT_HTML'] ?? []);
     // When local gallery is present the slider lives in _afisha_slider_fragment.php;
@@ -285,7 +353,17 @@ function uuopera_afisha_event_get_data(string $code): array
         $contentHtml = trim(uuopera_afisha_strip_slider_blocks($contentHtml));
     }
 
+    $participantsJson = [];
+    $participantsJsonRaw = uuopera_afisha_prop_value_plain($props['PARTICIPANTS_JSON'] ?? []);
+    if ($participantsJsonRaw !== '') {
+        $decoded = json_decode($participantsJsonRaw, true);
+        if (is_array($decoded)) {
+            $participantsJson = $decoded;
+        }
+    }
+
     return [
+        'element_id' => $elementId,
         'name' => trim((string) ($fields['NAME'] ?? '')),
         'layout' => $layout,
         'category' => $str($props['CATEGORY'] ?? []),
@@ -298,7 +376,8 @@ function uuopera_afisha_event_get_data(string $code): array
         'radario_hero_event_id' => $heroEventId,
         'sessions' => $sessions,
         'participants_html' => uuopera_afisha_prop_text_html($props['PARTICIPANTS_HTML'] ?? []),
-        'description_html' => (string) ($fields['DETAIL_TEXT'] ?? ''),
+        'participants_json' => $participantsJson,
+        'description_html' => uuopera_html_decode_content((string) ($fields['DETAIL_TEXT'] ?? '')),
         'content_html' => $contentHtml,
         'footer_duration' => $str($props['FOOTER_DURATION'] ?? []),
         'footer_price' => $str($props['FOOTER_PRICE'] ?? []),
@@ -630,7 +709,7 @@ function uuopera_afisha_list_events(string $categoryFilter, int $limit = 0, stri
             'radario_afisha_key' => $str($props['RADARIO_AFISHA_KEY'] ?? []),
             'radario_event_id' => (int) $str($props['RADARIO_HERO_EVENT_ID'] ?? []),
             'age' => $str($props['AGE'] ?? []),
-            'pushkin_card' => strtoupper($str($props['PUSHKIN_CARD'] ?? [])) === 'Y',
+            'pushkin_card' => uuopera_afisha_pushkin_card_from_prop($props['PUSHKIN_CARD'] ?? []),
         ];
     }
 

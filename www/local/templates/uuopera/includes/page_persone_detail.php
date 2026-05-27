@@ -18,6 +18,7 @@ if ($person === null) { ?>
     $pname = htmlspecialchars($person['name'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $prole = htmlspecialchars($person['role'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $photo = $person['photo'];
+    $personeAfishaEvents = uuopera_persone_afisha_events_for_slug($slug);
     ?>
 <main class="page-padding flex flex-col gap-20 2xl:gap-25">
 
@@ -64,6 +65,8 @@ if ($person === null) { ?>
         </div>
     </div>
     <?php } ?>
+
+    <?php include __DIR__ . '/_persone_afisha_events.inc.php'; ?>
 
 </main>
 <?php } ?>
