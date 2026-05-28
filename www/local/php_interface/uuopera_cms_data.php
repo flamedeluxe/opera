@@ -725,7 +725,7 @@ HTML,
         'map_latlng' => '51.832861, 107.583442',
         'map_api_key' => 'ec538965-b772-4b72-940b-760238e42731',
         'feedback_image' => 'https://uuopera.ru/wp-content/themes/uuopera/images/feedback.jpg',
-        'form_action' => '/wp-json/uuopera/v1/feedback/',
+        'form_action' => '/local/ajax/contacts-feedback.php',
     ];
 
     $pick = static function (string $iblockHtml, string $optKey, string $defHtml) use ($defaults): string {
@@ -796,7 +796,9 @@ HTML,
         'map_latlng' => $pickLine($latI, 'contacts_map_latlng', $defaults['map_latlng']),
         'map_api_key' => $pickLine($keyI, 'contacts_map_api_key', $defaults['map_api_key']),
         'feedback_image' => $feedback,
-        'form_action' => $pickLine($formI, 'contacts_form_action', $defaults['form_action']),
+        'form_action' => uuopera_contacts_form_action_url(
+            $pickLine($formI, 'contacts_form_action', $defaults['form_action'])
+        ),
     ];
 }
 
@@ -833,6 +835,26 @@ function uuopera_persone_iblock_id(): int
  *
  * @return array<string, list<array{id:int,name:string,slug:string,role:string,photo:string,photo_url:string}>>
  */
+function uuopera_persone_person_visible_in_category(array $sectionCodes, string $category): bool
+{
+    if (!in_array($category, $sectionCodes, true)) {
+        return false;
+    }
+    if (count($sectionCodes) <= 1) {
+        return true;
+    }
+    $hideWhenAlsoIn = [
+        'khor' => ['opera'],
+    ];
+    foreach ($hideWhenAlsoIn[$category] ?? [] as $other) {
+        if (in_array($other, $sectionCodes, true)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 function uuopera_persone_list_by_category(string $category): array
 {
     $category = trim($category);
@@ -844,13 +866,19 @@ function uuopera_persone_list_by_category(string $category): array
         return [];
     }
 
+    $sectionId = uuopera_persone_section_id_by_code($category);
+    if ($sectionId <= 0) {
+        return [];
+    }
+
     $res = CIBlockElement::GetList(
         ['SORT' => 'ASC', 'NAME' => 'ASC'],
         [
-            'IBLOCK_ID'         => $iblockId,
-            'ACTIVE'            => 'Y',
-            'CHECK_PERMISSIONS' => 'N',
-            'PROPERTY_CATEGORY' => $category,
+            'IBLOCK_ID'          => $iblockId,
+            'SECTION_ID'         => $sectionId,
+            'INCLUDE_SUBSECTIONS' => 'N',
+            'ACTIVE'             => 'Y',
+            'CHECK_PERMISSIONS'  => 'N',
         ],
         false,
         false,
@@ -895,11 +923,19 @@ function uuopera_persone_list_by_category(string $category): array
 
         // Collect sub-groups from GROUPS property (MULTIPLE='Y' → values in ['VALUE'] array)
         $groupNames = [];
+        $personSectionCodes = uuopera_persone_element_section_codes($elId);
+        if ($personSectionCodes === []) {
+            $personSectionCodes = uuopera_persone_category_codes_from_legacy_property($rawProps, $elId);
+        }
+        if (!uuopera_persone_person_visible_in_category($personSectionCodes, $category)) {
+            continue;
+        }
+
         $rawGroups = $rawProps[$elId]['GROUPS'] ?? null;
         if (is_array($rawGroups) && isset($rawGroups['VALUE'])) {
             foreach ((array) $rawGroups['VALUE'] as $gv) {
                 $gn = trim((string) $gv);
-                if ($gn !== '') {
+                if ($gn !== '' && !in_array($gn, $groupNames, true)) {
                     $groupNames[] = $gn;
                 }
             }
@@ -918,11 +954,54 @@ function uuopera_persone_list_by_category(string $category): array
         ];
 
         foreach ($groupNames as $gn) {
-            $grouped[$gn][] = $person;
+            $seenIds = [];
+            foreach ($grouped[$gn] ?? [] as $existing) {
+                $seenIds[(int) $existing['id']] = true;
+            }
+            if (!isset($seenIds[$elId])) {
+                $grouped[$gn][] = $person;
+            }
         }
     }
 
     return $grouped;
+}
+
+/**
+ * @param array<string, list<array{id:int,name:string,slug:string,role:string,photo:string,photo_url:string}>> $grouped
+ * @param list<string> $groupOrder
+ * @return array<string, list<array{id:int,name:string,slug:string,role:string,photo:string,photo_url:string}>>
+ */
+function uuopera_persone_filter_groups_for_category(string $category, array $grouped, array $groupOrder): array
+{
+    $excludeByCategory = [
+        'direction' => ['Дирекция', 'Художественное руководство'],
+        'hudr' => ['Художественно-постановочная часть'],
+        'opera' => ['Художественное руководство', 'Оперная труппа'],
+        'balet' => ['Художественное руководство', 'Балетная труппа'],
+        'orkestr' => ['Художественное руководство', 'Главный хормейстер', 'Оркестр'],
+        'khor' => ['Художественное руководство', 'Дирижер', 'Хор'],
+        'khpch' => ['Художественно-постановочная часть'],
+        'ticketservice' => ['Служба главного администратора'],
+        'administration' => ['Административный блок'],
+        'khpch-hudr-6' => [],
+    ];
+    foreach ($excludeByCategory[$category] ?? [] as $groupName) {
+        unset($grouped[$groupName]);
+    }
+
+    if ($groupOrder === []) {
+        return $grouped;
+    }
+
+    $sorted = [];
+    foreach ($groupOrder as $groupName) {
+        if (!empty($grouped[$groupName])) {
+            $sorted[$groupName] = $grouped[$groupName];
+        }
+    }
+
+    return $sorted;
 }
 
 /**

@@ -55,7 +55,14 @@ php local/tools/uuopera_megamenu_iblock_install.php
 php local/tools/uuopera_afisha_events_install.php
 php local/tools/uuopera_seed_admin_iblock_sections.php
 php local/tools/uuopera_afisha_bulk_import_uuopera.php
+php local/tools/uuopera_persone_iblock_install.php
+php local/tools/uuopera_persone_sections_install.php
+php local/tools/uuopera_persone_migrate_sections.php
+php local/tools/uuopera_persone_remove_category_property.php
+php local/tools/uuopera_megamenu_sync_personalii.php
 ```
+
+Деплой на VPS (`ssh opera`): `./deploy/deploy.sh opera` (код + БД + `upload/` через `deploy/sync-upload.sh`). Только медиа Bitrix: `./deploy/sync-upload.sh opera`. Каталог `wp-content/` на сервере не перезаписывается.
 
 ## Utility Scripts
 

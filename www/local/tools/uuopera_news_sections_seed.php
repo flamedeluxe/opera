@@ -47,8 +47,6 @@ echo "News iblock ID: $iblockId\n";
 $categories = [
     'oficialnaya-informaciya'     => ['name' => 'Официальная информация', 'sort' => 100],
     'news'                        => ['name' => 'Новости',                'sort' => 10],
-    'press-releases'              => ['name' => 'Пресс-релизы',           'sort' => 200],
-    'anons'                       => ['name' => 'Анонсы',                 'sort' => 300],
 ];
 
 // Ensure sections exist; collect slug → section ID map

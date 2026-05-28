@@ -23,8 +23,6 @@ if (!\Bitrix\Main\Loader::includeModule('iblock')) {
     exit(1);
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/init.php';
-
 $dry = in_array('--dry-run', $argv, true);
 
 $iblockId = (int) \Bitrix\Main\Config\Option::get('uuopera', 'persone_iblock_id', '0');
@@ -96,9 +94,15 @@ foreach ($data as $item) {
         }
     }
 
+    $primarySectionId = 0;
+    $sectionCodes = array_values(array_filter(array_map('trim', $categories)));
+    if ($sectionCodes !== []) {
+        $primarySectionId = uuopera_persone_section_id_by_code($sectionCodes[0]);
+    }
+
     $fields = [
         'MODIFIED_BY' => 1,
-        'IBLOCK_SECTION_ID' => false,
+        'IBLOCK_SECTION_ID' => $primarySectionId > 0 ? $primarySectionId : false,
         'IBLOCK_ID' => $iblockId,
         'NAME' => $name,
         'CODE' => $code,
@@ -125,9 +129,6 @@ foreach ($data as $item) {
         'ROLE' => $role,
         'PHOTO_URL' => $photoUrl,
     ];
-    if ($categories !== []) {
-        $props['CATEGORY'] = $categories;
-    }
     if ($subCats !== []) {
         $props['GROUPS'] = $subCats;
     }
@@ -149,6 +150,9 @@ foreach ($data as $item) {
             continue;
         }
         CIBlockElement::SetPropertyValuesEx($selfId, $iblockId, $props);
+        if ($sectionCodes !== []) {
+            uuopera_persone_assign_element_sections($selfId, $sectionCodes);
+        }
         $ok++;
     } else {
         $newId = (int) $el->Add($fields);
@@ -159,6 +163,9 @@ foreach ($data as $item) {
             continue;
         }
         CIBlockElement::SetPropertyValuesEx($newId, $iblockId, $props);
+        if ($sectionCodes !== []) {
+            uuopera_persone_assign_element_sections($newId, $sectionCodes);
+        }
         $ok++;
     }
 }

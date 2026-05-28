@@ -89,6 +89,8 @@ require_once __DIR__ . '/uuopera_excursions.php';
 require_once __DIR__ . '/uuopera_afisha_events.php';
 require_once __DIR__ . '/uuopera_afisha_events_bootstrap.php';
 require_once __DIR__ . '/uuopera_cms_data.php';
+require_once __DIR__ . '/uuopera_persone_sections.php';
+require_once __DIR__ . '/uuopera_contacts_feedback.php';
 
 require_once __DIR__ . '/uuopera_afisha_admin.php';
 

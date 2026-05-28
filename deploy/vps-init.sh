@@ -88,13 +88,14 @@ server {
         client_max_body_size 1024m;
     }
 
-    location /wp-content/uploads/ {
-        try_files \$uri @wp_uploads_proxy;
+    # wp-content/ — фото и PDF с диска; ^~ чтобы не перехватывало location для *.jpg
+    location ^~ /wp-content/ {
+        try_files \$uri @wp_content_proxy;
         expires 30d;
         add_header Cache-Control public;
         access_log off;
     }
-    location @wp_uploads_proxy {
+    location @wp_content_proxy {
         proxy_pass https://uuopera.ru;
         proxy_set_header Host uuopera.ru;
         proxy_ssl_server_name on;
@@ -165,8 +166,8 @@ ok "VPS настроен! Данные сохранены в ${CREDS_FILE}"
 echo ""
 echo "Следующие шаги (с локальной машины):"
 echo ""
-echo "  1. Скопируй сайт:"
-echo "       rsync -av --exclude='.git' --exclude='wp-old' --exclude='db' ./www/ root@${DOMAIN}:${APP_DIR}/"
+echo "  1. Скопируй сайт (wp-content/ на VPS не перезаписывать):"
+echo "       ./deploy/deploy.sh"
 echo ""
 echo "  2. Скопируй дамп БД и импортируй:"
 echo "       scp db/bitrix.sql.gz root@${DOMAIN}:/tmp/"

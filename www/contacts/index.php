@@ -7,6 +7,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/uuopera_page.php'
 uuopera_page([
     'title' => 'Контакты - Бурятский театр оперы и балета',
     'include' => '/local/templates/uuopera/includes/page_contacts.php',
-    'extra_css' => ['tpl/css/page-contacts.css'],
-    'footer_js' => [],
+    'extra_css' => ['tpl/css/page-beige.css', 'tpl/css/page-contacts.css'],
+    'footer_js' => ['tpl/js/page-contacts.js'],
 ]);

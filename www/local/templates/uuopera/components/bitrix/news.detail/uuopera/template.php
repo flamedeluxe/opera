@@ -79,7 +79,7 @@ foreach (['DETAIL_PICTURE', 'PREVIEW_PICTURE'] as $picField) {
     </div>
     <?php if ($detailText !== ''): ?>
     <div class="bg-beige" data-header-color-schema="beige">
-        <div class="wrapper-main wrapper-max w-full pt-12 pb-20 2xl:pt-20 flex flex-col gap-20">
+        <div class="wrapper-main wrapper-max w-full pt-12 pb-20 2xl:pt-20 flex flex-col gap-5">
             <?= $detailText ?>
         </div>
     </div>

@@ -20,7 +20,20 @@ function uuopera_html_decode_content(string $html): string
         }
     }
 
-    return $decoded;
+    return uuopera_html_rewrite_wp_media_urls($decoded);
+}
+
+function uuopera_html_rewrite_wp_media_urls(string $html): string
+{
+    if ($html === '') {
+        return '';
+    }
+
+    return str_replace(
+        ['https://uuopera.ru/wp-content/', 'http://uuopera.ru/wp-content/'],
+        '/wp-content/',
+        $html
+    );
 }
 
 function uuopera_html_convert_su_spoilers(string $html): string

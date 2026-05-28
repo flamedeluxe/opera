@@ -22,16 +22,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/uuopera_cms_ibloc
 
 $bid = uuopera_cms_ensure_iblock('uuopera_persone', 'Персоналии', 480, [
     [
-        'NAME' => 'Категория (hudr|opera|balet|orkestr|khor|...)',
-        'ACTIVE' => 'Y',
-        'SORT' => 100,
-        'CODE' => 'CATEGORY',
-        'PROPERTY_TYPE' => 'S',
-        'MULTIPLE' => 'Y',
-        'ROW_COUNT' => 1,
-        'COL_COUNT' => 40,
-    ],
-    [
         'NAME' => 'Должность / роль',
         'ACTIVE' => 'Y',
         'SORT' => 110,
@@ -61,8 +51,9 @@ $bid = uuopera_cms_ensure_iblock('uuopera_persone', 'Персоналии', 480,
         'ROW_COUNT' => 1,
         'COL_COUNT' => 200,
     ],
-], false);
+], true);
 
 \Bitrix\Main\Config\Option::set('uuopera', 'persone_iblock_id', (string) $bid);
 echo "persone_iblock_id = $bid\n";
+echo "Запустите: php local/tools/uuopera_persone_sections_install.php\n";
 echo "OK\n";

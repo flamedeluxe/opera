@@ -39,6 +39,8 @@ if (!\Bitrix\Main\Loader::includeModule('iblock')) {
     exit(1);
 }
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/init.php';
+
 use Bitrix\Main\Config\Option;
 
 $siteRes = CSite::GetList($by = 'sort', $order = 'asc', ['ACTIVE' => 'Y']);
@@ -138,13 +140,7 @@ $menuTree = [
         ['Национальная опера', '/projects/opera100/'],
         ['Национальный балет', '/projects/konkbalet100/'],
     ]],
-    ['xml' => 'uu_m_persons', 'name' => 'Персоны', 'sort' => 400, 'img_key' => 'uu_m_persons', 'items' => [
-        ['Художественное руководство', '/personalii/hudr/'],
-        ['Опера', '/personalii/opera/'],
-        ['Балет', '/personalii/balet/'],
-        ['Оркестр', '/personalii/orkestr/'],
-        ['Хор', '/personalii/khor/'],
-    ]],
+    ['xml' => 'uu_m_persons', 'name' => 'Персоны', 'sort' => 400, 'img_key' => 'uu_m_persons', 'items' => uuopera_persone_megamenu_link_items()],
     ['xml' => 'uu_m_visitors', 'name' => 'Посетителям', 'sort' => 500, 'img_key' => null, 'items' => [
         ['Театральный этикет', '/for-visitors/etiquette/'],
         ['Возврат билетов', '/for-visitors/ticket-refund/'],

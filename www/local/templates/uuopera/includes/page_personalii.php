@@ -11,25 +11,7 @@ $cats = (array) ($GLOBALS['UUOPERA_PERSONALII_CATS'] ?? []);
 $groupOrder = (array) ($GLOBALS['UUOPERA_PERSONALII_GROUP_ORDER'] ?? []);
 
 $persons = uuopera_persone_list_by_category($currentCat);
-
-// If canonical group order is defined — sort groups; otherwise collapse into one group
-if (!empty($groupOrder) && count($persons) > 1) {
-    $orderMap = array_flip($groupOrder);
-    uksort($persons, static function (string $a, string $b) use ($orderMap): int {
-        $posA = $orderMap[$a] ?? PHP_INT_MAX;
-        $posB = $orderMap[$b] ?? PHP_INT_MAX;
-        return $posA !== $posB ? $posA - $posB : strcmp($a, $b);
-    });
-} elseif (count($persons) !== 1 || !isset($persons[$currentTitle])) {
-    // Collapse all persons into one group named after the category
-    $flat = [];
-    foreach ($persons as $group) {
-        foreach ($group as $p) {
-            $flat[$p['id']] = $p;
-        }
-    }
-    $persons = $flat ? [$currentTitle => array_values($flat)] : [];
-}
+$persons = uuopera_persone_filter_groups_for_category($currentCat, $persons, $groupOrder);
 ?>
 <main class="page-padding" data-header-color-schema="beige">
     <div class="wrapper-max w-full pt-25">

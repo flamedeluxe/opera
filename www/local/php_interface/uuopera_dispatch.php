@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/uuopera_page.php';
+require_once __DIR__ . '/uuopera_persone_sections.php';
 
 /**
  * Вызов из любого сгенерированного …/index.php: маршрут по каталогу скрипта.
@@ -130,25 +131,17 @@ function uuopera_dispatch_for_path(string $path): void
         return;
     }
 
-    $personaliiCats = [
-        'direction'     => 'Дирекция',
-        'hudr'          => 'Художественное руководство',
-        'opera'         => 'Оперная труппа',
-        'balet'         => 'Балетная труппа',
-        'orkestr'       => 'Оркестр',
-        'khor'          => 'Хор',
-        'khpch'         => 'Художественно-постановочная часть',
-        'ticketservice' => 'Служба главного администратора',
-        'administration' => 'Административный блок',
-        'khpch-hudr-6'  => 'Театрально-производственные мастерские',
-    ];
-    // Canonical group display order per category (derived from WP term_order)
-    $personaliiGroupOrder = [
-        'opera' => ['Заведующая оперной труппой','Педагог по вокалу','Сопрано','Меццо-сопрано','Тенора','Баритоны','Басы','Концертмейстеры'],
-        'balet' => ['Художественный руководитель балета','Балетмейстеры-репетиторы','Солисты балета','Артисты высшей категории (женский состав)','Артисты I-категории (женский состав)','Артисты балета (женский состав)','Артисты балета (мужской состав)','Концертмейстеры'],
-        'orkestr' => ['Дирижёры','Группа струнных смычковых инструментов','Группа деревянных духовых инструментов','Группа медных духовых инструментов','Группа ударных инструментов','Группа клавишных инструментов','Концертмейстеры'],
-        'khor' => ['Художественный руководитель хора','Хормейстеры-репетиторы','Сопрано I','Сопрано II','Альт I','Альт II','Тенора','Баритоны','Басы','Концертмейстеры'],
-    ];
+    $personaliiSections = uuopera_persone_sections_catalog();
+    $personaliiCats = [];
+    foreach ($personaliiSections as $code => $sec) {
+        $personaliiCats[$code] = (string) ($sec['name'] ?? $code);
+    }
+    if ($personaliiCats === []) {
+        foreach (uuopera_persone_sections_definitions() as $code => $def) {
+            $personaliiCats[$code] = (string) $def['name'];
+        }
+    }
+    $personaliiGroupOrder = uuopera_persone_group_order_map();
 
     if (preg_match('#^/personalii/([^/]+)$#', $path, $ppm)) {
         $catSlug = (string) $ppm[1];

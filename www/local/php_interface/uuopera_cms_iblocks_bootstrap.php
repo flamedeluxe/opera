@@ -123,42 +123,7 @@ function uuopera_cms_ensure_iblock_section(int $iblockId, string $sectionCode, s
  */
 function uuopera_cms_seed_iblock_admin_sections(array $ids): void
 {
-    if (!\Bitrix\Main\Loader::includeModule('iblock')) {
-        return;
-    }
-    $sp = (int) ($ids['static_pages'] ?? 0);
-    if ($sp > 0) {
-        uuopera_cms_ensure_iblock_section($sp, 'common', 'Общие страницы', 100);
-        uuopera_cms_ensure_iblock_section($sp, 'theatre', 'Театр', 200);
-        uuopera_cms_ensure_iblock_section($sp, 'visitors', 'Посетителям', 300);
-        uuopera_cms_ensure_iblock_section($sp, 'legal', 'Юридические страницы', 400);
-    }
-    $hs = (int) ($ids['home_slides'] ?? 0);
-    if ($hs > 0) {
-        uuopera_cms_ensure_iblock_section($hs, 'main_slider', 'Слайды главной', 100);
-    }
-    $pr = (int) ($ids['projects'] ?? 0);
-    if ($pr > 0) {
-        uuopera_cms_ensure_iblock_section($pr, 'current', 'Текущие', 100);
-        uuopera_cms_ensure_iblock_section($pr, 'archive', 'Архив', 200);
-    }
-    $ab = (int) ($ids['about'] ?? 0);
-    if ($ab > 0) {
-        uuopera_cms_ensure_iblock_section($ab, 'mission', 'Миссия и ценности', 100);
-        uuopera_cms_ensure_iblock_section($ab, 'history', 'История', 200);
-        uuopera_cms_ensure_iblock_section($ab, 'management', 'Руководство', 300);
-        uuopera_cms_ensure_iblock_section($ab, 'other', 'Прочее', 900);
-    }
-    $fq = (int) ($ids['service_faq'] ?? 0);
-    if ($fq > 0) {
-        uuopera_cms_ensure_iblock_section($fq, 'intro', 'Вводные блоки', 100);
-        uuopera_cms_ensure_iblock_section($fq, 'questions', 'Вопросы', 200);
-        uuopera_cms_ensure_iblock_section($fq, 'files', 'Файлы и реквизиты', 300);
-    }
-    $ct = (int) ($ids['contacts'] ?? 0);
-    if ($ct > 0) {
-        uuopera_cms_ensure_iblock_section($ct, 'main', 'Контент страницы', 100);
-    }
+    // Разделы CMS-инфоблоков не используются: элементы привязаны по REQUEST_PATH / без разделов.
 }
 
 /**
