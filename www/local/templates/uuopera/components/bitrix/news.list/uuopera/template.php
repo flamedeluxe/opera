@@ -21,8 +21,8 @@ if (is_object($nav)) {
         $uuNewsHasMore = true;
         $path = strtok((string) ($_SERVER['REQUEST_URI'] ?? '/category/news/'), '?') ?: '/category/news/';
         $params = $_GET;
-        $params['page'] = (string) ($uuCurrentPage + 1);
-        unset($params['PAGEN_1']);
+        $params['PAGEN_1'] = (string) ($uuCurrentPage + 1);
+        unset($params['page']);
         $uuNewsNextUrl = $path . '?' . http_build_query($params);
     }
 }

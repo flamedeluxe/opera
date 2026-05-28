@@ -42,7 +42,7 @@ if ($arResult['UUOPERA_HAS_MORE']) {
     $path = strtok((string) ($_SERVER['REQUEST_URI'] ?? '/category/news/'), '?') ?: '/category/news/';
     $params = $_GET;
     $next = $currentPage + 1;
-    $params['page'] = (string) $next;
-    unset($params['PAGEN_1']);
+    $params['PAGEN_1'] = (string) $next;
+    unset($params['page']);
     $arResult['UUOPERA_NEXT_PAGE_URL'] = $path . '?' . http_build_query($params);
 }

@@ -6,11 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
-$pageNum = isset($_GET['page']) ? max(1, (int) $_GET['page']) : 0;
-if ($pageNum > 0) {
-    $_REQUEST['PAGEN_1'] = $pageNum;
-    $_GET['PAGEN_1'] = $pageNum;
-}
+$pagen = max(1, (int) ($_REQUEST['PAGEN_1'] ?? 1));
 
 /** @var CMain $APPLICATION */
 $APPLICATION->IncludeComponent(
@@ -30,7 +26,8 @@ $APPLICATION->IncludeComponent(
         'DISPLAY_BOTTOM_PAGER' => 'Y',
         'PAGER_SHOW_ALWAYS' => 'N',
         'PAGER_TEMPLATE' => '.default',
-        'CACHE_TYPE' => 'A',
+        'CACHE_TYPE' => $pagen > 1 ? 'N' : 'A',
+        'CACHE_FILTER' => 'Y',
         'CACHE_TIME' => '3600',
         'CACHE_GROUPS' => 'Y',
         'SET_TITLE' => 'N',

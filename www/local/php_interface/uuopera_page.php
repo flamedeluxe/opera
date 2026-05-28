@@ -11,10 +11,22 @@ declare(strict_types=1);
  *   title_callback?: callable(\CMain): void|string
  * } $config
  */
+function uuopera_apply_pagen_from_page_query(): void
+{
+    if (!isset($_GET['page'])) {
+        return;
+    }
+    $page = max(1, (int) $_GET['page']);
+    $_REQUEST['PAGEN_1'] = $page;
+    $_GET['PAGEN_1'] = $page;
+}
+
 function uuopera_page(array $config): void
 {
     global $APPLICATION;
     $doc = rtrim(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT'] ?? ''), '/');
+
+    uuopera_apply_pagen_from_page_query();
 
     $include = (string) ($config['include'] ?? '');
     $title = (string) ($config['title'] ?? '');
